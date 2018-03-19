@@ -1,0 +1,13 @@
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\bin\Release\BB_App.exe.config
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\bin\Release\BB_App.exe
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\bin\Release\BB_App.pdb
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\bin\Release\Bunifu_UI_v1.5.3.dll
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\bin\Release\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\bin\Release\TransControl_src_v1.1.dll
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.Forms.Dashboard.resources
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.Forms.Login.resources
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.Main.resources
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.Properties.Resources.resources
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.csproj.GenerateResource.Cache
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.exe
+C:\Users\Ghost\documents\visual studio 2012\Projects\BB_App\BB_App\obj\Release\BB_App.pdb
