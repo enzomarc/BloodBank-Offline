@@ -62,13 +62,17 @@ namespace BB_App.Models
 
             if (!Exist())
             {
-                if (SqlConnection.Connect(param.server, param.db_user, param.db_password, param.db_name))
+                if (SqlConnection.Connect("127.0.0.1", "root", "", "bloodbankdb"))
                 {
                     string query = "INSERT INTO blood_bank VALUES ('" + param.hospital + "', 0, 0, 0, 0, 0, 0, 0, 0, 0);";
                     MySqlCommand command = new MySqlCommand(query, SqlConnection.conn);
 
                     command.ExecuteNonQuery();
                 }
+                else
+                    System.Windows.Forms.MessageBox.Show("Erreur de connexion");
+
+                SqlConnection.Disconnect();
             }
 
         }
@@ -107,6 +111,7 @@ namespace BB_App.Models
 
             }
 
+            SqlConnection.Disconnect();
         }
 
         /// <summary>
@@ -128,6 +133,7 @@ namespace BB_App.Models
 
             }
 
+            SqlConnection.Disconnect();
         }
 
         /// <summary>
@@ -150,6 +156,8 @@ namespace BB_App.Models
 
                     command.ExecuteNonQuery();
                 }
+
+                SqlConnection.Disconnect();
             }
 
         }
@@ -159,9 +167,9 @@ namespace BB_App.Models
         #region Functions
 
         /// <summary>
-        /// Determines if the blood_bank table doesn't contains hospital blood informations.
+        /// Determines if the blood_bank table contains hospital blood informations.
         /// </summary>
-        /// <returns>A boolean that indicates if the blood_bank doesn't contains hospital informations</returns>
+        /// <returns>A boolean that indicates if the blood_bank contains hospital blood informations</returns>
         public static bool Exist()
         {
             bool _exist = false;
@@ -172,8 +180,13 @@ namespace BB_App.Models
                 MySqlCommand command = new MySqlCommand(query, SqlConnection.conn);
                 MySqlDataReader reader = command.ExecuteReader();
 
-                _exist = reader.HasRows;
+                if (reader.HasRows)
+                    _exist = true;
+                else
+                    _exist = false;
             }
+
+            SqlConnection.Disconnect();
 
             return _exist;
         }
