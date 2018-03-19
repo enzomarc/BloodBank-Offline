@@ -36,7 +36,6 @@ namespace BB_App
         private void Main_Load(object sender, EventArgs e)
         {
             loadForm(new Views.Login());
-            Blood.initializeBank();
         }
 
         #endregion

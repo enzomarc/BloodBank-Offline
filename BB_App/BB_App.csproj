@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Consts.cs" />
-    <Compile Include="Models\Blood.cs" />
     <Compile Include="Models\FirstStart.cs" />
     <Compile Include="Models\SqlConnection.cs" />
     <Compile Include="Models\Requests.cs" />
