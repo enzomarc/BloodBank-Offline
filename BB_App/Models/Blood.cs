@@ -180,10 +180,7 @@ namespace BB_App.Models
                 MySqlCommand command = new MySqlCommand(query, SqlConnection.conn);
                 MySqlDataReader reader = command.ExecuteReader();
 
-                if (reader.HasRows)
-                    _exist = true;
-                else
-                    _exist = false;
+                _exist = reader.HasRows;
             }
 
             SqlConnection.Disconnect();

@@ -37,11 +37,9 @@ namespace BB_App
         {
             loadForm(new Views.Login());
             Blood.initializeBank();
-            
         }
 
         #endregion
-
 
     }
 }
