@@ -16,13 +16,13 @@ Module de gestion hors-ligne pour des banque de sang disponible dans les différ
 
 - Les librairies :
 
-  - MySqlConnector 6.9.0.0
+  - MySqlConnector 6.9.0.0 disponible [ici](https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.9.11.msi)
 
-  - Krypton.Toolkit disponible ici
+  - Krypton.Toolkit disponible [ici](https://github.com/ComponentFactory/Krypton)
 
-  - Bunifu.UI 1.5.3
+  - Bunifu.UI 1.5.3 disponible [ici](https://devtools.bunifu.co.ke)
 
-  - TransControl disponible ici
+  - TransControl disponible sur ce repositoire
 
     ​
 
