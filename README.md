@@ -6,8 +6,6 @@ Module de gestion hors-ligne pour des banque de sang disponible dans les différ
 
 ## Getting Started
 
-------
-
 #### Prérequis
 
 - Visual Studio 2012 ou une autre version supérieure à 2012,
