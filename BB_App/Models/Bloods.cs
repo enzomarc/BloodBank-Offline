@@ -23,7 +23,7 @@ namespace BB_App.Models
     class Bloods
     {
 
-        /// <summary>
+        /// <summary>dz
         /// Represents a blood object with group and units.
         /// </summary>
         public class Blood
