@@ -4,7 +4,7 @@ Module de gestion hors-ligne pour des banque de sang disponible dans les différ
 
 
 
-### Getting Started
+## Getting Started
 
 ------
 
@@ -28,7 +28,7 @@ Module de gestion hors-ligne pour des banque de sang disponible dans les différ
 
     ​
 
-#### Install
+### Install
 
 - Déployer PhpMyAdmin et MySql sur un LAN (soit sur un ordinateur du même réseau soit sur l'ordinateur de test).
 
@@ -38,21 +38,19 @@ Module de gestion hors-ligne pour des banque de sang disponible dans les différ
 
   ​
 
-#### Contributing 
+### Contributing 
 
 Veuillez lire le fichier CONTRIBUTING.md pour avoir le code de conduite et le processus à suivre pour la contribution au développement du projet.
 
 
 
-#### Versioning
+### Versioning
 
 GitKraken a été utilisé pour le versioning. Voir la documentation pour la version utilisée.
 
 
 
-#### Authors
+### Authors
 
-Marc Enzo - *Initial Work* - 
-
-[Ghost237]: https://github.com/focus237	"focus237"
+Marc Enzo - *Initial Work* - [Ghost237](https://github.com/focus237)
 
