@@ -210,6 +210,7 @@
             this.bloodLabel.TabIndex = 32;
             this.bloodLabel.Text = "AB-";
             this.bloodLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bloodLabel.Click += new System.EventHandler(this.bloodLabel_Click);
             // 
             // unitLabel
             // 
@@ -232,6 +233,7 @@
             this.nextBlood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.nextBlood.TabIndex = 34;
             this.nextBlood.TabStop = false;
+            this.nextBlood.Click += new System.EventHandler(this.nextBlood_Click);
             this.nextBlood.MouseEnter += new System.EventHandler(this.nextBlood_MouseEnter);
             this.nextBlood.MouseLeave += new System.EventHandler(this.nextBlood_MouseLeave);
             // 
@@ -244,6 +246,7 @@
             this.previousBlood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.previousBlood.TabIndex = 35;
             this.previousBlood.TabStop = false;
+            this.previousBlood.Click += new System.EventHandler(this.previousBlood_Click);
             this.previousBlood.MouseEnter += new System.EventHandler(this.nextBlood_MouseEnter);
             this.previousBlood.MouseLeave += new System.EventHandler(this.nextBlood_MouseLeave);
             // 

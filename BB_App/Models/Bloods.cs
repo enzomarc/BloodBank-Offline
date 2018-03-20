@@ -38,12 +38,24 @@ namespace BB_App.Models
 
         #endregion
 
+        #region Constructors
+
+        public Bloods()
+        {
+            if (Exist())
+                loadBloods();
+            else
+                initializeBloods();
+        }
+
+        #endregion
+
         #region Methods
 
         /// <summary>
         /// Load bloodgroups with units from the database.
         /// </summary>
-        private static void loadBloods()
+        public static void loadBloods()
         {
 
             SqlConnection.Disconnect();
@@ -64,7 +76,10 @@ namespace BB_App.Models
                         BloodsList.Add(blood);
                     }
 
+                    reader.Close();
                 }
+                else
+                    initializeBloods();
             }
 
         }

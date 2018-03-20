@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Commons.cs" />
     <Compile Include="Models\Consts.cs" />
     <Compile Include="Models\Bloods.cs" />
     <Compile Include="Models\FirstStart.cs" />
