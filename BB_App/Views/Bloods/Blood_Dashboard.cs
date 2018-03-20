@@ -42,6 +42,32 @@ namespace BB_App.Views.Bloods
             ((Control)sender).BackColor = Color.WhiteSmoke;        
         }
 
+        private void nextBlood_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bloodLabel.Text = Commons.Format(goNextBlood().name);
+                unitLabel.Text = goNextBlood().value.ToString() + " Bottles";
+            }
+            catch { }
+        }
+
+        private void previousBlood_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bloodLabel.Text = Commons.Format(goPreviousBlood().name);
+                unitLabel.Text = goPreviousBlood().value.ToString() + " Bottles";
+            }
+            catch { }
+        }
+
+        private void bloodLabel_Click(object sender, EventArgs e)
+        {
+            Bl.loadBloods();
+            MessageBox.Show(Bl.BloodsList.Count.ToString());
+        }
+
         #endregion
 
         #region Methods
@@ -96,30 +122,5 @@ namespace BB_App.Views.Bloods
 
         #endregion
 
-        private void nextBlood_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bloodLabel.Text = Commons.Format(goNextBlood().name);
-                unitLabel.Text = goNextBlood().value.ToString() + " Bottles";
-            }
-            catch { }
-        }
-
-        private void previousBlood_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bloodLabel.Text = Commons.Format(goPreviousBlood().name);
-                unitLabel.Text = goPreviousBlood().value.ToString() + " Bottles";
-            }
-            catch { }
-        }
-
-        private void bloodLabel_Click(object sender, EventArgs e)
-        {
-            Bl.loadBloods();
-            MessageBox.Show(Bl.BloodsList.Count.ToString());
-        }
     }
 }
