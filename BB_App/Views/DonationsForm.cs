@@ -80,7 +80,7 @@ namespace BB_App.Views
                 donationsDGV.Columns[4].HeaderText = "Units";
             }
             else
-                MessageBox.Show("Can't connect to the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Can't connect to the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Donations_Load(object sender, EventArgs e)

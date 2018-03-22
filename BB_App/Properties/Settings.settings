@@ -18,7 +18,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="db_name" Type="System.String" Scope="User">
-      <Value Profile="(Default)">bloodbankdb</Value>
+      <Value Profile="(Default)">bbdb</Value>
     </Setting>
   </Settings>
 </SettingsFile>

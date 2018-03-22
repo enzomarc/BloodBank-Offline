@@ -16,6 +16,7 @@ namespace BB_App.Views.Bloods
         public Blood_Dashboard()
         {
             InitializeComponent();
+            Bl.loadBloods();
         }
 
         #region Fields
@@ -50,6 +51,9 @@ namespace BB_App.Views.Bloods
                 unitLabel.Text = goNextBlood().value.ToString() + " Bottles";
             }
             catch { }
+
+            for (var i = 0; i < Bl.BloodsList.Count; i++)
+                MessageBox.Show("Je suis " + Bl.BloodsList[i].BloodGroup + " et je vaut " + Bl.BloodsList[i].BloodUnits.ToString());
         }
 
         private void previousBlood_Click(object sender, EventArgs e)

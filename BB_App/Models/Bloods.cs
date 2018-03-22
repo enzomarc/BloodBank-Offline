@@ -68,14 +68,14 @@ namespace BB_App.Models
                     MySqlCommand command = new MySqlCommand(query, SqlConnection.conn);
                     MySqlDataReader reader = command.ExecuteReader();
 
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    var i = 0;
+
+                    while (reader.Read())
                     {
-                        reader.Read();
-
-                        Blood blood = new Blood() { BloodGroup = reader.GetName(i), BloodUnits = reader.GetInt32(i) };
-                        BloodsList.Add(blood);
+                        Blood blood = new Blood { BloodGroup = reader.GetName(i), BloodUnits = 1 };
+                        i++;
                     }
-
+                    
                     reader.Close();
                 }
                 else
