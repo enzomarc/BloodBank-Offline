@@ -11,25 +11,54 @@ namespace BB_App.Views.Bloods
         public BloodDashboard()
         {
             InitializeComponent();
-            Bl.LoadBloods();
         }
 
         #region Fields
 
-        int counter = 0;
+        private int counter = -1;
 
         #endregion Fields
 
         #region UI Methods
 
+        private void closeButton_MouseEnter(object sender, EventArgs e)
+        {
+            closeButton.Image = Properties.Resources.Delete_Hover_18px;
+        }
+
+        private void closeButton_MouseLeave(object sender, EventArgs e)
+        {
+            closeButton.Image = Properties.Resources.Delete_18px;
+        }
+
+        private void menuButton_MouseEnter(object sender, EventArgs e)
+        {
+            menuButton.Image = Properties.Resources.Left_Hover_16px;
+        }
+
+        private void menuButton_MouseLeave(object sender, EventArgs e)
+        {
+            menuButton.Image = Properties.Resources.Left_15px;
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            ((Main)ParentForm).LoadForm(new BB_App.Views.Dashboard());
+        }
+
         private void nextBlood_MouseEnter(object sender, EventArgs e)
         {
-            ((Control) sender).BackColor = Color.FromArgb(235, 235, 235);
+            ((Control)sender).BackColor = Color.FromArgb(235, 235, 235);
         }
 
         private void nextBlood_MouseLeave(object sender, EventArgs e)
         {
-            ((Control) sender).BackColor = Color.WhiteSmoke;
+            ((Control)sender).BackColor = Color.WhiteSmoke;
         }
 
         private void nextBlood_Click(object sender, EventArgs e)
@@ -80,7 +109,7 @@ namespace BB_App.Views.Bloods
             }
             else
             {
-                counter = 0;
+                counter = -1;
                 blood = Bl.BloodsList[++counter];
             }
 
@@ -97,7 +126,7 @@ namespace BB_App.Views.Bloods
             }
             else
             {
-                counter = 8;
+                counter = 9;
                 blood = Bl.BloodsList[--counter];
             }
 
@@ -105,5 +134,15 @@ namespace BB_App.Views.Bloods
         }
 
         #endregion Methods
+
+        private void bunifuTileButton1_Click(object sender, EventArgs e)
+        {
+            ((Main) ParentForm).LoadForm(new Blood_Purchase_Form());
+        }
+
+        private void BloodDashboard_Load(object sender, EventArgs e)
+        {
+            Bl.LoadBloods();
+        }
     }
 }

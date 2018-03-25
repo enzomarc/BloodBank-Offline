@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BloodPurchase.cs" />
     <Compile Include="Models\Commons.cs" />
     <Compile Include="Models\Consts.cs" />
     <Compile Include="Models\Bloods.cs" />
@@ -81,6 +82,12 @@
     </Compile>
     <Compile Include="Views\Bloods\Blood_Dashboard.Designer.cs">
       <DependentUpon>Blood_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bloods\Blood_Purchase_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Bloods\Blood_Purchase_Form.Designer.cs">
+      <DependentUpon>Blood_Purchase_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -164,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Bloods\Blood_Dashboard.resx">
       <DependentUpon>Blood_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Bloods\Blood_Purchase_Form.resx">
+      <DependentUpon>Blood_Purchase_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

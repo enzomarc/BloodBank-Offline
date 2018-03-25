@@ -188,8 +188,8 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label3.Location = new System.Drawing.Point(185, 178);
+            this.label3.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label3.Location = new System.Drawing.Point(185, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 20);
             this.label3.TabIndex = 53;
@@ -197,8 +197,8 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label4.Location = new System.Drawing.Point(185, 213);
+            this.label4.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label4.Location = new System.Drawing.Point(185, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 20);
             this.label4.TabIndex = 54;
@@ -206,8 +206,8 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label5.Location = new System.Drawing.Point(185, 248);
+            this.label5.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label5.Location = new System.Drawing.Point(185, 249);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 20);
             this.label5.TabIndex = 55;
@@ -215,8 +215,8 @@
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label6.Location = new System.Drawing.Point(185, 284);
+            this.label6.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label6.Location = new System.Drawing.Point(185, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(169, 20);
             this.label6.TabIndex = 56;
@@ -264,17 +264,17 @@
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label11.Location = new System.Drawing.Point(185, 368);
+            this.label11.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label11.Location = new System.Drawing.Point(185, 369);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(169, 20);
             this.label11.TabIndex = 61;
-            this.label11.Text = "unit ";
+            this.label11.Text = "Number of units";
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label12.Location = new System.Drawing.Point(185, 426);
+            this.label12.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label12.Location = new System.Drawing.Point(185, 427);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(169, 20);
             this.label12.TabIndex = 62;
@@ -292,8 +292,8 @@
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Roboto Medium", 10F);
-            this.label13.Location = new System.Drawing.Point(185, 320);
+            this.label13.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.label13.Location = new System.Drawing.Point(185, 321);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 20);
             this.label13.TabIndex = 63;
@@ -306,7 +306,7 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // Request_Informations
+            // RequestInformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

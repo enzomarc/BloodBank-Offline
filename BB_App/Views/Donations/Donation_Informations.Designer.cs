@@ -226,7 +226,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label3.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label3.Location = new System.Drawing.Point(185, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 20);
@@ -235,7 +235,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label4.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label4.Location = new System.Drawing.Point(185, 250);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 20);
@@ -244,7 +244,7 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label5.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label5.Location = new System.Drawing.Point(185, 285);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 20);
@@ -253,7 +253,7 @@
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label6.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label6.Location = new System.Drawing.Point(185, 321);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(169, 20);
@@ -302,16 +302,16 @@
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label11.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label11.Location = new System.Drawing.Point(185, 405);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(169, 20);
             this.label11.TabIndex = 61;
-            this.label11.Text = "unit ";
+            this.label11.Text = "Number of units";
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label12.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label12.Location = new System.Drawing.Point(185, 463);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(169, 20);
@@ -330,7 +330,7 @@
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Roboto Medium", 10F);
+            this.label13.Font = new System.Drawing.Font("Roboto Medium", 9F);
             this.label13.Location = new System.Drawing.Point(185, 357);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 20);
@@ -344,7 +344,7 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // Donation_Informations
+            // DonationInformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

@@ -47,6 +47,7 @@
             this.previousBlood = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -63,6 +64,9 @@
             this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.menuButton.TabIndex = 23;
             this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            this.menuButton.MouseEnter += new System.EventHandler(this.menuButton_MouseEnter);
+            this.menuButton.MouseLeave += new System.EventHandler(this.menuButton_MouseLeave);
             // 
             // closeButton
             // 
@@ -73,6 +77,9 @@
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.closeButton.TabIndex = 22;
             this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
             // label1
             // 
@@ -170,6 +177,7 @@
             this.bunifuTileButton1.Name = "bunifuTileButton1";
             this.bunifuTileButton1.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton1.TabIndex = 24;
+            this.bunifuTileButton1.Click += new System.EventHandler(this.bunifuTileButton1_Click);
             // 
             // label2
             // 
@@ -260,7 +268,14 @@
             this.bunifuElipse2.ElipseRadius = 5;
             this.bunifuElipse2.TargetControl = this.nextBlood;
             // 
-            // Blood_Dashboard
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // BloodDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -282,6 +297,7 @@
             this.Controls.Add(this.logo);
             this.Name = "BloodDashboard";
             this.Size = new System.Drawing.Size(813, 646);
+            this.Load += new System.EventHandler(this.BloodDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -311,5 +327,6 @@
         private System.Windows.Forms.PictureBox previousBlood;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

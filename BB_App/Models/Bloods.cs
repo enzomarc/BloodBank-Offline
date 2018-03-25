@@ -23,7 +23,6 @@ namespace BB_App.Models
         public class Blood
         {
             public string BloodGroup { get; set; }
-
             public int BloodUnits { get; set; }
         }
 
@@ -79,15 +78,18 @@ namespace BB_App.Models
 
             if (Exist())
             {
-                var query = "SELECT AP, AM, BP, BM, ABP, ABM, OP, OM FROM blood_bank WHERE ref_hospital = '" + param.Hospital + "'";
+                var query = "SELECT AP, AM, BP, BM, ABP, ABM, OP, OM FROM blood_bank WHERE ref_hospital = '" +
+                            param.Hospital + "'";
                 var command = new MySqlCommand(query, SqlConnection.Conn);
                 var reader = command.ExecuteReader();
+
+                BloodsList.Clear();
 
                 for (var i = 0; i < reader.FieldCount; i++)
                 {
                     reader.Read();
 
-                    var blood = new Blood() { BloodGroup = reader.GetName(i), BloodUnits = reader.GetInt32(i) };
+                    var blood = new Blood() {BloodGroup = reader.GetName(i), BloodUnits = reader.GetInt32(i)};
                     BloodsList.Add(blood);
                 }
 
@@ -106,7 +108,8 @@ namespace BB_App.Models
 
             if (!SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName)) return;
 
-            const string query = "UPDATE blood_bank SET AP = @ap, AM = @am, BP = @bp, BM = @bm, ABP = @abp, ABM = @abm, OP = @op, OM = @om, Total = @total";
+            const string query =
+                "UPDATE blood_bank SET AP = @ap, AM = @am, BP = @bp, BM = @bm, ABP = @abp, ABM = @abm, OP = @op, OM = @om, Total = @total";
             var command = new MySqlCommand(query, SqlConnection.Conn);
 
             command.Prepare();
@@ -121,6 +124,20 @@ namespace BB_App.Models
 
             command.ExecuteNonQuery();
         }
+
+        public static int getUnits(string bloodgroup)
+        {
+            bloodgroup = bloodgroup.ToLower();
+
+            foreach (var t in BloodsList)
+            {
+                if (t.BloodGroup.ToLower() == bloodgroup)
+                    return t.BloodUnits;
+            }
+
+            return 0;
+        }
+
         #endregion Methods
 
         #region Functions
