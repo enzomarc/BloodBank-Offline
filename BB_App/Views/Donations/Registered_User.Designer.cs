@@ -1,6 +1,6 @@
 ﻿namespace BB_App.Views.Donations
 {
-    partial class Registered_User
+    partial class RegisteredUser
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registered_User));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisteredUser));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
@@ -188,7 +188,7 @@
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);
-            this.Name = "Registered_User";
+            this.Name = "RegisteredUser";
             this.Size = new System.Drawing.Size(813, 646);
             this.Load += new System.EventHandler(this.Registered_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();

@@ -1,30 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms; using BB_App.Models;
-using MySql;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace BB_App.Views.Donations
 {
-    public partial class Registered_User : UserControl
+    public partial class RegisteredUser : UserControl
     {
-        
-        MySqlDataAdapter data;
-        DataSet ds;
-        int id;
-        bool update = false;
+        private MySqlDataAdapter _data;
+        private DataSet _ds;
+        private readonly int _id;
+        private readonly bool _update;
 
-        public Registered_User(bool _update, int _id = 0)
+        public RegisteredUser(bool update, int id = 0)
         {
             InitializeComponent();
-            update = _update;
-            id = _id;
+            _update = update;
+            _id = id;
         }
 
         #region Methods
@@ -56,20 +48,20 @@ namespace BB_App.Views.Donations
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Donations.Add_Type());
+            ((Main)ParentForm).LoadForm(new AddType());
         }
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            if (update == false)
+            if (_update == false)
             {
-                int id = (int)usersDGV.SelectedRows[0].Cells[0].Value;
-                ((Main)this.ParentForm).loadForm(new Views.Donations.Donation_Informations(new Models.User(id)));
+                var id = (int)usersDGV.SelectedRows[0].Cells[0].Value;
+                ((Main)ParentForm).LoadForm(new DonationInformations(new User(id)));
             }
             else
             {
-                updateDonation(id);
-                ((Main)this.ParentForm).loadForm(new Views.DonationsForm());
+                UpdateDonation(_id);
+                ((Main)ParentForm).LoadForm(new DonationsForm());
             }
         }
 
@@ -77,7 +69,7 @@ namespace BB_App.Views.Donations
         /// Update donation over the database.
         /// </summary>
         /// <param name="donationId">Id of the donation to update.</param>
-        public void updateDonation(int donationId)
+        public void UpdateDonation(int donationId)
         {
 
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
@@ -85,9 +77,9 @@ namespace BB_App.Views.Donations
 
                 try
                 {
-                    int id = (int)usersDGV.SelectedRows[0].Cells[0].Value;
-                    string query = "UPDATE donations SET id_user = " + id + " WHERE id_donation = " + donationId + ";";
-                    MySqlCommand cmd = new MySqlCommand(query, SqlConnection.conn);
+                    var id = (int)usersDGV.SelectedRows[0].Cells[0].Value;
+                    var query = "UPDATE donations SET id_user = " + id + " WHERE id_donation = " + donationId + ";";
+                    var cmd = new MySqlCommand(query, SqlConnection.Conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("User updated !", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -103,18 +95,17 @@ namespace BB_App.Views.Donations
         /// <summary>
         /// Load list of all users available in the database.
         /// </summary>
-        public void loadUsers()
+        public void LoadUsers()
         {
 
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
-                string query = "SELECT id_user, name FROM users";
-                data = new MySqlDataAdapter(query, SqlConnection.conn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(data);
+                var query = "SELECT id_user, name FROM users";
+                _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
-                ds = new DataSet();
-                data.Fill(ds, "users");
-                usersDGV.DataSource = ds;
+                _ds = new DataSet();
+                _data.Fill(_ds, "users");
+                usersDGV.DataSource = _ds;
                 usersDGV.DataMember = "users";
                 usersDGV.Columns[0].ReadOnly = true;
                 usersDGV.Columns[1].ReadOnly = true;
@@ -129,7 +120,7 @@ namespace BB_App.Views.Donations
 
         private void Registered_User_Load(object sender, EventArgs e)
         {
-            loadUsers();
+            LoadUsers();
         }
 
         #endregion

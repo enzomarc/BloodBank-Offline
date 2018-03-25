@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MySql;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 /* ====================================
  * Management of SQL Database Class
@@ -15,40 +9,43 @@ using MySql.Data.MySqlClient;
 
 namespace BB_App.Models
 {
-    class SqlConnection
+    internal class SqlConnection
     {
 
-        public static MySqlConnection conn = new MySqlConnection();
+        public static MySqlConnection Conn = new MySqlConnection();
 
         #region Methods
 
         public static bool Connect(string server, string user, string password, string database)
         {
-            bool _connected = false;
+            bool connected;
 
             try
             {
-                if (conn.Ping())
-                    _connected = true;
+                if (Conn.Ping())
+                    connected = true;
                 else
                 {
-                    conn.ConnectionString = "server=" + server + "; user=" + user + "; password=" + password + "; database=" + database;
-                    conn.Open();
-                    _connected = conn.Ping();
+                    Conn.ConnectionString = "server=" + server + "; user=" + user + "; password=" + password + "; database=" + database;
+                    Conn.Open();
+                    connected = Conn.Ping();
                 }
             }
-            catch { _connected = false; }
+            catch { connected = false; }
 
-            return _connected;
+            return connected;
         }
 
         public static void Disconnect()
         {
             try
             {
-                conn.Close();
+                Conn.Close();
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         #endregion

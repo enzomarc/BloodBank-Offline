@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App", "BB_App\BB_App.csproj", "{4DAF8474-17E5-48D1-99E9-D64025A230A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_AppTests", "BB_AppTests\BB_AppTests.csproj", "{D76C9759-59A5-42F4-9BFB-5315E8FF33E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{4DAF8474-17E5-48D1-99E9-D64025A230A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DAF8474-17E5-48D1-99E9-D64025A230A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DAF8474-17E5-48D1-99E9-D64025A230A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76C9759-59A5-42F4-9BFB-5315E8FF33E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76C9759-59A5-42F4-9BFB-5315E8FF33E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76C9759-59A5-42F4-9BFB-5315E8FF33E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76C9759-59A5-42F4-9BFB-5315E8FF33E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

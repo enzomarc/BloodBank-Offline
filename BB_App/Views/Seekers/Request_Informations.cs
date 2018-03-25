@@ -1,26 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms; using BB_App.Models;
-using MySql;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace BB_App.Views.Seekers
 {
-    public partial class Request_Informations : UserControl
+    public partial class RequestInformations : UserControl
     {
-        User currentUser;
+        private readonly User _currentUser;
 
-        public Request_Informations(Models.User user)
+        public RequestInformations(User user)
         {
             InitializeComponent();
-            currentUser = user;
-            FillWith(currentUser);
+            _currentUser = user;
+            FillWith(_currentUser);
             kryptonDateTimePicker1.MinDate = DateTime.Today.AddDays(1);
         }
 
@@ -53,29 +44,29 @@ namespace BB_App.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Seekers.Add_Type());
+            ((Main)ParentForm).LoadForm(new AddType());
         }
 
-        private void FillWith(Models.User _user)
+        private void FillWith(User user)
         {
-            label10.Text = _user.Name;
-            label9.Text = _user.BloodGroup;
-            label8.Text = _user.Gender;
-            label7.Text = _user.Phone.ToString();
+            label10.Text = user.Name;
+            label9.Text = user.BloodGroup;
+            label8.Text = user.Gender;
+            label7.Text = user.Phone.ToString();
             label2.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
         }
 
         private void AddRequest()
         {
 
-            Requests.Request request = new Requests.Request(currentUser.Id, Properties.Settings.Default.reference, DateTime.Today, kryptonDateTimePicker1.Value, Convert.ToInt32(kryptonNumericUpDown1.Value), "waiting");
+            var request = new Requests.Request(_currentUser.Id, Properties.Settings.Default.reference, DateTime.Today, kryptonDateTimePicker1.Value, Convert.ToInt32(kryptonNumericUpDown1.Value), "waiting");
 
-            if (Models.Requests.saveRequest(request))
+            if (Requests.SaveRequest(request))
                 MessageBox.Show("Request added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("Can't save the request. Contact administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            ((Main)this.ParentForm).loadForm(new Views.SeekersForm());
+            ((Main)ParentForm).LoadForm(new SeekersForm());
 
         }
 

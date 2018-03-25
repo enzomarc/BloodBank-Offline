@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms; using BB_App.Models;
-using MySql;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace BB_App.Views
@@ -18,9 +11,9 @@ namespace BB_App.Views
         {
             InitializeComponent();
         }
- 
-        MySqlDataAdapter data;
-        DataSet ds;
+
+        private MySqlDataAdapter _data;
+        private DataSet _ds;
 
         #region Methods
 
@@ -51,65 +44,64 @@ namespace BB_App.Views
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Dashboard());
+            ((Main)ParentForm).LoadForm(new Dashboard());
         }
 
         private void profileButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Donations.Add_Type());
+            ((Main)ParentForm).LoadForm(new Donations.AddType());
         }
 
-        public void loadDonations()
+        public void LoadDonations()
         {
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
-                string query = "SELECT id_donation, id_user, donation_date, expiration_date, unit FROM donations WHERE ref_hospital = '" + Properties.Settings.Default.reference + "';";
-                data = new MySqlDataAdapter(query, SqlConnection.conn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(data);
+                var query = "SELECT id_donation, id_user, donation_date, expiration_date, unit FROM donations WHERE ref_hospital = '" + Properties.Settings.Default.reference + "';";
+                _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
-                ds = new DataSet();
-                data.Fill(ds, "donations");
-                donationsDGV.DataSource = ds;
+                _ds = new DataSet();
+                _data.Fill(_ds, "donations");
+                donationsDGV.DataSource = _ds;
                 donationsDGV.DataMember = "donations";
                 donationsDGV.Columns[0].ReadOnly = true;
                 donationsDGV.Columns[1].ReadOnly = true;
-                donationsDGV.Columns[0].HeaderText = "Donation ID";
-                donationsDGV.Columns[1].HeaderText = "User ID";
-                donationsDGV.Columns[2].HeaderText = "Donation Date";
-                donationsDGV.Columns[3].HeaderText = "Expiration Date";
-                donationsDGV.Columns[4].HeaderText = "Units";
+                donationsDGV.Columns[0].HeaderText = @"Donation ID";
+                donationsDGV.Columns[1].HeaderText = @"User ID";
+                donationsDGV.Columns[2].HeaderText = @"Donation Date";
+                donationsDGV.Columns[3].HeaderText = @"Expiration Date";
+                donationsDGV.Columns[4].HeaderText = @"Units";
             }
             else
-                MessageBox.Show("Can't connect to the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Can't connect to the database", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Donations_Load(object sender, EventArgs e)
         {
-            loadDonations();
+            LoadDonations();
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            data.Update(ds, "donations");
+            _data.Update(_ds, "donations");
         }
 
         private void donationsDGV_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            data.Update(ds, "donations");
+            _data.Update(_ds, "donations");
         }
 
         private void donationsDGV_SelectionChanged(object sender, EventArgs e)
         {
             if (donationsDGV.SelectedRows.Count > 0)
             {
-                bunifuFlatButton2.Text = "From " + Models.User.getUserName(Convert.ToInt32(donationsDGV.SelectedRows[0].Cells[1].Value));
+                bunifuFlatButton2.Text = @"From " + User.GetUserName(Convert.ToInt32(donationsDGV.SelectedRows[0].Cells[1].Value));
             }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            int id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
-            ((Main)this.ParentForm).loadForm(new Views.Donations.Registered_User(true, id));
+            var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
+            ((Main)ParentForm).LoadForm(new Donations.RegisteredUser(true, id));
         }
 
         #endregion

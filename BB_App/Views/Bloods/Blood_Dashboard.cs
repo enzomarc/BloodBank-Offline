@@ -1,32 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BB_App.Models;
 using Bl = BB_App.Models.Bloods;
 
 namespace BB_App.Views.Bloods
 {
-    public partial class Blood_Dashboard : UserControl
+    public partial class BloodDashboard : UserControl
     {
-        public Blood_Dashboard()
+        public BloodDashboard()
         {
             InitializeComponent();
+            Bl.LoadBloods();
         }
 
         #region Fields
 
-        struct blood
+        private struct Blood
         {
-            public string name;
-            public int value;
+            public string Name;
+            public int Value;
         }
 
-        int x = 0;
+        private int _x;
 
         #endregion
 
@@ -46,8 +42,8 @@ namespace BB_App.Views.Bloods
         {
             try
             {
-                bloodLabel.Text = Commons.Format(goNextBlood().name);
-                unitLabel.Text = goNextBlood().value.ToString() + " Bottles";
+                bloodLabel.Text = Commons.Format(GoNextBlood().Name);
+                unitLabel.Text = GoNextBlood().Value.ToString() + @" Bottles";
             }
             catch { }
         }
@@ -56,15 +52,15 @@ namespace BB_App.Views.Bloods
         {
             try
             {
-                bloodLabel.Text = Commons.Format(goPreviousBlood().name);
-                unitLabel.Text = goPreviousBlood().value.ToString() + " Bottles";
+                bloodLabel.Text = Commons.Format(GoPreviousBlood().Name);
+                unitLabel.Text = GoPreviousBlood().Value.ToString() + " Bottles";
             }
             catch { }
         }
 
         private void bloodLabel_Click(object sender, EventArgs e)
         {
-            Bl.loadBloods();
+            Bl.LoadBloods();
             MessageBox.Show(Bl.BloodsList.Count.ToString());
         }
 
@@ -72,20 +68,20 @@ namespace BB_App.Views.Bloods
 
         #region Methods
 
-        private blood goNextBlood()
+        private Blood GoNextBlood()
         {
-            blood _blood = new blood();
+            var blood = new Blood();
 
             try
             {
                 if (Bl.BloodsList.Count >= 0)
                 {
-                    if (x >= Bl.BloodsList.Count)
-                        x = 0;
+                    if (_x >= Bl.BloodsList.Count)
+                        _x = 0;
 
-                    _blood.name = Bl.BloodsList[x].BloodGroup;
-                    _blood.value = Bl.BloodsList[x].BloodUnits;
-                    x++;
+                    blood.Name = Bl.BloodsList[_x].BloodGroup;
+                    blood.Value = Bl.BloodsList[_x].BloodUnits;
+                    _x++;
                 }
             }
             catch (Exception ex)
@@ -93,23 +89,23 @@ namespace BB_App.Views.Bloods
                 MessageBox.Show("Can't get next bloodgroup. Error is : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return _blood;
+            return blood;
         }
 
-        private blood goPreviousBlood()
+        private Blood GoPreviousBlood()
         {
-            blood _blood = new blood();
+            var blood = new Blood();
 
             try
             {
                 if (Bl.BloodsList.Count >= 0)
                 {
-                    if (x >= Bl.BloodsList.Count)
-                        x = 0;
+                    if (_x >= Bl.BloodsList.Count)
+                        _x = 0;
 
-                    _blood.name = Bl.BloodsList[x].BloodGroup;
-                    _blood.value = Bl.BloodsList[x].BloodUnits;
-                    x--;
+                    blood.Name = Bl.BloodsList[_x].BloodGroup;
+                    blood.Value = Bl.BloodsList[_x].BloodUnits;
+                    _x--;
                 }
             }
             catch (Exception ex)
@@ -117,7 +113,7 @@ namespace BB_App.Views.Bloods
                 MessageBox.Show("Can't get next bloodgroup. Error is : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return _blood;
+            return blood;
         }
 
         #endregion

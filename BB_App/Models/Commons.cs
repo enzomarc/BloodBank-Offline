@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BB_App.Models
 {
-    class Commons
+    internal class Commons
     {
 
         #region Methods
 
         public static string Format(string bloodgroup)
         {
-            string formatted = String.Empty;
+            var formatted = String.Empty;
 
             bloodgroup = bloodgroup.ToLower();
 

@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ComponentModel;
-using System.Text;
-using MySql;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
 
@@ -20,14 +14,14 @@ namespace BB_App.Models
     /// <summary>
     /// Requests Management Class for the database.
     /// </summary>
-    class Requests
+    internal class Requests
     {
 
         #region Fields
 
         
-        public static MySqlDataAdapter adapter;
-        public static DataSet datas = new DataSet();
+        public static MySqlDataAdapter Adapter;
+        public static DataSet Datas = new DataSet();
 
         #endregion
 
@@ -39,9 +33,7 @@ namespace BB_App.Models
 
             #region Fields
 
-            private int fromId, request_id, request_user, unit;
-            private string hospital_ref, request_status;
-            private DateTime request_date, date_limit;
+            private readonly int _fromId;
 
             #endregion
 
@@ -50,20 +42,20 @@ namespace BB_App.Models
             /// <summary>
             /// Clone of the request object available in the database
             /// </summary>
-            /// <param name="req_user">id of the user who is making request</param>
+            /// <param name="reqUser">id of the user who is making request</param>
             /// <param name="hospital">hospital reference from where the request is maded</param>
-            /// <param name="req_date">the day where the request was made</param>
-            /// <param name="exp_date">the day the request will expires</param>
+            /// <param name="reqDate">the day where the request was made</param>
+            /// <param name="expDate">the day the request will expires</param>
             /// <param name="qty">the number units of blood the user needs</param>
             /// <param name="status">status message of the request (waiting, cancelled, done)</param>
-            public Request(int req_user, string hospital, DateTime req_date, DateTime exp_date, int qty, string status)
+            public Request(int reqUser, string hospital, DateTime reqDate, DateTime expDate, int qty, string status)
             {
-                request_user = req_user;
-                unit = qty;
-                hospital_ref = hospital;
-                request_date = req_date;
-                date_limit = exp_date;
-                request_status = status;
+                RequestUser = reqUser;
+                Unit = qty;
+                HospitalReference = hospital;
+                RequestDate = reqDate;
+                ExpirationDate = expDate;
+                RequestStatus = status;
             }
 
             /// <summary>
@@ -72,8 +64,8 @@ namespace BB_App.Models
             /// <param name="id">id of the blood request to load from the database</param>
             public Request(int id = 0)
             {
-                fromId = id;
-                loadFrom();
+                _fromId = id;
+                LoadFrom();
             }
 
             #endregion
@@ -84,7 +76,7 @@ namespace BB_App.Models
             /// Load request from the database.
             /// </summary>
             /// <param name="id">id of the request to load</param>
-            public void loadFrom(int id = 0)
+            public void LoadFrom(int id = 0)
             {
 
                 try
@@ -98,23 +90,23 @@ namespace BB_App.Models
                         if (id != 0)
                             query = "SELECT * FROM requests WHERE id_request = " + id;
                         else
-                            query = "SELECT * FROM requests WHERE id_request = " + fromId;
+                            query = "SELECT * FROM requests WHERE id_request = " + _fromId;
 
-                        MySqlCommand command = new MySqlCommand(query, SqlConnection.conn);
-                        MySqlDataReader reader = command.ExecuteReader();
+                        var command = new MySqlCommand(query, SqlConnection.Conn);
+                        var reader = command.ExecuteReader();
 
                         if (reader.HasRows)
                         {
                             
                             while (reader.Read())
                             {
-                                this.request_id = Convert.ToInt32(reader[0]);
-                                this.request_user = Convert.ToInt32(reader[1]);
-                                this.hospital_ref = Convert.ToString(reader[2]);
-                                this.request_date = Convert.ToDateTime(reader[3]);
-                                this.date_limit = Convert.ToDateTime(reader[4]);
-                                this.unit = Convert.ToInt32(reader[5]);
-                                this.request_status = Convert.ToString(reader[6]);
+                                RequestId = Convert.ToInt32(reader[0]);
+                                RequestUser = Convert.ToInt32(reader[1]);
+                                HospitalReference = Convert.ToString(reader[2]);
+                                RequestDate = Convert.ToDateTime(reader[3]);
+                                ExpirationDate = Convert.ToDateTime(reader[4]);
+                                Unit = Convert.ToInt32(reader[5]);
+                                RequestStatus = Convert.ToString(reader[6]);
                             }
 
                             reader.Close();
@@ -138,65 +130,37 @@ namespace BB_App.Models
             /// <summary>
             /// ID of the request.
             /// </summary>
-            public int RequestID
-            {
-                get { return request_id; }
-                set { request_id = value; }
-            }
+            public int RequestId { get; set; }
 
             /// <summary>
             /// ID of the user who makes request.
             /// </summary>
-            public int RequestUser
-            {
-                get { return request_user; }
-                set { request_user = value; }
-            }
+            public int RequestUser { get; set; }
 
             /// <summary>
             /// Number units of blood for the request.
             /// </summary>
-            public int Unit
-            {
-                get { return unit; }
-                set { unit = value; }
-            }
+            public int Unit { get; set; }
 
             /// <summary>
             /// Reference of the hospital where the request is passed.
             /// </summary>
-            public string HospitalReference
-            {
-                get { return hospital_ref; }
-                set { hospital_ref = value; }
-            }
+            public string HospitalReference { get; set; }
 
             /// <summary>
             /// Request status (waiting, cancelled, done).
             /// </summary>
-            public string RequestStatus
-            {
-                get { return request_status; }
-                set { request_status = value; }
-            }
+            public string RequestStatus { get; set; }
 
             /// <summary>
             /// Request initialization date.
             /// </summary>
-            public DateTime RequestDate
-            {
-                get { return request_date; }
-                set { request_date = value; }
-            }
+            public DateTime RequestDate { get; set; }
 
             /// <summary>
             /// Request expiration date.
             /// </summary>
-            public DateTime ExpirationDate
-            {
-                get { return date_limit; }
-                set { date_limit = value; }
-            }
+            public DateTime ExpirationDate { get; set; }
 
             #endregion
 
@@ -208,19 +172,18 @@ namespace BB_App.Models
         /// Load requests from the database based on the hospital reference.
         /// </summary>
         /// <returns>A dataset that represents a clone of datas from the database.</returns>
-        public static DataSet loadRequests()
+        public static DataSet LoadRequests()
         {
-            if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
-            {
-                string query = "SELECT * FROM requests WHERE ref_hospital = '" + Properties.Settings.Default.reference + "'";
-                adapter = new MySqlDataAdapter(query, SqlConnection.conn);
-                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            if (!SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user,
+                Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name)) return Datas;
 
-                datas.Clear();
-                adapter.Fill(datas, "requests");
-            }
+            var query = "SELECT * FROM requests WHERE ref_hospital = '" + Properties.Settings.Default.reference + "'";
+            Adapter = new MySqlDataAdapter(query, SqlConnection.Conn);
 
-            return datas;
+            Datas.Clear();
+            Adapter.Fill(Datas, "requests");
+
+            return Datas;
         }
 
         /// <summary>
@@ -228,39 +191,37 @@ namespace BB_App.Models
         /// </summary>
         /// <param name="req">Request to save</param>
         /// <returns>Boolean that represent the insert result.</returns>
-        public static bool saveRequest(Request req)
+        public static bool SaveRequest(Request req)
         {
             // Variaable who checks if the request was saved
-            bool saved = false;
+            bool saved;
 
-            if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
+            if (!SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user,
+                Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name)) return false;
+
+            var date = req.RequestDate.Year + "-" + req.RequestDate.Month + "-" + req.RequestDate.Day;
+            var expDate = req.ExpirationDate.Year + "-" + req.ExpirationDate.Month + "-" + req.ExpirationDate.Day;
+
+            var query = "INSERT INTO requests(id_user, ref_hospital, request_date, limit_date, unit, request_status) VALUES (@id, @ref, @date, @exp_date, @qty, @status);";
+
+            var cmd = new MySqlCommand(query, SqlConnection.Conn);
+            cmd.Prepare();
+
+            cmd.Parameters.AddWithValue("@id", req.RequestUser);
+            cmd.Parameters.AddWithValue("@ref", Properties.Settings.Default.reference);
+            cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@qty", req.Unit);
+            cmd.Parameters.AddWithValue("@status", "waiting");
+            cmd.Parameters.AddWithValue("@exp_date", expDate);
+
+            try
             {
-
-                string date = req.RequestDate.Year.ToString() + "-" + req.RequestDate.Month.ToString() + "-" + req.RequestDate.Day.ToString();
-                string expDate = req.ExpirationDate.Year.ToString() + "-" + req.ExpirationDate.Month.ToString() + "-" + req.ExpirationDate.Day.ToString();
-
-                string query = "INSERT INTO requests(id_user, ref_hospital, request_date, limit_date, unit, request_status) VALUES (@id, @ref, @date, @exp_date, @qty, @status);";
-
-                MySqlCommand cmd = new MySqlCommand(query, SqlConnection.conn);
-                cmd.Prepare();
-
-                cmd.Parameters.AddWithValue("@id", req.RequestUser);
-                cmd.Parameters.AddWithValue("@ref", Properties.Settings.Default.reference);
-                cmd.Parameters.AddWithValue("@date", date);
-                cmd.Parameters.AddWithValue("@qty", req.Unit);
-                cmd.Parameters.AddWithValue("@status", "waiting");
-                cmd.Parameters.AddWithValue("@exp_date", expDate);
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    saved = true;
-                }
-                catch
-                {
-                    saved = false;
-                }
-
+                cmd.ExecuteNonQuery();
+                saved = true;
+            }
+            catch
+            {
+                saved = false;
             }
 
             return saved;
@@ -272,21 +233,18 @@ namespace BB_App.Models
         /// <param name="request">id of the request to changes the user</param>
         /// <param name="id">id of the new user</param>
         /// <returns>Boolean that represents the update result.</returns>
-        public static bool changeUser(int request, int id)
+        public static bool ChangeUser(int request, int id)
         {
-            bool updated = false;
+            if (!SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user,
+                Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name)) return false;
 
-            if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
-            {
-                string query = "UPDATE requests SET id_user = " + id + " WHERE id_request = " + request + ";";
+            var query = "UPDATE requests SET id_user = " + id + " WHERE id_request = " + request + ";";
 
-                MySqlCommand cmd = new MySqlCommand(query, SqlConnection.conn);
+            var cmd = new MySqlCommand(query, SqlConnection.Conn);
 
-                cmd.ExecuteNonQuery();
-                updated = true;
-            }
+            cmd.ExecuteNonQuery();
 
-            return updated;
+            return true;
         }
 
         #endregion

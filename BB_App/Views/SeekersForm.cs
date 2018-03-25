@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms; using BB_App.Models;
-using MySql;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace BB_App.Views
 {
@@ -48,14 +39,14 @@ namespace BB_App.Views
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Dashboard());
+            ((Main)ParentForm).LoadForm(new Dashboard());
         }
 
         private void Seekers_Load(object sender, EventArgs e)
         {
 
             // Load all requests from the database
-            requestsDGV.DataSource = Models.Requests.loadRequests();
+            requestsDGV.DataSource = Models.Requests.LoadRequests();
             requestsDGV.DataMember = "requests";
 
             // Change columns names
@@ -84,27 +75,27 @@ namespace BB_App.Views
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            Models.Requests.adapter.Update(Models.Requests.datas, "requests");
-            MessageBox.Show("Database updated !", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Models.Requests.Adapter.Update(Models.Requests.Datas, "requests");
+            MessageBox.Show(@"Database updated !", @"Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Seekers.Add_Type());
+            ((Main)ParentForm).LoadForm(new Seekers.AddType());
         }
 
         private void requestsDGV_SelectionChanged(object sender, EventArgs e)
         {
             if (requestsDGV.SelectedRows.Count > 0)
             {
-                bunifuFlatButton2.Text = "From " + Models.User.getUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
+                bunifuFlatButton2.Text = "From " + Models.User.GetUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
             }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            int id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
-            ((Main)this.ParentForm).loadForm(new Views.Seekers.Registered_User(true, id));
+            var id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
+            ((Main)ParentForm).LoadForm(new Seekers.RegisteredUser(true, id));
         }
 
         #endregion

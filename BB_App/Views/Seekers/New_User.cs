@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms; using BB_App.Models;
-using MySql;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace BB_App.Views.Seekers
 {
-    public partial class New_User : UserControl
+    public partial class NewUser : UserControl
     {
 
-        public New_User()
+        public NewUser()
         {
             InitializeComponent();
         }
@@ -49,7 +41,7 @@ namespace BB_App.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Seekers.Add_Type());
+            ((Main)ParentForm).LoadForm(new AddType());
         }
 
         private void AddUser()
@@ -57,9 +49,9 @@ namespace BB_App.Views.Seekers
 
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
-                string date = kryptonDateTimePicker1.Value.Year.ToString() + "-" + kryptonDateTimePicker1.Value.Month.ToString() + "-" + kryptonDateTimePicker1.Value.Day.ToString();
-                string query = "INSERT INTO users(name, phone, bloodgroup, birthdate, gender, city) VALUES (@name, @phone, @blood, @birth, @gender, @city);";
-                MySqlCommand cmd = new MySqlCommand(query, SqlConnection.conn);
+                var date = kryptonDateTimePicker1.Value.Year.ToString() + "-" + kryptonDateTimePicker1.Value.Month.ToString() + "-" + kryptonDateTimePicker1.Value.Day.ToString();
+                var query = "INSERT INTO users(name, phone, bloodgroup, birthdate, gender, city) VALUES (@name, @phone, @blood, @birth, @gender, @city);";
+                var cmd = new MySqlCommand(query, SqlConnection.Conn);
                 cmd.Prepare();
 
                 cmd.Parameters.AddWithValue("@name", username.Text);
@@ -73,11 +65,11 @@ namespace BB_App.Views.Seekers
                 {
                     cmd.ExecuteNonQuery();  // Adding user
 
-                    int id = 0;
-                    string query2 = "SELECT id_user FROM users WHERE phone = " + phone.Text;
-                    MySqlCommand cmd2 = new MySqlCommand(query2, SqlConnection.conn);
+                    int id;
+                    var query2 = "SELECT id_user FROM users WHERE phone = " + phone.Text;
+                    var cmd2 = new MySqlCommand(query2, SqlConnection.Conn);
 
-                    object result = cmd2.ExecuteScalar();   // Loading user id for donation informations
+                    var result = cmd2.ExecuteScalar();   // Loading user id for donation informations
 
                     if (result != null)
                         id = Convert.ToInt32(result);
@@ -87,7 +79,7 @@ namespace BB_App.Views.Seekers
                         return;
                     }
 
-                    ((Main)this.ParentForm).loadForm(new Views.Seekers.Request_Informations(new Models.User(id)));
+                    ((Main)ParentForm).LoadForm(new RequestInformations(new User(id)));
                 }
                 catch (MySqlException ex)
                 {

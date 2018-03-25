@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms; using BB_App.Models;
+using System.Windows.Forms;
 
 namespace BB_App.Views.Seekers
 {
-    public partial class Add_Type : UserControl
+    public partial class AddType : UserControl
     {
-        public Add_Type()
+        public AddType()
         {
             InitializeComponent();
         }
@@ -45,17 +39,17 @@ namespace BB_App.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.SeekersForm());
+            ((Main)ParentForm).LoadForm(new SeekersForm());
         }
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Seekers.New_User());
+            ((Main)ParentForm).LoadForm(new NewUser());
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Seekers.Registered_User(false));
+            ((Main)ParentForm).LoadForm(new RegisteredUser(false));
         }
 
         #endregion

@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms; using BB_App.Models;
-using MySql;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace BB_App.Views.Donations
 {
-    public partial class Donation_Informations : UserControl
+    public partial class DonationInformations : UserControl
     {
-        User currentUser;
+        private readonly User _currentUser;
 
-        public Donation_Informations(Models.User user)
+        public DonationInformations(User user)
         {
             InitializeComponent();
-            currentUser = user;
-            FillWith(currentUser);
+            _currentUser = user;
+            FillWith(_currentUser);
             kryptonDateTimePicker1.MinDate = DateTime.Today.AddDays(1);
         }
 
@@ -53,15 +45,15 @@ namespace BB_App.Views.Donations
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main)this.ParentForm).loadForm(new Views.Donations.Add_Type());
+            ((Main)ParentForm).LoadForm(new AddType());
         }
 
-        private void FillWith(Models.User _user)
+        private void FillWith(User user)
         {
-            label10.Text = _user.Name;
-            label9.Text = _user.BloodGroup;
-            label8.Text = _user.Gender;
-            label7.Text = _user.Phone.ToString();
+            label10.Text = user.Name;
+            label9.Text = user.BloodGroup;
+            label8.Text = user.Gender;
+            label7.Text = user.Phone.ToString();
             label2.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
         }
 
@@ -73,29 +65,26 @@ namespace BB_App.Views.Donations
 
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
-                string date = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
-                string expDate = kryptonDateTimePicker1.Value.Year.ToString() + "-" + kryptonDateTimePicker1.Value.Month.ToString() + "-" + kryptonDateTimePicker1.Value.Day.ToString();
-                string query = "INSERT INTO donations(id_user, ref_hospital, donation_date, expiration_date, blood_group, unit, donation_status) VALUES (@id, @ref, @date, @exp_date, @blood, @qty, @status);";
-                MySqlCommand cmd = new MySqlCommand(query, SqlConnection.conn);
+                var date = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
+                var expDate = kryptonDateTimePicker1.Value.Year.ToString() + "-" + kryptonDateTimePicker1.Value.Month.ToString() + "-" + kryptonDateTimePicker1.Value.Day.ToString();
+                var query = "INSERT INTO donations(id_user, ref_hospital, donation_date, expiration_date, blood_group, unit, donation_status) VALUES (@id, @ref, @date, @exp_date, @blood, @qty, @status);";
+                var cmd = new MySqlCommand(query, SqlConnection.Conn);
                 cmd.Prepare();
 
-                cmd.Parameters.AddWithValue("@id", currentUser.Id);
+                cmd.Parameters.AddWithValue("@id", _currentUser.Id);
                 cmd.Parameters.AddWithValue("@ref", Properties.Settings.Default.reference);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@blood", label9.Text);
                 cmd.Parameters.AddWithValue("@qty", kryptonNumericUpDown1.Value);
                 cmd.Parameters.AddWithValue("@status", "pending");
 
-                if (radioButton1.Checked)
-                    cmd.Parameters.AddWithValue("@exp_date", null);
-                else
-                    cmd.Parameters.AddWithValue("@exp_date", expDate);
+                cmd.Parameters.AddWithValue("@exp_date", radioButton1.Checked ? null : expDate);
 
                 try
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Donation added with succes", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ((Main)this.ParentForm).loadForm(new Views.DonationsForm());
+                    ((Main)ParentForm).LoadForm(new DonationsForm());
                 }
                 catch (MySqlException ex)
                 {
