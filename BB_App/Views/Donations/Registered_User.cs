@@ -81,11 +81,11 @@ namespace BB_App.Views.Donations
                     var query = "UPDATE donations SET id_user = " + id + " WHERE id_donation = " + donationId + ";";
                     var cmd = new MySqlCommand(query, SqlConnection.Conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("User updated !", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"User updated !", @"Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show("Error occured during update (" + ex.ErrorCode + ") : " + ex.Message, "Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Error occured during update (" + ex.ErrorCode + @") : " + ex.Message, @"Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -100,7 +100,7 @@ namespace BB_App.Views.Donations
 
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
-                var query = "SELECT id_user, name FROM users";
+                const string query = "SELECT id_user, name FROM users";
                 _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
                 _ds = new DataSet();
@@ -114,7 +114,7 @@ namespace BB_App.Views.Donations
 
             }
             else
-                MessageBox.Show("Cannot connect to the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot connect to the database", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 

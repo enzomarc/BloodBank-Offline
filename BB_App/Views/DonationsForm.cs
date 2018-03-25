@@ -52,7 +52,7 @@ namespace BB_App.Views
             ((Main)ParentForm).LoadForm(new Donations.AddType());
         }
 
-        public void LoadDonations()
+        private void LoadDonations()
         {
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {

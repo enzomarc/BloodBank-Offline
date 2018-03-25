@@ -5,10 +5,8 @@
     /// </summary>
     public class FirstStart
     {
-
         public FirstStart()
         {
-
             if (Properties.Settings.Default.first_start)
             {
                 // Blood.initializeBank();
@@ -17,6 +15,5 @@
             Properties.Settings.Default.first_start = false;
             Properties.Settings.Default.Save();
         }
-
     }
 }

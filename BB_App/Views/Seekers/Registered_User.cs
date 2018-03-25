@@ -77,7 +77,7 @@ namespace BB_App.Views.Seekers
 
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
-                var query = "SELECT id_user, name FROM users";
+                const string query = "SELECT id_user, name FROM users";
                 _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
                 _ds = new DataSet();
@@ -90,7 +90,7 @@ namespace BB_App.Views.Seekers
                 usersDGV.Columns[1].HeaderText = "User Name";
             }
             else
-                MessageBox.Show("Cannot connect to the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot connect to the database", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 

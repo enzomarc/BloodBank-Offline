@@ -1,39 +1,53 @@
-﻿using System;
-
-namespace BB_App.Models
+﻿namespace BB_App.Models
 {
-    internal class Commons
+    internal static class Commons
     {
-
         #region Methods
 
         public static string Format(string bloodgroup)
         {
-            var formatted = String.Empty;
+            var formatted = string.Empty;
 
             bloodgroup = bloodgroup.ToLower();
 
-            if (bloodgroup == "ap")
-                formatted = "A+";
-            else if (bloodgroup == "am")
-                formatted = "A-";
-            else if (bloodgroup == "bp")
-                formatted = "B+";
-            else if (bloodgroup == "bm")
-                formatted = "B-";
-            else if (bloodgroup == "abp")
-                formatted = "AB+";
-            else if (bloodgroup == "abm")
-                formatted = "AB-";
-            else if (bloodgroup == "op")
-                formatted = "O+";
-            else if (bloodgroup == "om")
-                formatted = "O-";
+            switch (bloodgroup)
+            {
+                case "ap":
+                    formatted = "A+";
+                    break;
+
+                case "am":
+                    formatted = "A-";
+                    break;
+
+                case "bp":
+                    formatted = "B+";
+                    break;
+
+                case "bm":
+                    formatted = "B-";
+                    break;
+
+                case "abp":
+                    formatted = "AB+";
+                    break;
+
+                case "abm":
+                    formatted = "AB-";
+                    break;
+
+                case "op":
+                    formatted = "O+";
+                    break;
+
+                case "om":
+                    formatted = "O-";
+                    break;
+            }
 
             return formatted;
         }
 
-        #endregion
-
+        #endregion Methods
     }
 }

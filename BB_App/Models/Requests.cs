@@ -1,6 +1,6 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 /* =====================================================
  * Class Name : Requests
@@ -16,26 +16,23 @@ namespace BB_App.Models
     /// </summary>
     internal class Requests
     {
-
         #region Fields
 
-        
         public static MySqlDataAdapter Adapter;
         public static DataSet Datas = new DataSet();
 
-        #endregion
+        #endregion Fields
 
         /// <summary>
         /// Represents a set of datas based on request available in the database.
         /// </summary>
         public class Request
         {
-
             #region Fields
 
             private readonly int _fromId;
 
-            #endregion
+            #endregion Fields
 
             #region Constructors
 
@@ -68,7 +65,7 @@ namespace BB_App.Models
                 LoadFrom();
             }
 
-            #endregion
+            #endregion Constructors
 
             #region Methods
 
@@ -78,52 +75,43 @@ namespace BB_App.Models
             /// <param name="id">id of the request to load</param>
             public void LoadFrom(int id = 0)
             {
-
                 try
                 {
+                    if (!SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user,
+                        Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name)) return;
 
-                    if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
+                    string query;
+
+                    if (id != 0)
+                        query = "SELECT * FROM requests WHERE id_request = " + id;
+                    else
+                        query = "SELECT * FROM requests WHERE id_request = " + _fromId;
+
+                    var command = new MySqlCommand(query, SqlConnection.Conn);
+                    var reader = command.ExecuteReader();
+
+                    if (!reader.HasRows) return;
+
+                    while (reader.Read())
                     {
-
-                        string query;
-
-                        if (id != 0)
-                            query = "SELECT * FROM requests WHERE id_request = " + id;
-                        else
-                            query = "SELECT * FROM requests WHERE id_request = " + _fromId;
-
-                        var command = new MySqlCommand(query, SqlConnection.Conn);
-                        var reader = command.ExecuteReader();
-
-                        if (reader.HasRows)
-                        {
-                            
-                            while (reader.Read())
-                            {
-                                RequestId = Convert.ToInt32(reader[0]);
-                                RequestUser = Convert.ToInt32(reader[1]);
-                                HospitalReference = Convert.ToString(reader[2]);
-                                RequestDate = Convert.ToDateTime(reader[3]);
-                                ExpirationDate = Convert.ToDateTime(reader[4]);
-                                Unit = Convert.ToInt32(reader[5]);
-                                RequestStatus = Convert.ToString(reader[6]);
-                            }
-
-                            reader.Close();
-
-                        }
-
+                        RequestId = Convert.ToInt32(reader[0]);
+                        RequestUser = Convert.ToInt32(reader[1]);
+                        HospitalReference = Convert.ToString(reader[2]);
+                        RequestDate = Convert.ToDateTime(reader[3]);
+                        ExpirationDate = Convert.ToDateTime(reader[4]);
+                        Unit = Convert.ToInt32(reader[5]);
+                        RequestStatus = Convert.ToString(reader[6]);
                     }
 
+                    reader.Close();
                 }
                 catch
                 {
                     throw new NotImplementedException();
                 }
-
             }
 
-            #endregion
+            #endregion Methods
 
             #region Properties
 
@@ -162,8 +150,7 @@ namespace BB_App.Models
             /// </summary>
             public DateTime ExpirationDate { get; set; }
 
-            #endregion
-
+            #endregion Properties
         }
 
         #region Methods
@@ -247,7 +234,6 @@ namespace BB_App.Models
             return true;
         }
 
-        #endregion
-
+        #endregion Methods
     }
 }

@@ -16,46 +16,48 @@ namespace BB_App.Views.Bloods
 
         #region Fields
 
-        private struct Blood
-        {
-            public string Name;
-            public int Value;
-        }
+        int counter = 0;
 
-        private int _x;
-
-        #endregion
+        #endregion Fields
 
         #region UI Methods
 
         private void nextBlood_MouseEnter(object sender, EventArgs e)
         {
-            ((Control)sender).BackColor = Color.FromArgb(235, 235, 235);
+            ((Control) sender).BackColor = Color.FromArgb(235, 235, 235);
         }
 
         private void nextBlood_MouseLeave(object sender, EventArgs e)
         {
-            ((Control)sender).BackColor = Color.WhiteSmoke;        
+            ((Control) sender).BackColor = Color.WhiteSmoke;
         }
 
         private void nextBlood_Click(object sender, EventArgs e)
         {
             try
             {
-                bloodLabel.Text = Commons.Format(GoNextBlood().Name);
-                unitLabel.Text = GoNextBlood().Value.ToString() + @" Bottles";
+                var item = GoNextBlood();
+                bloodLabel.Text = Commons.Format(item.BloodGroup);
+                unitLabel.Text = item.BloodUnits + @" Bottles";
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void previousBlood_Click(object sender, EventArgs e)
         {
             try
             {
-                bloodLabel.Text = Commons.Format(GoPreviousBlood().Name);
-                unitLabel.Text = GoPreviousBlood().Value.ToString() + " Bottles";
+                var item = GoPreviousBlood();
+                bloodLabel.Text = Commons.Format(item.BloodGroup);
+                unitLabel.Text = item.BloodUnits + @" Bottles";
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void bloodLabel_Click(object sender, EventArgs e)
@@ -64,59 +66,44 @@ namespace BB_App.Views.Bloods
             MessageBox.Show(Bl.BloodsList.Count.ToString());
         }
 
-        #endregion
+        #endregion UI Methods
 
         #region Methods
 
-        private Blood GoNextBlood()
+        private Bl.Blood GoNextBlood()
         {
-            var blood = new Blood();
+            Bl.Blood blood;
 
-            try
+            if (counter < 8)
             {
-                if (Bl.BloodsList.Count >= 0)
-                {
-                    if (_x >= Bl.BloodsList.Count)
-                        _x = 0;
-
-                    blood.Name = Bl.BloodsList[_x].BloodGroup;
-                    blood.Value = Bl.BloodsList[_x].BloodUnits;
-                    _x++;
-                }
+                blood = Bl.BloodsList[++counter];
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Can't get next bloodgroup. Error is : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                counter = 0;
+                blood = Bl.BloodsList[++counter];
             }
 
             return blood;
         }
 
-        private Blood GoPreviousBlood()
+        private Bl.Blood GoPreviousBlood()
         {
-            var blood = new Blood();
+            Bl.Blood blood;
 
-            try
+            if (counter > 0)
             {
-                if (Bl.BloodsList.Count >= 0)
-                {
-                    if (_x >= Bl.BloodsList.Count)
-                        _x = 0;
-
-                    blood.Name = Bl.BloodsList[_x].BloodGroup;
-                    blood.Value = Bl.BloodsList[_x].BloodUnits;
-                    _x--;
-                }
+                blood = Bl.BloodsList[--counter];
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Can't get next bloodgroup. Error is : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                counter = 8;
+                blood = Bl.BloodsList[--counter];
             }
 
             return blood;
         }
 
-        #endregion
-
+        #endregion Methods
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using MySql.Data.MySqlClient;
-using param =  BB_App.Models.Consts;
+using param = BB_App.Models.Consts;
 
 /* =============================================================
 * Class Name : Blood
@@ -17,7 +17,6 @@ namespace BB_App.Models
     /// </summary>
     internal class Bloods
     {
-
         /// <summary>dz
         /// Represents a blood object with group and units.
         /// </summary>
@@ -32,7 +31,7 @@ namespace BB_App.Models
 
         public static List<Blood> BloodsList = new List<Blood>();
 
-        #endregion
+        #endregion Fields
 
         #region Constructors
 
@@ -44,16 +43,36 @@ namespace BB_App.Models
                 InitializeBloods();
         }
 
-        #endregion
+        #endregion Constructors
 
         #region Methods
+
+        /// <summary>
+        /// Populates the blood_bank table with null values from the current hospital.
+        /// </summary>
+        public static void InitializeBloods()
+        {
+            SqlConnection.Disconnect();
+
+            if (SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName))
+            {
+                const string query = "INSERT INTO blood_bank VALUES (@hospital, 0, 0, 0, 0, 0, 0, 0, 0, 0);";
+                var command = new MySqlCommand(query, SqlConnection.Conn);
+
+                command.Prepare();
+                command.Parameters.AddWithValue("@hospital", param.Hospital);
+
+                command.ExecuteNonQuery();
+            }
+
+            LoadBloods();
+        }
 
         /// <summary>
         /// Load bloodgroups with units from the database.
         /// </summary>
         public static void LoadBloods()
         {
-
             SqlConnection.Disconnect();
 
             if (!SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName)) return;
@@ -76,7 +95,6 @@ namespace BB_App.Models
             }
             else
                 InitializeBloods();
-
         }
 
         /// <summary>
@@ -84,7 +102,6 @@ namespace BB_App.Models
         /// </summary>
         public static void UpdateValues()
         {
-
             SqlConnection.Disconnect();
 
             if (!SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName)) return;
@@ -103,33 +120,8 @@ namespace BB_App.Models
             command.Parameters.AddWithValue("@total", GetTotal(BloodsList));
 
             command.ExecuteNonQuery();
-
         }
-
-        /// <summary>
-        /// Populates the blood_bank table with null values from the current hospital.
-        /// </summary>
-        public static void InitializeBloods()
-        {
-
-            SqlConnection.Disconnect();
-
-            if (SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName))
-            {
-                const string query = "INSERT INTO blood_bank VALUES (@hospital, 0, 0, 0, 0, 0, 0, 0, 0, 0);";
-                var command = new MySqlCommand(query, SqlConnection.Conn);
-
-                command.Prepare();
-                command.Parameters.AddWithValue("@hospital", param.Hospital);
-
-                command.ExecuteNonQuery();
-            }
-
-            LoadBloods();
-
-        }
-
-        #endregion
+        #endregion Methods
 
         #region Functions
 
@@ -137,7 +129,7 @@ namespace BB_App.Models
         /// Verify if the database contains blood informations of the current hospital.
         /// </summary>
         /// <returns>True if exist and false if not</returns>
-        public static bool Exist()
+        private static bool Exist()
         {
             SqlConnection.Disconnect();
 
@@ -152,7 +144,6 @@ namespace BB_App.Models
             reader.Close();
 
             return exist;
-
         }
 
         /// <summary>
@@ -165,7 +156,6 @@ namespace BB_App.Models
             return list.Sum(blood => blood.BloodUnits);
         }
 
-        #endregion
-
+        #endregion Functions
     }
 }

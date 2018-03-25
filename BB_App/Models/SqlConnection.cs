@@ -11,8 +11,7 @@ namespace BB_App.Models
 {
     internal class SqlConnection
     {
-
-        public static MySqlConnection Conn = new MySqlConnection();
+        public static readonly MySqlConnection Conn = new MySqlConnection();
 
         #region Methods
 
@@ -48,7 +47,6 @@ namespace BB_App.Models
             }
         }
 
-        #endregion
-
+        #endregion Methods
     }
 }

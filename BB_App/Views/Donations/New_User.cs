@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Windows.Forms; using BB_App.Models;
+using System.Windows.Forms;
+using BB_App.Models;
 using MySql.Data.MySqlClient;
 
 namespace BB_App.Views.Donations
 {
     public partial class NewUser : UserControl
     {
-
         public NewUser()
         {
             InitializeComponent();
@@ -49,7 +49,6 @@ namespace BB_App.Views.Donations
         /// </summary>
         private void AddUser()
         {
-
             if (SqlConnection.Connect(Properties.Settings.Default.server, Properties.Settings.Default.db_user, Properties.Settings.Default.db_pwd, Properties.Settings.Default.db_name))
             {
                 var date = kryptonDateTimePicker1.Value.Year.ToString() + "-" + kryptonDateTimePicker1.Value.Month.ToString() + "-" + kryptonDateTimePicker1.Value.Day.ToString();
@@ -77,17 +76,15 @@ namespace BB_App.Views.Donations
                     if (result != null)
                         id = Convert.ToInt32(result);
                     else
-                        MessageBox.Show("Can't retrieve user id, Try creating the user again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(@"Can't retrieve user id, Try creating the user again.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     ((Main)ParentForm).LoadForm(new DonationInformations(new User(id)));
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show("Can't create the user. Error " + ex.ErrorCode + " : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Can't create the user. Error " + ex.ErrorCode + @" : " + ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
-
         }
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -110,7 +107,6 @@ namespace BB_App.Views.Donations
             AddUser();
         }
 
-        #endregion
-
+        #endregion Methods
     }
 }

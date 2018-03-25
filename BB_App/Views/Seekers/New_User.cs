@@ -75,7 +75,7 @@ namespace BB_App.Views.Seekers
                         id = Convert.ToInt32(result);
                     else
                     {
-                        MessageBox.Show("Can't retrieve user id, Try creating the user again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(@"Can't retrieve user id, Try creating the user again.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -83,7 +83,7 @@ namespace BB_App.Views.Seekers
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show("Can't create the user. Error " + ex.ErrorCode + " : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Can't create the user. Error " + ex.ErrorCode + @" : " + ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
