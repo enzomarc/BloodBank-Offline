@@ -18,3 +18,8 @@ Sources/BB_App\.Admin/obj
 Sources/BB_App\.Core/bin
 
 Sources/BB_App\.Core/obj
+
+Sources/BB_App.Admin/bin/
+Sources/BB_App.Core/bin/
+Sources/BB_App.Admin/obj/
+Sources/BB_App.Core/obj/
