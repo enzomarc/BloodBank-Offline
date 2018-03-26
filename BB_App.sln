@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App", "BB_App\BB_App.csproj", "{4DAF8474-17E5-48D1-99E9-D64025A230A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App.Core", "Sources\BB_App.Core\BB_App.Core.csproj", "{4DAF8474-17E5-48D1-99E9-D64025A230A9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B1D7F290-D8EB-4482-9AA0-30D992E0669D} = {B1D7F290-D8EB-4482-9AA0-30D992E0669D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App.Admin", "BB_App.Admin\BB_App.Admin.csproj", "{B1D7F290-D8EB-4482-9AA0-30D992E0669D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App.Admin", "Sources\BB_App.Admin\BB_App.Admin.csproj", "{B1D7F290-D8EB-4482-9AA0-30D992E0669D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{03AF1D9D-1A4A-4497-A981-90C2E6C04C38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DAF8474-17E5-48D1-99E9-D64025A230A9} = {03AF1D9D-1A4A-4497-A981-90C2E6C04C38}
+		{B1D7F290-D8EB-4482-9AA0-30D992E0669D} = {03AF1D9D-1A4A-4497-A981-90C2E6C04C38}
 	EndGlobalSection
 EndGlobal

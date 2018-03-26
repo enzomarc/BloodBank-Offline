@@ -1,6 +1,0 @@
-C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\BB_App.Admin\bin\Debug\BB_App.Admin.exe
-C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\BB_App.Admin\bin\Debug\BB_App.Admin.pdb
-C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\BB_App.Admin\obj\Debug\BB_App.Admin.Properties.Resources.resources
-C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\BB_App.Admin\obj\Debug\BB_App.Admin.csproj.GenerateResource.Cache
-C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\BB_App.Admin\obj\Debug\BB_App.Admin.exe
-C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\BB_App.Admin\obj\Debug\BB_App.Admin.pdb
