@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Blood_Purchase_Form));
             this.label1 = new System.Windows.Forms.Label();
-            this.menuButton = new System.Windows.Forms.PictureBox();
-            this.closeButton = new System.Windows.Forms.PictureBox();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.bloodGD = new ComponentFactory.Krypton.Toolkit.KryptonDropButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,12 +49,15 @@
             this.unitsPrice = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.purchaseBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.purchaseBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.menuButton = new System.Windows.Forms.PictureBox();
+            this.closeButton = new System.Windows.Forms.PictureBox();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -70,42 +70,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Blood Purchase";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuButton
-            // 
-            this.menuButton.Image = global::BB_App.Properties.Resources.Left_15px;
-            this.menuButton.Location = new System.Drawing.Point(16, 15);
-            this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(18, 18);
-            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.menuButton.TabIndex = 27;
-            this.menuButton.TabStop = false;
-            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
-            this.menuButton.MouseEnter += new System.EventHandler(this.menuButton_MouseEnter);
-            this.menuButton.MouseLeave += new System.EventHandler(this.menuButton_MouseLeave);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(779, 15);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(18, 18);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.closeButton.TabIndex = 26;
-            this.closeButton.TabStop = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
-            // 
-            // logo
-            // 
-            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(310, 79);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(32, 32);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.logo.TabIndex = 24;
-            this.logo.TabStop = false;
             // 
             // bloodGD
             // 
@@ -310,6 +274,13 @@
             this.priceLabel.Text = "1 Frcs";
             this.priceLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // purchaseBtn
             // 
             this.purchaseBtn.Activecolor = System.Drawing.Color.Gainsboro;
@@ -346,12 +317,41 @@
             this.purchaseBtn.TextFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.purchaseBtn.Click += new System.EventHandler(this.purchaseBtn_Click);
             // 
-            // bunifuDragControl1
+            // menuButton
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
-            this.bunifuDragControl1.Vertical = true;
+            this.menuButton.Image = global::BB_App.Properties.Resources.Left_15px;
+            this.menuButton.Location = new System.Drawing.Point(16, 15);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(18, 18);
+            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.menuButton.TabIndex = 27;
+            this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            this.menuButton.MouseEnter += new System.EventHandler(this.menuButton_MouseEnter);
+            this.menuButton.MouseLeave += new System.EventHandler(this.menuButton_MouseLeave);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.Location = new System.Drawing.Point(779, 15);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(18, 18);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.closeButton.TabIndex = 26;
+            this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
+            // 
+            // logo
+            // 
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(310, 79);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(32, 32);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.logo.TabIndex = 24;
+            this.logo.TabStop = false;
             // 
             // Blood_Purchase_Form
             // 
@@ -373,10 +373,10 @@
             this.Controls.Add(this.logo);
             this.Name = "Blood_Purchase_Form";
             this.Size = new System.Drawing.Size(813, 646);
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

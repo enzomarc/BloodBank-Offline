@@ -120,6 +120,7 @@
             this.bunifuTileButton5.Name = "bunifuTileButton5";
             this.bunifuTileButton5.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton5.TabIndex = 27;
+            this.bunifuTileButton5.Click += new System.EventHandler(this.bunifuTileButton5_Click);
             // 
             // bunifuTileButton6
             // 
@@ -139,6 +140,7 @@
             this.bunifuTileButton6.Name = "bunifuTileButton6";
             this.bunifuTileButton6.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton6.TabIndex = 26;
+            this.bunifuTileButton6.Click += new System.EventHandler(this.bunifuTileButton6_Click);
             // 
             // bunifuTileButton2
             // 
@@ -158,6 +160,7 @@
             this.bunifuTileButton2.Name = "bunifuTileButton2";
             this.bunifuTileButton2.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton2.TabIndex = 25;
+            this.bunifuTileButton2.Click += new System.EventHandler(this.bunifuTileButton2_Click);
             // 
             // bunifuTileButton1
             // 

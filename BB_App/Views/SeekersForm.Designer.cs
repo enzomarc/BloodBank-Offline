@@ -70,13 +70,13 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 40D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(33, 584);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(33, 572);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(345, 48);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(227, 48);
             this.bunifuFlatButton2.TabIndex = 30;
             this.bunifuFlatButton2.Text = "From ";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +107,7 @@
             this.updateButton.IconVisible = true;
             this.updateButton.IconZoom = 40D;
             this.updateButton.IsTab = false;
-            this.updateButton.Location = new System.Drawing.Point(543, 584);
+            this.updateButton.Location = new System.Drawing.Point(520, 572);
             this.updateButton.Name = "updateButton";
             this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -143,7 +143,7 @@
             this.addButton.IconVisible = true;
             this.addButton.IconZoom = 40D;
             this.addButton.IsTab = false;
-            this.addButton.Location = new System.Drawing.Point(698, 584);
+            this.addButton.Location = new System.Drawing.Point(681, 572);
             this.addButton.Name = "addButton";
             this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -160,7 +160,7 @@
             // menuButton
             // 
             this.menuButton.Image = global::BB_App.Properties.Resources.Left_15px;
-            this.menuButton.Location = new System.Drawing.Point(33, 26);
+            this.menuButton.Location = new System.Drawing.Point(16, 15);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(18, 18);
             this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -174,7 +174,7 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(796, 26);
+            this.closeButton.Location = new System.Drawing.Point(779, 15);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(18, 18);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -189,7 +189,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoEllipsis = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(318, 90);
+            this.label1.Location = new System.Drawing.Point(301, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 32);
             this.label1.TabIndex = 25;
@@ -200,7 +200,7 @@
             // 
             this.logo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(280, 90);
+            this.logo.Location = new System.Drawing.Point(263, 90);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(32, 32);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -223,7 +223,7 @@
             this.requestsDGV.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
             this.requestsDGV.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
             this.requestsDGV.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.requestsDGV.Location = new System.Drawing.Point(33, 157);
+            this.requestsDGV.Location = new System.Drawing.Point(16, 157);
             this.requestsDGV.Name = "requestsDGV";
             this.requestsDGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.requestsDGV.RowHeadersVisible = false;
@@ -235,12 +235,14 @@
             this.requestsDGV.ShowCellToolTips = false;
             this.requestsDGV.ShowEditingIcon = false;
             this.requestsDGV.ShowRowErrors = false;
-            this.requestsDGV.Size = new System.Drawing.Size(781, 413);
-            this.requestsDGV.StateCommon.Background.Color1 = System.Drawing.Color.Gainsboro;
-            this.requestsDGV.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.requestsDGV.Size = new System.Drawing.Size(781, 401);
+            this.requestsDGV.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.requestsDGV.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.requestsDGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.requestsDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Gainsboro;
-            this.requestsDGV.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.requestsDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.requestsDGV.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.requestsDGV.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)(((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.requestsDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.requestsDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.requestsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
@@ -273,7 +275,7 @@
             this.Controls.Add(this.logo);
             this.Controls.Add(this.requestsDGV);
             this.Name = "SeekersForm";
-            this.Size = new System.Drawing.Size(846, 658);
+            this.Size = new System.Drawing.Size(813, 646);
             this.Load += new System.EventHandler(this.Seekers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();

@@ -15,7 +15,7 @@ namespace BB_App.Models
     /// <summary>
     /// Represents the blood bank from the database.
     /// </summary>
-    internal class Bloods
+    public class Bloods
     {
         /// <summary>dz
         /// Represents a blood object with group and units.

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\BloodPurchase.cs" />
+    <Compile Include="Models\BloodSale.cs" />
     <Compile Include="Models\Commons.cs" />
     <Compile Include="Models\Consts.cs" />
     <Compile Include="Models\Bloods.cs" />
@@ -88,6 +89,24 @@
     </Compile>
     <Compile Include="Views\Bloods\Blood_Purchase_Form.Designer.cs">
       <DependentUpon>Blood_Purchase_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bloods\Blood_Sale_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Bloods\Blood_Sale_Form.Designer.cs">
+      <DependentUpon>Blood_Sale_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bloods\Purchases_Report_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Bloods\Purchases_Report_Form.Designer.cs">
+      <DependentUpon>Purchases_Report_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bloods\Sales_Report_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Bloods\Sales_Report_Form.Designer.cs">
+      <DependentUpon>Sales_Report_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -174,6 +193,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Bloods\Blood_Purchase_Form.resx">
       <DependentUpon>Blood_Purchase_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Bloods\Blood_Sale_Form.resx">
+      <DependentUpon>Blood_Sale_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Bloods\Purchases_Report_Form.resx">
+      <DependentUpon>Purchases_Report_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Bloods\Sales_Report_Form.resx">
+      <DependentUpon>Sales_Report_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

@@ -2,12 +2,14 @@
 using System.Windows.Forms;
 using BB_App.Models;
 using static BB_App.Models.Commons;
+using static BB_App.Models.Bloods;
+using static BB_App.Models.BloodSale;
 
 namespace BB_App.Views.Bloods
 {
-    public partial class Blood_Purchase_Form : UserControl
+    public partial class Blood_Sale_Form : UserControl
     {
-        public Blood_Purchase_Form()
+        public Blood_Sale_Form()
         {
             InitializeComponent();
         }
@@ -47,6 +49,7 @@ namespace BB_App.Views.Bloods
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             bloodGD.Text = e.ClickedItem.Text;
+            numberUnits.Maximum = getUnits(Unformat(e.ClickedItem.Text).ToLower());
         }
 
         private void unitsPrice_ValueChanged(object sender, EventArgs e)
@@ -54,14 +57,15 @@ namespace BB_App.Views.Bloods
             priceLabel.Text = TotalPrice((int)numberUnits.Value, (int)unitsPrice.Value).ToString() + @" Frcs";
         }
 
-        private void purchaseBtn_Click(object sender, EventArgs e)
-        {
+        #endregion UI Methods
 
+        private void saleBtn_Click(object sender, EventArgs e)
+        {
             if (bloodGD.Text != "Blood Group" && dateTime.Value != null && numberUnits.Value > 0)
             {
                 var price = Convert.ToInt32(priceLabel.Text.Split(' ')[0]);
-                BloodPurchase.PurchaseBlood(Unformat(bloodGD.Text).ToUpper(), dateTime.Value, (int)numberUnits.Value, price);
-                MessageBox.Show("Blood successfully purchased.", "Blood Purchase", MessageBoxButtons.OK,
+                BloodSale.saleBlood(Unformat(bloodGD.Text).ToUpper(), dateTime.Value, (int)numberUnits.Value, price);
+                MessageBox.Show("Blood successfully saled.", "Blood Sale", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 ((Main)ParentForm).LoadForm(new BloodDashboard());
             }
@@ -69,10 +73,6 @@ namespace BB_App.Views.Bloods
             {
                 MessageBox.Show("Error occured. Please check all fields before clicking the button.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
-
-        #endregion UI Methods
-
     }
 }

@@ -73,11 +73,13 @@
             this.donationsDGV.ShowEditingIcon = false;
             this.donationsDGV.ShowRowErrors = false;
             this.donationsDGV.Size = new System.Drawing.Size(781, 413);
-            this.donationsDGV.StateCommon.Background.Color1 = System.Drawing.Color.Gainsboro;
-            this.donationsDGV.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.donationsDGV.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.donationsDGV.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.donationsDGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.donationsDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Gainsboro;
-            this.donationsDGV.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.donationsDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.donationsDGV.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.donationsDGV.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)(((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.donationsDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.donationsDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.donationsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
@@ -241,7 +243,7 @@
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(467, 48);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(271, 48);
             this.bunifuFlatButton2.TabIndex = 22;
             this.bunifuFlatButton2.Text = "From ";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

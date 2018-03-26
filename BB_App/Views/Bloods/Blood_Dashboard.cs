@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using BB_App.Models;
+using static BB_App.Models.Commons;
 using Bl = BB_App.Models.Bloods;
 
 namespace BB_App.Views.Bloods
@@ -66,7 +66,7 @@ namespace BB_App.Views.Bloods
             try
             {
                 var item = GoNextBlood();
-                bloodLabel.Text = Commons.Format(item.BloodGroup);
+                bloodLabel.Text = Format(item.BloodGroup);
                 unitLabel.Text = item.BloodUnits + @" Bottles";
             }
             catch
@@ -80,7 +80,7 @@ namespace BB_App.Views.Bloods
             try
             {
                 var item = GoPreviousBlood();
-                bloodLabel.Text = Commons.Format(item.BloodGroup);
+                bloodLabel.Text = Format(item.BloodGroup);
                 unitLabel.Text = item.BloodUnits + @" Bottles";
             }
             catch
@@ -143,6 +143,21 @@ namespace BB_App.Views.Bloods
         private void BloodDashboard_Load(object sender, EventArgs e)
         {
             Bl.LoadBloods();
+        }
+
+        private void bunifuTileButton2_Click(object sender, EventArgs e)
+        {
+            ((Main)ParentForm).LoadForm(new Blood_Sale_Form());
+        }
+
+        private void bunifuTileButton5_Click(object sender, EventArgs e)
+        {
+            ((Main)ParentForm).LoadForm(new Sales_Report_Form());
+        }
+
+        private void bunifuTileButton6_Click(object sender, EventArgs e)
+        {
+            ((Main)ParentForm).LoadForm(new Purchases_Report_Form());
         }
     }
 }
