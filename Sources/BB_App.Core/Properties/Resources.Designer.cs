@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace BB_App.Core.Properties {
-    using System;
+    using System; using static BB_App.Helpers.FormsHelpers;
     
     
     /// <summary>

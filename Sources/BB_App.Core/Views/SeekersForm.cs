@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -42,7 +42,7 @@ namespace BB_App.Core.Views
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Dashboard());
+            LoadForm(((Main)ParentForm).frmContainer, new Dashboard());
         }
 
         private void Seekers_Load(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace BB_App.Core.Views
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void requestsDGV_SelectionChanged(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace BB_App.Core.Views
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             var id = (int) requestsDGV.SelectedRows[0].Cells[0].Value;
-            ((Main) ParentForm).LoadForm(new RegisteredUser(true, id));
+            LoadForm(((Main)ParentForm).frmContainer, new RegisteredUser(true, id));
         }
 
         #endregion

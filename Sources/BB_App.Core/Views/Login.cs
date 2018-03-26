@@ -1,7 +1,10 @@
 ﻿using System;
+using static BB_App.Helpers.FormsHelpers;
+using static BB_App.Helpers.AccountsHelpers;
 using System.Drawing;
 using System.Windows.Forms;
 using BB_App.Core.Properties;
+using static BB_App.Core.Models.AccountsModel;
 
 namespace BB_App.Core.Views
 {
@@ -12,11 +15,11 @@ namespace BB_App.Core.Views
             InitializeComponent();
         }
 
-        #region Methods
+        #region UI Methods
 
         private void kryptonTextBox1_Enter(object sender, EventArgs e)
         {
-            if (username.Text != "Nom d'utilisateur ...") return;
+            if (username.Text != @"Nom d'utilisateur ...") return;
             username.Clear();
             username.StateCommon.Content.Color1 = Color.Black;
         }
@@ -24,13 +27,13 @@ namespace BB_App.Core.Views
         private void kryptonTextBox1_Leave(object sender, EventArgs e)
         {
             if (username.Text != "") return;
-            username.Text = "Nom d'utilisateur ...";
+            username.Text = @"Nom d'utilisateur ...";
             username.StateCommon.Content.Color1 = Color.DarkGray;
         }
 
         private void kryptonTextBox2_Enter(object sender, EventArgs e)
         {
-            if (password.Text != "Mot de passe ...") return;
+            if (password.Text != @"Mot de passe ...") return;
             password.Clear();
             password.UseSystemPasswordChar = true;
             password.StateCommon.Content.Color1 = Color.Black;
@@ -40,7 +43,7 @@ namespace BB_App.Core.Views
         {
             if (password.Text != "") return;
             password.UseSystemPasswordChar = false;
-            password.Text = "Mot de passe ...";
+            password.Text = @"Mot de passe ...";
             password.StateCommon.Content.Color1 = Color.DarkGray;
         }
 
@@ -51,12 +54,17 @@ namespace BB_App.Core.Views
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Dashboard());
+	        var accountType = Login(username.Text, password.Text);
 
-            //if (username.Text == "admin" && password.Text == "root")
-
-            //else
-            // MessageBox.Show("Wrong username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			if (accountType != string.Empty)
+	        {
+				SetAccountType(ParseAccountType(accountType));
+		        LoadForm(((Main) ParentForm)?.frmContainer, new Dashboard());
+		        MessageBox.Show(@"You're an " + Settings.Default.account_type + @" user !");
+	        }
+	        else
+		        MessageBox.Show(@"Username or password incorrect ! Check your login informations.", @"Login Error",
+			        MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void logo_MouseEnter(object sender, EventArgs e)
@@ -69,6 +77,7 @@ namespace BB_App.Core.Views
             logo.Image = Resources.Heart_96px;
         }
 
-        #endregion
-    }
+		#endregion
+
+	}
 }

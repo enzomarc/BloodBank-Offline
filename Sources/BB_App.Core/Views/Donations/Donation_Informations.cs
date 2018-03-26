@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -47,7 +47,7 @@ namespace BB_App.Core.Views.Donations
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void FillWith(User user)
@@ -89,7 +89,7 @@ namespace BB_App.Core.Views.Donations
                     cmd.ExecuteNonQuery();
                     MessageBox.Show(@"Donation added with succes", @"Success", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    ((Main) ParentForm).LoadForm(new DonationsForm());
+                    LoadForm(((Main)ParentForm).frmContainer, new DonationsForm());
                 }
                 catch (MySqlException ex)
                 {

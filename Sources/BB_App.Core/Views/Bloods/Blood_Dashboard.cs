@@ -1,4 +1,5 @@
 ﻿using System;
+using static BB_App.Helpers.FormsHelpers;
 using System.Drawing;
 using System.Windows.Forms;
 using BB_App.Core.Models;
@@ -22,7 +23,7 @@ namespace BB_App.Core.Views.Bloods
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Blood_Purchase_Form());
+            LoadForm(((Main)ParentForm).frmContainer, new Blood_Purchase_Form());
         }
 
         private void BloodDashboard_Load(object sender, EventArgs e)
@@ -32,17 +33,17 @@ namespace BB_App.Core.Views.Bloods
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Blood_Sale_Form());
+            LoadForm(((Main)ParentForm).frmContainer, new Blood_Sale_Form());
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Sales_Report_Form());
+            LoadForm(((Main)ParentForm).frmContainer, new Sales_Report_Form());
         }
 
         private void bunifuTileButton6_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Purchases_Report_Form());
+            LoadForm(((Main)ParentForm).frmContainer, new Purchases_Report_Form());
         }
 
         #region UI Methods
@@ -74,7 +75,7 @@ namespace BB_App.Core.Views.Bloods
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Dashboard());
+            LoadForm(((Main)ParentForm).frmContainer, new Dashboard());
         }
 
         private void nextBlood_MouseEnter(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Data;
 using System.Windows.Forms;
 using BB_App.Core.Models;
@@ -50,7 +50,7 @@ namespace BB_App.Core.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void nextButton_Click(object sender, EventArgs e)
@@ -58,12 +58,12 @@ namespace BB_App.Core.Views.Seekers
             if (_update == false)
             {
                 var id = (int) usersDGV.SelectedRows[0].Cells[0].Value;
-                ((Main) ParentForm).LoadForm(new RequestInformations(new User(id)));
+                LoadForm(((Main)ParentForm).frmContainer, new RequestInformations(new User(id)));
             }
             else
             {
                 UpdateRequest(_id);
-                ((Main) ParentForm).LoadForm(new SeekersForm());
+                LoadForm(((Main)ParentForm).frmContainer, new SeekersForm());
             }
         }
 

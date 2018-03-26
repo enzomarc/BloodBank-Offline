@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -56,7 +56,7 @@ namespace BB_App.Core.Views.Bloods
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new BloodDashboard());
+            LoadForm(((Main)ParentForm).frmContainer, new BloodDashboard());
         }
 
         #endregion

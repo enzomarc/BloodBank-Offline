@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Properties;
 
@@ -40,17 +40,17 @@ namespace BB_App.Core.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new SeekersForm());
+            LoadForm(((Main)ParentForm).frmContainer, new SeekersForm());
         }
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new NewUser());
+            LoadForm(((Main)ParentForm).frmContainer, new NewUser());
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new RegisteredUser(false));
+            LoadForm(((Main)ParentForm).frmContainer, new RegisteredUser(false));
         }
 
         #endregion

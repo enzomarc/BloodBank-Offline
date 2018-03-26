@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AccountsModel.cs" />
     <Compile Include="Models\BloodPurchase.cs" />
     <Compile Include="Models\BloodSale.cs" />
     <Compile Include="Models\Commons.cs" />
@@ -298,6 +299,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Left_Hover_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BB_App.Helpers\BB_App.Helpers.csproj">
+      <Project>{93409461-4571-4a38-b857-aca1d030497d}</Project>
+      <Name>BB_App.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

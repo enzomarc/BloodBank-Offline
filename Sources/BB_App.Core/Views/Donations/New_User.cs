@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -42,7 +42,7 @@ namespace BB_App.Core.Views.Donations
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace BB_App.Core.Views.Donations
                         MessageBox.Show(@"Can't retrieve user id, Try creating the user again.", @"Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    ((Main) ParentForm).LoadForm(new DonationInformations(new User(id)));
+                    LoadForm(((Main)ParentForm).frmContainer, new DonationInformations(new User(id)));
                 }
                 catch (MySqlException ex)
                 {

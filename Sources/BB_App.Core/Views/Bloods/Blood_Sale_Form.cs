@@ -1,4 +1,5 @@
 ﻿using System;
+using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -14,18 +15,18 @@ namespace BB_App.Core.Views.Bloods
 
         private void saleBtn_Click(object sender, EventArgs e)
         {
-            if (bloodGD.Text != "Blood Group" && dateTime.Value != null && numberUnits.Value > 0)
+            if (bloodGD.Text != @"Blood Group" && dateTime.Value != null && numberUnits.Value > 0)
             {
                 var price = Convert.ToInt32(priceLabel.Text.Split(' ')[0]);
                 BloodSale.saleBlood(Commons.Unformat(bloodGD.Text).ToUpper(), dateTime.Value, (int) numberUnits.Value,
                     price);
-                MessageBox.Show("Blood successfully saled.", "Blood Sale", MessageBoxButtons.OK,
+                MessageBox.Show(@"Blood successfully saled.", @"Blood Sale", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                ((Main) ParentForm).LoadForm(new BloodDashboard());
+                LoadForm(((Main)ParentForm)?.frmContainer, new BloodDashboard());
             }
             else
             {
-                MessageBox.Show("Error occured. Please check all fields before clicking the button.", "Error",
+                MessageBox.Show(@"Error occured. Please check all fields before clicking the button.", @"Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -59,7 +60,7 @@ namespace BB_App.Core.Views.Bloods
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm)?.LoadForm(new BloodDashboard());
+            LoadForm(((Main)ParentForm).frmContainer, new BloodDashboard());
         }
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

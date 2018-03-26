@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -62,7 +62,7 @@ namespace BB_App.Core.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void AddUser()
@@ -105,7 +105,7 @@ namespace BB_App.Core.Views.Seekers
                         return;
                     }
 
-                    ((Main) ParentForm).LoadForm(new RequestInformations(new User(id)));
+                    LoadForm(((Main)ParentForm).frmContainer, new RequestInformations(new User(id)));
                 }
                 catch (MySqlException ex)
                 {

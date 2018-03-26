@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
@@ -46,7 +46,7 @@ namespace BB_App.Core.Views.Seekers
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void FillWith(User user)
@@ -70,7 +70,7 @@ namespace BB_App.Core.Views.Seekers
                 MessageBox.Show(@"Can't save the request. Contact administrator.", @"Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-            ((Main) ParentForm).LoadForm(new SeekersForm());
+            LoadForm(((Main)ParentForm).frmContainer, new SeekersForm());
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)

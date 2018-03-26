@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace BB_App.Admin
+namespace BB_App.Helpers
 {
 	public class FormsHelpers
 	{

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Data;
 using System.Windows.Forms;
 using BB_App.Core.Models;
@@ -47,12 +47,12 @@ namespace BB_App.Core.Views
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Dashboard());
+            LoadForm(((Main)ParentForm).frmContainer, new Dashboard());
         }
 
         private void profileButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void LoadDonations()
@@ -108,7 +108,7 @@ namespace BB_App.Core.Views
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             var id = (int) donationsDGV.SelectedRows[0].Cells[0].Value;
-            ((Main) ParentForm).LoadForm(new RegisteredUser(true, id));
+            LoadForm(((Main)ParentForm).frmContainer, new RegisteredUser(true, id));
         }
 
         #endregion

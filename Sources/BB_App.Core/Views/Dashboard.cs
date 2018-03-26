@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Properties;
 using BB_App.Core.Views.Bloods;
@@ -60,22 +60,22 @@ namespace BB_App.Core.Views
 
         private void bunifuTileButton4_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new Login());
+            LoadForm(((Main)ParentForm).frmContainer, new Login());
         }
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new DonationsForm());
+            LoadForm(((Main)ParentForm).frmContainer, new DonationsForm());
         }
 
         private void bunifuTileButton3_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new SeekersForm());
+            LoadForm(((Main)ParentForm).frmContainer, new SeekersForm());
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new BloodDashboard());
+            LoadForm(((Main)ParentForm).frmContainer, new BloodDashboard());
         }
 
         #endregion

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; using static BB_App.Helpers.FormsHelpers;
 using System.Data;
 using System.Windows.Forms;
 using BB_App.Core.Models;
@@ -50,7 +50,7 @@ namespace BB_App.Core.Views.Donations
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            ((Main) ParentForm).LoadForm(new AddType());
+            LoadForm(((Main)ParentForm).frmContainer, new AddType());
         }
 
         private void nextButton_Click(object sender, EventArgs e)
@@ -58,12 +58,12 @@ namespace BB_App.Core.Views.Donations
             if (_update == false)
             {
                 var id = (int) usersDGV.SelectedRows[0].Cells[0].Value;
-                ((Main) ParentForm).LoadForm(new DonationInformations(new User(id)));
+                LoadForm(((Main)ParentForm).frmContainer, new DonationInformations(new User(id)));
             }
             else
             {
                 UpdateDonation(_id);
-                ((Main) ParentForm).LoadForm(new DonationsForm());
+                LoadForm(((Main)ParentForm).frmContainer, new DonationsForm());
             }
         }
 
