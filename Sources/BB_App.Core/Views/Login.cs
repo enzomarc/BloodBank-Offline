@@ -1,6 +1,7 @@
 ﻿using System;
 using static BB_App.Helpers.FormsHelpers;
 using static BB_App.Helpers.AccountsHelpers;
+using static BB_App.Helpers.StringHelpers;
 using System.Drawing;
 using System.Windows.Forms;
 using BB_App.Core.Properties;
@@ -59,12 +60,11 @@ namespace BB_App.Core.Views
 			if (accountType != string.Empty)
 	        {
 				SetAccountType(ParseAccountType(accountType));
-		        LoadForm(((Main) ParentForm)?.frmContainer, new Dashboard());
-		        MessageBox.Show(@"You're an " + Settings.Default.account_type + @" user !");
-	        }
+	            SetCurrentUser(username.Text);
+                LoadForm(((Main) ParentForm)?.frmContainer, new Dashboard());
+            }
 	        else
-		        MessageBox.Show(@"Username or password incorrect ! Check your login informations.", @"Login Error",
-			        MessageBoxButtons.OK, MessageBoxIcon.Error);
+		        password.Clear();
         }
 
         private void logo_MouseEnter(object sender, EventArgs e)
@@ -77,7 +77,14 @@ namespace BB_App.Core.Views
             logo.Image = Resources.Heart_96px;
         }
 
-		#endregion
+        #endregion
 
-	}
+        private void password_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bunifuFlatButton1_Click(sender, EventArgs.Empty);
+            }
+        }
+    }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BB_App.Helpers
+﻿namespace BB_App.Helpers
 {
 	public class AccountsHelpers
 	{
@@ -35,7 +30,7 @@ namespace BB_App.Helpers
 
 		public static string ParseAccountType(AccountType fromType)
 		{
-			var type = string.Empty;
+			string type;
 
 			switch (fromType)
 			{

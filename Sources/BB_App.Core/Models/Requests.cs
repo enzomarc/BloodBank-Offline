@@ -2,6 +2,7 @@
 using System.Data;
 using BB_App.Core.Properties;
 using MySql.Data.MySqlClient;
+using static BB_App.Core.Models.SqlConnection;
 
 /* =====================================================
  * Class Name : Requests
@@ -38,7 +39,7 @@ namespace BB_App.Core.Models
             {
                 try
                 {
-                    if (!SqlConnection.Connect(Settings.Default.server, Settings.Default.db_user,
+                    if (!Connect(Settings.Default.server, Settings.Default.db_user,
                         Settings.Default.db_pwd, Settings.Default.db_name)) return;
 
                     string query;
@@ -48,7 +49,7 @@ namespace BB_App.Core.Models
                     else
                         query = "SELECT * FROM requests WHERE id_request = " + _fromId;
 
-                    var command = new MySqlCommand(query, SqlConnection.Conn);
+                    var command = new MySqlCommand(query, Conn);
                     var reader = command.ExecuteReader();
 
                     if (!reader.HasRows) return;
@@ -162,13 +163,13 @@ namespace BB_App.Core.Models
         /// <returns>A dataset that represents a clone of datas from the database.</returns>
         public static DataSet LoadRequests()
         {
-            if (!SqlConnection.Connect(Settings.Default.server, Settings.Default.db_user,
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
                 Settings.Default.db_pwd, Settings.Default.db_name)) return Datas;
 
             var query = "SELECT * FROM requests WHERE ref_hospital = '" + Settings.Default.reference + "'";
-            Adapter = new MySqlDataAdapter(query, SqlConnection.Conn);
+            Adapter = new MySqlDataAdapter(query, Conn);
 
-            Datas.Clear();
+            Datas = new DataSet();
             Adapter.Fill(Datas, "requests");
 
             return Datas;
@@ -184,7 +185,7 @@ namespace BB_App.Core.Models
             // Variaable who checks if the request was saved
             bool saved;
 
-            if (!SqlConnection.Connect(Settings.Default.server, Settings.Default.db_user,
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
                 Settings.Default.db_pwd, Settings.Default.db_name)) return false;
 
             var date = req.RequestDate.Year + "-" + req.RequestDate.Month + "-" + req.RequestDate.Day;
@@ -193,7 +194,7 @@ namespace BB_App.Core.Models
             var query =
                 "INSERT INTO requests(id_user, ref_hospital, request_date, limit_date, unit, request_status) VALUES (@id, @ref, @date, @exp_date, @qty, @status);";
 
-            var cmd = new MySqlCommand(query, SqlConnection.Conn);
+            var cmd = new MySqlCommand(query, Conn);
             cmd.Prepare();
 
             cmd.Parameters.AddWithValue("@id", req.RequestUser);
@@ -224,12 +225,12 @@ namespace BB_App.Core.Models
         /// <returns>Boolean that represents the update result.</returns>
         public static bool ChangeUser(int request, int id)
         {
-            if (!SqlConnection.Connect(Settings.Default.server, Settings.Default.db_user,
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
                 Settings.Default.db_pwd, Settings.Default.db_name)) return false;
 
             var query = "UPDATE requests SET id_user = " + id + " WHERE id_request = " + request + ";";
 
-            var cmd = new MySqlCommand(query, SqlConnection.Conn);
+            var cmd = new MySqlCommand(query, Conn);
 
             cmd.ExecuteNonQuery();
 

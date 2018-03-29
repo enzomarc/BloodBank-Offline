@@ -1,7 +1,10 @@
-﻿using System; using static BB_App.Helpers.FormsHelpers;
+﻿using System;
+using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Properties;
 using BB_App.Core.Views.Bloods;
+using static BB_App.Core.Models.AccountsModel;
+using static BB_App.Core.Properties.Settings;
 
 namespace BB_App.Core.Views
 {
@@ -79,5 +82,19 @@ namespace BB_App.Core.Views
         }
 
         #endregion
+
+        private void bunifuTileButton5_Click(object sender, EventArgs e)
+        {
+            if (IsAdmin(Default.current_user))
+                    LoadForm(((Main)ParentForm)?.frmContainer, new Administration.Dashboard());
+            else
+                MessageBox.Show(@"You don't have permission to access this section. Contact the administrator.", @"Access Denied",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            profileButton.Text = WhoIsConnected();
+        }
     }
 }

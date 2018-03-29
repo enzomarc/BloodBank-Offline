@@ -1,12 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 
-/* ====================================
- * Management of SQL Database Class
- * By : eMarc
- * At : 11/03/2018
- * ===================================
-*/
-
 namespace BB_App.Core.Models
 {
     internal class SqlConnection
@@ -18,6 +11,7 @@ namespace BB_App.Core.Models
         public static bool Connect(string server, string user, string password, string database)
         {
             bool connected;
+            Disconnect();
 
             try
             {
@@ -27,8 +21,7 @@ namespace BB_App.Core.Models
                 }
                 else
                 {
-                    Conn.ConnectionString = "server=" + server + "; user=" + user + "; password=" + password +
-                                            "; database=" + database;
+                    Conn.ConnectionString = $"server={server}; user={user}; password={password}; database={database}";
                     Conn.Open();
                     connected = Conn.Ping();
                 }

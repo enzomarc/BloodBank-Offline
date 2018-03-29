@@ -1,0 +1,4 @@
+C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\Sources\BB_App.Helpers\bin\Release\BB_App.Helpers.dll
+C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\Sources\BB_App.Helpers\bin\Release\BB_App.Helpers.pdb
+C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\Sources\BB_App.Helpers\obj\Release\BB_App.Helpers.dll
+C:\Users\Ghost\Documents\Visual Studio 2012\Projects\BloodBank-Offline\Sources\BB_App.Helpers\obj\Release\BB_App.Helpers.pdb

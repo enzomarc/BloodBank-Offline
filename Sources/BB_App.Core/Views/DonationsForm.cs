@@ -47,12 +47,12 @@ namespace BB_App.Core.Views
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            LoadForm(((Main)ParentForm).frmContainer, new Dashboard());
+            LoadForm(((Main)ParentForm)?.frmContainer, new Dashboard());
         }
 
         private void profileButton_Click(object sender, EventArgs e)
         {
-            LoadForm(((Main)ParentForm).frmContainer, new AddType());
+            LoadForm(((Main)ParentForm)?.frmContainer, new AddType());
         }
 
         private void LoadDonations()
@@ -108,7 +108,7 @@ namespace BB_App.Core.Views
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             var id = (int) donationsDGV.SelectedRows[0].Cells[0].Value;
-            LoadForm(((Main)ParentForm).frmContainer, new RegisteredUser(true, id));
+            LoadForm(((Main)ParentForm)?.frmContainer, new RegisteredUser(true, id));
         }
 
         #endregion

@@ -225,6 +225,7 @@
             this.bunifuTileButton5.Name = "bunifuTileButton5";
             this.bunifuTileButton5.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton5.TabIndex = 12;
+            this.bunifuTileButton5.Click += new System.EventHandler(this.bunifuTileButton5_Click);
             // 
             // bunifuTileButton6
             // 
@@ -349,6 +350,7 @@
             this.Controls.Add(this.closeButton);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(813, 646);
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();

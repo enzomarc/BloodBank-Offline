@@ -67,6 +67,7 @@
             this.password.TabIndex = 12;
             this.password.Text = "Mot de passe ...";
             this.password.Enter += new System.EventHandler(this.kryptonTextBox2_Enter);
+            this.password.KeyUp += new System.Windows.Forms.KeyEventHandler(this.password_KeyUp);
             this.password.Leave += new System.EventHandler(this.kryptonTextBox2_Leave);
             // 
             // username
@@ -86,6 +87,7 @@
             this.username.TabIndex = 9;
             this.username.Text = "Nom d\'utilisateur ...";
             this.username.Enter += new System.EventHandler(this.kryptonTextBox1_Enter);
+            this.username.KeyUp += new System.Windows.Forms.KeyEventHandler(this.password_KeyUp);
             this.username.Leave += new System.EventHandler(this.kryptonTextBox1_Leave);
             // 
             // bunifuFlatButton2

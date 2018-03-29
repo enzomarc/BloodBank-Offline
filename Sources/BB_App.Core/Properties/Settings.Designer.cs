@@ -106,5 +106,17 @@ namespace BB_App.Core.Properties {
                 this["account_type"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string current_user {
+            get {
+                return ((string)(this["current_user"]));
+            }
+            set {
+                this["current_user"] = value;
+            }
+        }
     }
 }

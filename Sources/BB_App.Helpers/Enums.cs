@@ -3,9 +3,23 @@
 
 	public enum AccountType
 	{
-		Administrator = 0,
-		Analyst = 1,
-		Default = 2
+		Administrator,
+		Analyst,
+		Default
 	}
+
+    public enum DonationState
+    {
+        Cancelled,
+        Completed,
+        Waiting
+    }
+
+    public enum RequestState
+    {
+        Cancelled,
+        Completed,
+        Waiting
+    }
 
 }

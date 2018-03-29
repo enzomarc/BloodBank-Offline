@@ -42,7 +42,7 @@ namespace BB_App.Core.Views
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            LoadForm(((Main)ParentForm).frmContainer, new Dashboard());
+            LoadForm(((Main)ParentForm)?.frmContainer, new Dashboard());
         }
 
         private void Seekers_Load(object sender, EventArgs e)
@@ -55,13 +55,13 @@ namespace BB_App.Core.Views
             requestsDGV.Columns[0].ReadOnly = true;
             requestsDGV.Columns[1].ReadOnly = true;
             requestsDGV.Columns[2].ReadOnly = true;
-            requestsDGV.Columns[0].HeaderText = "Request ID";
-            requestsDGV.Columns[1].HeaderText = "User ID";
-            requestsDGV.Columns[2].HeaderText = "Hospital Reference";
-            requestsDGV.Columns[3].HeaderText = "Request Date";
-            requestsDGV.Columns[4].HeaderText = "Expiration Date";
-            requestsDGV.Columns[5].HeaderText = "Units";
-            requestsDGV.Columns[6].HeaderText = "Status";
+            requestsDGV.Columns[0].HeaderText = @"Request ID";
+            requestsDGV.Columns[1].HeaderText = @"User ID";
+            requestsDGV.Columns[2].HeaderText = @"Hospital Reference";
+            requestsDGV.Columns[3].HeaderText = @"Request Date";
+            requestsDGV.Columns[4].HeaderText = @"Expiration Date";
+            requestsDGV.Columns[5].HeaderText = @"Units";
+            requestsDGV.Columns[6].HeaderText = @"Status";
         }
 
         private void requestsDGV_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -82,20 +82,20 @@ namespace BB_App.Core.Views
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            LoadForm(((Main)ParentForm).frmContainer, new AddType());
+            LoadForm(((Main)ParentForm)?.frmContainer, new AddType());
         }
 
         private void requestsDGV_SelectionChanged(object sender, EventArgs e)
         {
             if (requestsDGV.SelectedRows.Count > 0)
                 bunifuFlatButton2.Text =
-                    "From " + User.GetUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
+                    @"From " + User.GetUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             var id = (int) requestsDGV.SelectedRows[0].Cells[0].Value;
-            LoadForm(((Main)ParentForm).frmContainer, new RegisteredUser(true, id));
+            LoadForm(((Main)ParentForm)?.frmContainer, new RegisteredUser(true, id));
         }
 
         #endregion
