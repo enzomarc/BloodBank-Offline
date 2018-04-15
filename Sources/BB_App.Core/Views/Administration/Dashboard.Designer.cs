@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.label1 = new System.Windows.Forms.Label();
             this.profileButton = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -38,9 +39,19 @@
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bloodBankWebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutBloodBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
+            this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -185,6 +196,9 @@
             this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.menuButton.TabIndex = 18;
             this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            this.menuButton.MouseEnter += new System.EventHandler(this.menuButton_MouseEnter);
+            this.menuButton.MouseLeave += new System.EventHandler(this.menuButton_MouseLeave);
             // 
             // closeButton
             // 
@@ -195,6 +209,80 @@
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.closeButton.TabIndex = 17;
             this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // Menu
+            // 
+            this.Menu.BackColor = System.Drawing.Color.White;
+            this.Menu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateDatabaseToolStripMenuItem,
+            this.updateSoftwareToolStripMenuItem,
+            this.preferencesToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.Menu.Name = "Menu";
+            this.Menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.Menu.Size = new System.Drawing.Size(171, 114);
+            // 
+            // updateDatabaseToolStripMenuItem
+            // 
+            this.updateDatabaseToolStripMenuItem.Name = "updateDatabaseToolStripMenuItem";
+            this.updateDatabaseToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.updateDatabaseToolStripMenuItem.Text = "Update Database";
+            // 
+            // updateSoftwareToolStripMenuItem
+            // 
+            this.updateSoftwareToolStripMenuItem.Name = "updateSoftwareToolStripMenuItem";
+            this.updateSoftwareToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.updateSoftwareToolStripMenuItem.Text = "Check for updates";
+            // 
+            // preferencesToolStripMenuItem
+            // 
+            this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.preferencesToolStripMenuItem.Text = "Preferences";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bloodBankWebsiteToolStripMenuItem,
+            this.reportIssueToolStripMenuItem,
+            this.aboutBloodBankToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // bloodBankWebsiteToolStripMenuItem
+            // 
+            this.bloodBankWebsiteToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.bloodBankWebsiteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.bloodBankWebsiteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bloodBankWebsiteToolStripMenuItem.Name = "bloodBankWebsiteToolStripMenuItem";
+            this.bloodBankWebsiteToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.bloodBankWebsiteToolStripMenuItem.Text = "BloodBank Website";
+            // 
+            // reportIssueToolStripMenuItem
+            // 
+            this.reportIssueToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.reportIssueToolStripMenuItem.Name = "reportIssueToolStripMenuItem";
+            this.reportIssueToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.reportIssueToolStripMenuItem.Text = "Report Issue";
+            // 
+            // aboutBloodBankToolStripMenuItem
+            // 
+            this.aboutBloodBankToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.aboutBloodBankToolStripMenuItem.Name = "aboutBloodBankToolStripMenuItem";
+            this.aboutBloodBankToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.aboutBloodBankToolStripMenuItem.Text = "About BloodBank";
             // 
             // Dashboard
             // 
@@ -215,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
+            this.Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -230,5 +319,14 @@
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.PictureBox closeButton;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ContextMenuStrip Menu;
+        private System.Windows.Forms.ToolStripMenuItem updateDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateSoftwareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bloodBankWebsiteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportIssueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutBloodBankToolStripMenuItem;
     }
 }

@@ -20,6 +20,9 @@
 				case "default":
 					type = AccountType.Default;
 					break;
+                case "administrator":
+                    type = AccountType.Administrator;
+                    break;
 				default:
 					type = AccountType.Default;
 					break;

@@ -6,6 +6,7 @@ using static BB_App.Core.Models.Consts;
 using static BB_App.Core.Properties.Settings;
 using static BB_App.Helpers.AccountsHelpers;
 using static BB_App.Helpers.StringHelpers;
+using System.Collections.Generic;
 
 namespace BB_App.Core.Models
 {
@@ -73,6 +74,93 @@ namespace BB_App.Core.Models
                     isAdmin = reader[0].ToString() == "admin";
 
 	        return isAdmin;
+	    }
+
+        /// <summary>
+        /// Get the list of all users available in the database
+        /// </summary>
+        /// <returns>A list containing all the usernames</returns>
+	    public static List<string> LoadUsers()
+        {
+            List<string> users = new List<string>();
+
+            if (!Connect(Server, DbUser, DbPassword, DbName)) return users;
+
+            const string query = "SELECT username FROM accounts ORDER BY username DESC";
+
+            var command = new MySqlCommand(query, Conn);
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+                users.Add(reader[0].ToString());
+
+            return users;
+        }
+
+        /// <summary>
+        /// Load informations about specified user
+        /// </summary>
+        /// <param name="username">Username of the user to load informations</param>
+        /// <returns>String containing informations about the user</returns>
+	    public static string LoadInfo(string username)
+	    {
+	        string infos = null;
+
+	        if (!Connect(Server, DbUser, DbPassword, DbName)) return infos;
+
+	        const string query = "SELECT username, account_type FROM accounts WHERE username = @user";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+	        command.Parameters.AddWithValue("@user", username);
+	        var reader = command.ExecuteReader();
+
+	        while (reader.Read())
+	        {
+	            infos = reader[0].ToString() + "|" + reader[1].ToString();
+	        }
+
+	        return infos;
+	    }
+
+        /// <summary>
+        /// Delete user with specified username
+        /// </summary>
+        /// <param name="username">Username of the user to delete</param>
+        /// <returns>True if the user was successfully deleted or false if not</returns>
+	    public static bool DeleteUser(string username)
+	    {
+	        var deleted = false;
+
+	        if (!Connect(Server, DbUser, DbPassword, DbName)) return deleted;
+
+	        const string query = "DELETE FROM accounts WHERE username = @user";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+	        command.Parameters.AddWithValue("@user", username);
+	        deleted = command.ExecuteNonQuery() > 0;
+
+	        return deleted;
+	    }
+
+	    public static bool CreateUser(string username, string password, string type)
+	    {
+	        var added = false;
+
+            if (!Connect(Server, DbUser, DbPassword, DbName)) return added;
+
+	        const string query = "INSERT INTO accounts (username, password, account_type) VALUES (@user, @pwd, @type)";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+	        command.Parameters.AddWithValue("@user", username);
+	        command.Parameters.AddWithValue("@pwd", password);
+	        command.Parameters.AddWithValue("@type", ParseAccountType(ParseAccountType(type)));
+
+	        added = command.ExecuteNonQuery() > 0;
+
+	        return added;
 	    }
 
     }

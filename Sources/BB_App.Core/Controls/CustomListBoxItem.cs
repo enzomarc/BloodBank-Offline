@@ -35,6 +35,8 @@ namespace BB_App.Core.Controls
 
         #region UI Methods
 
+        private void CustomListBoxItem_Load(object sender, EventArgs e) => textLabel.Location = checkBox.Visible ? textLabel.Location : new Point(textLabel.Location.X - 20, textLabel.Location.Y);
+
         private void checkBox_MouseEnter(object sender, EventArgs e) => checkBox.Image = Selected ? Checked_Checkbox_Hover : Unchecked_Checkbox_Hover;
 
         private void checkBox_MouseLeave(object sender, EventArgs e) => checkBox.Image = Selected ? Checked_Checkbox_Def : Unchecked_Checkbox_Def;
@@ -54,6 +56,12 @@ namespace BB_App.Core.Controls
             Selected = !Selected;
             checkBox.Image = Selected ? Checked_Checkbox_Def : Unchecked_Checkbox_Def;
         }
+
+        #endregion
+
+        #region Events
+
+
 
         #endregion
 

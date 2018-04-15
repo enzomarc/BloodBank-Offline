@@ -10,6 +10,7 @@ namespace BB_App.Core.Views.Bloods
 {
     public partial class BloodDashboard : UserControl
     {
+
         #region Fields
 
         private int counter = -1;

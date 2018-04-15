@@ -37,9 +37,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemsContainer.AutoScroll = true;
-            this.ItemsContainer.Location = new System.Drawing.Point(9, 9);
+            this.ItemsContainer.Location = new System.Drawing.Point(0, 9);
             this.ItemsContainer.Name = "ItemsContainer";
-            this.ItemsContainer.Size = new System.Drawing.Size(245, 383);
+            this.ItemsContainer.Size = new System.Drawing.Size(262, 383);
             this.ItemsContainer.TabIndex = 0;
             // 
             // CustomListBox
@@ -50,6 +50,7 @@
             this.Controls.Add(this.ItemsContainer);
             this.Name = "CustomListBox";
             this.Size = new System.Drawing.Size(262, 401);
+            this.Load += new System.EventHandler(this.CustomListBox_Load);
             this.ResumeLayout(false);
 
         }

@@ -23,11 +23,15 @@ namespace BB_App.Core.Controls
 
         [Category("Data")]
         [Description("List of items in the listbox control")]
-        private List<CustomListBoxItem> Items
+        public List<CustomListBoxItem> Items
         {
             get { return _items; }
-            set { _items = value; }
         }
+
+        [Category("Behavior")]
+        [Description("Determines whether the listbox can support items multiselection")]
+        [DefaultValue(false)]
+        public bool MultiSelect { get; set; }
 
         #endregion
 
@@ -35,11 +39,30 @@ namespace BB_App.Core.Controls
 
         public void Add(CustomListBoxItem item)
         {
+            item.checkBox.Visible = MultiSelect;
             item.Dock = DockStyle.Top;
             Items.Add(item);
             ItemsContainer.Controls.Add(item);
         }
 
+        public void Clear()
+        {
+            Items.Clear();
+            ItemsContainer.Controls.Clear();
+        }
+
         #endregion
+
+        private void CustomListBox_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            var text = ((Control) sender).Name.Contains("Label")
+                ? ((Control) sender).Text
+                : ((CustomListBoxItem) sender).textLabel.Text;
+        }
     }
 }
