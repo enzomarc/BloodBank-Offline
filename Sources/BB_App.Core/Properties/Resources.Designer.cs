@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace BB_App.Core.Properties {
-    using System; using static BB_App.Helpers.FormsHelpers;
+    using System;
     
     
     /// <summary>
@@ -57,6 +57,26 @@ namespace BB_App.Core.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Checked_Checkbox_Def {
+            get {
+                object obj = ResourceManager.GetObject("Checked_Checkbox_Def", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Checked_Checkbox_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Checked_Checkbox_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -166,6 +186,26 @@ namespace BB_App.Core.Properties {
         internal static System.Drawing.Bitmap Menu_Hover_16px {
             get {
                 object obj = ResourceManager.GetObject("Menu_Hover_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unchecked_Checkbox_Def {
+            get {
+                object obj = ResourceManager.GetObject("Unchecked Checkbox_Def", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unchecked_Checkbox_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Unchecked Checkbox_Hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

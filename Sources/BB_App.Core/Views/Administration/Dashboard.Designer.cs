@@ -168,7 +168,7 @@
             this.bunifuTileButton1.ImagePosition = 15;
             this.bunifuTileButton1.ImageZoom = 50;
             this.bunifuTileButton1.LabelPosition = 25;
-            this.bunifuTileButton1.LabelText = "BLOOD MANAGEMENT";
+            this.bunifuTileButton1.LabelText = "MANAGE USERS";
             this.bunifuTileButton1.Location = new System.Drawing.Point(266, 198);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuTileButton1.Name = "bunifuTileButton1";
