@@ -50,7 +50,6 @@
             this.Controls.Add(this.ItemsContainer);
             this.Name = "CustomListBox";
             this.Size = new System.Drawing.Size(262, 401);
-            this.Load += new System.EventHandler(this.CustomListBox_Load);
             this.ResumeLayout(false);
 
         }

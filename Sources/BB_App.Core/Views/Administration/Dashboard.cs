@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using BB_App.Core.Views.Administration;
+using static BB_App.Helpers.FormsHelpers;
 
 namespace BB_App.Core.Views.Administration
 {
@@ -14,6 +10,11 @@ namespace BB_App.Core.Views.Administration
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void bunifuTileButton1_Click(object sender, EventArgs e)
+        {
+            LoadForm(((Main)ParentForm).frmContainer, new UsersManagement());
         }
     }
 }

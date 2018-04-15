@@ -23,7 +23,7 @@ namespace BB_App.Core.Controls
 
         [Category("Data")]
         [Description("List of items in the listbox control")]
-        public List<CustomListBoxItem> Items
+        private List<CustomListBoxItem> Items
         {
             get { return _items; }
             set { _items = value; }
@@ -41,10 +41,5 @@ namespace BB_App.Core.Controls
         }
 
         #endregion
-
-        private void CustomListBox_Load(object sender, EventArgs e)
-        {
-            Add(new CustomListBoxItem("FF"));
-        }
     }
 }

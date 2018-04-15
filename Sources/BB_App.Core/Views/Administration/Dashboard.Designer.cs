@@ -174,6 +174,7 @@
             this.bunifuTileButton1.Name = "bunifuTileButton1";
             this.bunifuTileButton1.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton1.TabIndex = 19;
+            this.bunifuTileButton1.Click += new System.EventHandler(this.bunifuTileButton1_Click);
             // 
             // menuButton
             // 

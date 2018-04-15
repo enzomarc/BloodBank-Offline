@@ -49,10 +49,10 @@
             // 
             this.textLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textLabel.Font = new System.Drawing.Font("Roboto", 9.5F);
-            this.textLabel.Location = new System.Drawing.Point(34, 9);
+            this.textLabel.Font = new System.Drawing.Font("Roboto", 8F);
+            this.textLabel.Location = new System.Drawing.Point(30, 10);
             this.textLabel.Name = "textLabel";
-            this.textLabel.Size = new System.Drawing.Size(185, 23);
+            this.textLabel.Size = new System.Drawing.Size(190, 23);
             this.textLabel.TabIndex = 1;
             this.textLabel.Text = "John Doe";
             this.textLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -64,10 +64,10 @@
             this.checkBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox.Image = global::BB_App.Core.Properties.Resources.Unchecked_Checkbox_Def;
-            this.checkBox.Location = new System.Drawing.Point(7, 10);
+            this.checkBox.Location = new System.Drawing.Point(7, 12);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(20, 20);
-            this.checkBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.checkBox.Size = new System.Drawing.Size(16, 16);
+            this.checkBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.checkBox.TabIndex = 2;
             this.checkBox.TabStop = false;
             this.checkBox.Click += new System.EventHandler(this.checkBox_Click);

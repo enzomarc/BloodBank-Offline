@@ -33,7 +33,6 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.customListBox1 = new BB_App.Core.Controls.CustomListBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
@@ -80,20 +79,11 @@
             this.closeButton.TabIndex = 28;
             this.closeButton.TabStop = false;
             // 
-            // customListBox1
-            // 
-            this.customListBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.customListBox1.Location = new System.Drawing.Point(216, 182);
-            this.customListBox1.Name = "customListBox1";
-            this.customListBox1.Size = new System.Drawing.Size(210, 404);
-            this.customListBox1.TabIndex = 36;
-            // 
             // UsersManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.customListBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.menuButton);
@@ -112,6 +102,5 @@
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.PictureBox closeButton;
-        private Controls.CustomListBox customListBox1;
     }
 }
