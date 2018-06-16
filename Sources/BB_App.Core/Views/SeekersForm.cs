@@ -52,16 +52,20 @@ namespace BB_App.Core.Views
             requestsDGV.DataMember = "requests";
 
             // Change columns names
-            requestsDGV.Columns[0].ReadOnly = true;
-            requestsDGV.Columns[1].ReadOnly = true;
-            requestsDGV.Columns[2].ReadOnly = true;
             requestsDGV.Columns[0].HeaderText = @"Request ID";
-            requestsDGV.Columns[1].HeaderText = @"User ID";
+            requestsDGV.Columns[1].HeaderText = @"User";
             requestsDGV.Columns[2].HeaderText = @"Hospital Reference";
             requestsDGV.Columns[3].HeaderText = @"Request Date";
-            requestsDGV.Columns[4].HeaderText = @"Expiration Date";
+            requestsDGV.Columns[4].HeaderText = @"Received Date";
             requestsDGV.Columns[5].HeaderText = @"Units";
             requestsDGV.Columns[6].HeaderText = @"Status";
+
+            for (var i = 0; i < requestsDGV.Rows.Count; i++)
+            {
+                var id = (int)requestsDGV.Rows[i].Cells[1].Value;
+                requestsDGV.Rows[i].Cells[1].ValueType = User.GetUserName(id).GetType();
+                
+            }
         }
 
         private void requestsDGV_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -76,8 +80,17 @@ namespace BB_App.Core.Views
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            Requests.Adapter.Update(Requests.Datas, "requests");
-            MessageBox.Show(@"Database updated !", @"Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
+
+            if (Requests.ValidateRequest(id))
+            {
+                MessageBox.Show(@"Request validated !", @"Validation", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                requestsDGV.DataSource = Requests.LoadRequests();
+                requestsDGV.DataMember = "requests";
+            }
+            else
+                MessageBox.Show(@"Can't validate the request.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -87,17 +100,34 @@ namespace BB_App.Core.Views
 
         private void requestsDGV_SelectionChanged(object sender, EventArgs e)
         {
-            if (requestsDGV.SelectedRows.Count > 0)
-                bunifuFlatButton2.Text =
-                    @"From " + User.GetUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
-        }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            var id = (int) requestsDGV.SelectedRows[0].Cells[0].Value;
-            LoadForm(((Main)ParentForm)?.frmContainer, new RegisteredUser(true, id));
+            try
+            {
+                updateButton.Enabled = (string) requestsDGV.SelectedRows[0].Cells[6].Value == "waiting";
+                deleteButton.Enabled = requestsDGV.SelectedRows.Count > 0;
+            } catch { }
         }
 
         #endregion
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
+
+                if (Requests.DeleteRequest(id))
+                {
+                    MessageBox.Show(@"Request deleted !", @"Deletion", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    requestsDGV.DataSource = Requests.LoadRequests();
+                    requestsDGV.DataMember = "requests";
+                }
+                else
+                    MessageBox.Show(@"Can't delete the request.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch{ }
+
+        }
     }
 }

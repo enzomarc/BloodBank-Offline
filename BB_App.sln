@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{03AF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App.Helpers", "Sources\BB_App.Helpers\BB_App.Helpers.csproj", "{93409461-4571-4A38-B857-ACA1D030497D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_App.Sync", "BB_App.Sync\BB_App.Sync.csproj", "{01BA4FB5-D0F3-4866-AF96-E4294A98443A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,14 @@ Global
 		{93409461-4571-4A38-B857-ACA1D030497D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93409461-4571-4A38-B857-ACA1D030497D}.Release|x64.ActiveCfg = Release|x64
 		{93409461-4571-4A38-B857-ACA1D030497D}.Release|x64.Build.0 = Release|x64
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Debug|x64.Build.0 = Debug|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Release|x64.ActiveCfg = Release|Any CPU
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +50,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4DAF8474-17E5-48D1-99E9-D64025A230A9} = {03AF1D9D-1A4A-4497-A981-90C2E6C04C38}
 		{93409461-4571-4A38-B857-ACA1D030497D} = {03AF1D9D-1A4A-4497-A981-90C2E6C04C38}
+		{01BA4FB5-D0F3-4866-AF96-E4294A98443A} = {03AF1D9D-1A4A-4497-A981-90C2E6C04C38}
 	EndGlobalSection
 EndGlobal

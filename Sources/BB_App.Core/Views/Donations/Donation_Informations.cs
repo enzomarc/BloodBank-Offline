@@ -53,7 +53,7 @@ namespace BB_App.Core.Views.Donations
         private void FillWith(User user)
         {
             label10.Text = user.Name;
-            label9.Text = user.BloodGroup;
+            label9.Text = Commons.Format(user.BloodGroup);
             label8.Text = user.Gender;
             label7.Text = user.Phone.ToString();
             label2.Text = DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year;
@@ -71,18 +71,17 @@ namespace BB_App.Core.Views.Donations
                 var expDate = kryptonDateTimePicker1.Value.Year + "-" + kryptonDateTimePicker1.Value.Month + "-" +
                               kryptonDateTimePicker1.Value.Day;
                 const string query =
-                    "INSERT INTO donations(id_user, ref_hospital, donation_date, expiration_date, blood_group, unit, donation_status) VALUES (@id, @ref, @date, @exp_date, @blood, @qty, @status);";
+                    "INSERT INTO donations(id_user, ref_hospital, donation_date, expiration_date, unit, donation_status) VALUES (@id, @ref, @date, @exp_date, @qty, @status);";
                 var cmd = new MySqlCommand(query, SqlConnection.Conn);
                 cmd.Prepare();
 
                 cmd.Parameters.AddWithValue("@id", _currentUser.Id);
                 cmd.Parameters.AddWithValue("@ref", Settings.Default.reference);
                 cmd.Parameters.AddWithValue("@date", date);
-                cmd.Parameters.AddWithValue("@blood", label9.Text);
                 cmd.Parameters.AddWithValue("@qty", kryptonNumericUpDown1.Value);
                 cmd.Parameters.AddWithValue("@status", "pending");
 
-                cmd.Parameters.AddWithValue("@exp_date", radioButton1.Checked ? null : expDate);
+                cmd.Parameters.AddWithValue("@exp_date", radioButton1.Checked ? date : expDate);
 
                 try
                 {

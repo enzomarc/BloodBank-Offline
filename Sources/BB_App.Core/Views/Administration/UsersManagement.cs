@@ -166,6 +166,9 @@ namespace BB_App.Core.Views.Administration
                         MessageBoxIcon.Error);
                 }
             }
+            else
+                MessageBox.Show("Check all the account fields before clicking the add button.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

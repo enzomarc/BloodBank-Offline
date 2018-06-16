@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{4DAF8474-17E5-48D1-99E9-D64025A230A9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sources/BB_App.Core/Main.cs">
+    <Files>
+      <File FileName="Sources/BB_App.Core/Main.cs" Line="23" Column="6" />
+      <File FileName="Sources/BB_App.Core/Views/DonationsForm.cs" Line="20" Column="3" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BB_App" expanded="True">
+            <Node name="Sources" expanded="True">
+              <Node name="BB_App.Core" expanded="True">
+                <Node name="Controls" expanded="True" />
+                <Node name="Models" expanded="True" />
+                <Node name="Views" expanded="True">
+                  <Node name="SeekersForm.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Sources.BB__App.Core PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

@@ -14,7 +14,6 @@ namespace BB_App.Core.Views.Seekers
             InitializeComponent();
             _currentUser = user;
             FillWith(_currentUser);
-            kryptonDateTimePicker1.MinDate = DateTime.Today.AddDays(1);
         }
 
         #region Methods
@@ -52,7 +51,7 @@ namespace BB_App.Core.Views.Seekers
         private void FillWith(User user)
         {
             label10.Text = user.Name;
-            label9.Text = user.BloodGroup;
+            label9.Text = Commons.Format(user.BloodGroup);
             label8.Text = user.Gender;
             label7.Text = user.Phone.ToString();
             label2.Text = DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year;
@@ -61,7 +60,7 @@ namespace BB_App.Core.Views.Seekers
         private void AddRequest()
         {
             var request = new Requests.Request(_currentUser.Id, Settings.Default.reference, DateTime.Today,
-                kryptonDateTimePicker1.Value, Convert.ToInt32(kryptonNumericUpDown1.Value), "waiting");
+                checkBox1.Checked ? DateTime.Today : new DateTime(1, 1, 1), Convert.ToInt32(kryptonNumericUpDown1.Value), "waiting");
 
             if (Requests.SaveRequest(request))
                 MessageBox.Show(@"Request added successfully.", @"Success", MessageBoxButtons.OK,
@@ -75,7 +74,11 @@ namespace BB_App.Core.Views.Seekers
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            AddRequest();
+            if (!Requests.PendingRequest(_currentUser.Id))
+                AddRequest();
+            else
+                MessageBox.Show("Can't add the request because the specified user has pending request.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         #endregion

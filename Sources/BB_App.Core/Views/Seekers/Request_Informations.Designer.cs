@@ -34,7 +34,6 @@
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonNumericUpDown1 = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,10 +45,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -101,22 +100,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.logo.TabIndex = 28;
             this.logo.TabStop = false;
-            // 
-            // kryptonDateTimePicker1
-            // 
-            this.kryptonDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(363, 411);
-            this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(261, 40);
-            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonDateTimePicker1.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
-            this.kryptonDateTimePicker1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDateTimePicker1.StateCommon.Border.Rounding = 30;
-            this.kryptonDateTimePicker1.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F);
-            this.kryptonDateTimePicker1.TabIndex = 42;
             // 
             // kryptonNumericUpDown1
             // 
@@ -271,15 +254,6 @@
             this.label11.TabIndex = 61;
             this.label11.Text = "Number of units";
             // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.label12.Location = new System.Drawing.Point(185, 427);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(169, 20);
-            this.label12.TabIndex = 62;
-            this.label12.Text = "Expiration Date ";
-            // 
             // label2
             // 
             this.label2.AutoEllipsis = true;
@@ -306,14 +280,25 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.checkBox1.Location = new System.Drawing.Point(345, 435);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(122, 18);
+            this.checkBox1.TabIndex = 65;
+            this.checkBox1.Text = "Request validated";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // RequestInformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -325,7 +310,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.kryptonNumericUpDown1);
-            this.Controls.Add(this.kryptonDateTimePicker1);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.label1);
@@ -336,6 +320,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -345,7 +330,6 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
         private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown kryptonNumericUpDown1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.Label label3;
@@ -357,9 +341,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

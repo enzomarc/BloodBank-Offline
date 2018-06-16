@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonationsForm));
             this.donationsDGV = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +40,8 @@
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.logo = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.updateButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.fromLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.donationsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
@@ -50,9 +51,9 @@
             // donationsDGV
             // 
             this.donationsDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donationsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.donationsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.donationsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.donationsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.donationsDGV.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Sheet;
@@ -63,10 +64,11 @@
             this.donationsDGV.Location = new System.Drawing.Point(16, 146);
             this.donationsDGV.Name = "donationsDGV";
             this.donationsDGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.donationsDGV.ReadOnly = true;
             this.donationsDGV.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donationsDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.donationsDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.donationsDGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.donationsDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.donationsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.donationsDGV.ShowCellErrors = false;
             this.donationsDGV.ShowCellToolTips = false;
@@ -85,7 +87,7 @@
             this.donationsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
             this.donationsDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.donationsDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.donationsDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Roboto Medium", 8.75F);
+            this.donationsDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
             this.donationsDGV.TabIndex = 0;
             this.donationsDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.donationsDGV_CellEndEdit);
             this.donationsDGV.SelectionChanged += new System.EventHandler(this.donationsDGV_SelectionChanged);
@@ -93,7 +95,7 @@
             // label1
             // 
             this.label1.AutoEllipsis = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(328, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 32);
@@ -140,7 +142,7 @@
             this.addButton.Text = "Add Donation";
             this.addButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.addButton.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
+            this.addButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.addButton.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // menuButton
@@ -185,7 +187,7 @@
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
-            this.bunifuFlatButton1.ButtonText = "Update Database";
+            this.bunifuFlatButton1.ButtonText = "Delete Donation";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
@@ -208,55 +210,66 @@
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(150, 48);
             this.bunifuFlatButton1.TabIndex = 21;
-            this.bunifuFlatButton1.Text = "Update Database";
+            this.bunifuFlatButton1.Text = "Delete Donation";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // bunifuFlatButton2
+            // updateButton
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton2.AutoSize = true;
-            this.bunifuFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 7;
-            this.bunifuFlatButton2.ButtonText = "From ";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 5;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = false;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 40D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(16, 573);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(343, 48);
-            this.bunifuFlatButton2.TabIndex = 22;
-            this.bunifuFlatButton2.Text = "From ";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            this.updateButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.updateButton.BorderRadius = 7;
+            this.updateButton.ButtonText = "Validate Donation";
+            this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Enabled = false;
+            this.updateButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.updateButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("updateButton.Iconimage")));
+            this.updateButton.Iconimage_right = null;
+            this.updateButton.Iconimage_right_Selected = null;
+            this.updateButton.Iconimage_Selected = null;
+            this.updateButton.IconMarginLeft = 5;
+            this.updateButton.IconMarginRight = 0;
+            this.updateButton.IconRightVisible = true;
+            this.updateButton.IconRightZoom = 0D;
+            this.updateButton.IconVisible = true;
+            this.updateButton.IconZoom = 40D;
+            this.updateButton.IsTab = false;
+            this.updateButton.Location = new System.Drawing.Point(354, 573);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.updateButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.updateButton.selected = false;
+            this.updateButton.Size = new System.Drawing.Size(143, 48);
+            this.updateButton.TabIndex = 30;
+            this.updateButton.Text = "Validate Donation";
+            this.updateButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.updateButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.updateButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // fromLabel
+            // 
+            this.fromLabel.AutoEllipsis = true;
+            this.fromLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.fromLabel.Location = new System.Drawing.Point(15, 591);
+            this.fromLabel.Name = "fromLabel";
+            this.fromLabel.Size = new System.Drawing.Size(240, 16);
+            this.fromLabel.TabIndex = 32;
+            this.fromLabel.Text = "From";
             // 
             // DonationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.bunifuFlatButton2);
+            this.Controls.Add(this.fromLabel);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.menuButton);
@@ -272,7 +285,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -286,6 +298,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton addButton;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton updateButton;
+        private System.Windows.Forms.Label fromLabel;
     }
 }

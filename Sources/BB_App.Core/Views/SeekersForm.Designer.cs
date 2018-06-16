@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeekersForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.updateButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuButton = new System.Windows.Forms.PictureBox();
@@ -41,48 +40,13 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.requestsDGV = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.fromLabel = new System.Windows.Forms.Label();
+            this.deleteButton = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestsDGV)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuFlatButton2.AutoSize = true;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 7;
-            this.bunifuFlatButton2.ButtonText = "From ";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 5;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = false;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 40D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(33, 572);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(227, 48);
-            this.bunifuFlatButton2.TabIndex = 30;
-            this.bunifuFlatButton2.Text = "From ";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // updateButton
             // 
@@ -91,7 +55,7 @@
             this.updateButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.updateButton.BorderRadius = 7;
-            this.updateButton.ButtonText = "Save change(s)";
+            this.updateButton.ButtonText = "Validate Request";
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.Enabled = false;
@@ -107,15 +71,15 @@
             this.updateButton.IconVisible = true;
             this.updateButton.IconZoom = 40D;
             this.updateButton.IsTab = false;
-            this.updateButton.Location = new System.Drawing.Point(520, 572);
+            this.updateButton.Location = new System.Drawing.Point(394, 572);
             this.updateButton.Name = "updateButton";
             this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.updateButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.selected = false;
-            this.updateButton.Size = new System.Drawing.Size(137, 48);
+            this.updateButton.Size = new System.Drawing.Size(143, 48);
             this.updateButton.TabIndex = 29;
-            this.updateButton.Text = "Save change(s)";
+            this.updateButton.Text = "Validate Request";
             this.updateButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.updateButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
@@ -210,9 +174,9 @@
             // requestsDGV
             // 
             this.requestsDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.requestsDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -224,11 +188,13 @@
             this.requestsDGV.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
             this.requestsDGV.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
             this.requestsDGV.Location = new System.Drawing.Point(16, 157);
+            this.requestsDGV.MultiSelect = false;
             this.requestsDGV.Name = "requestsDGV";
             this.requestsDGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.requestsDGV.ReadOnly = true;
             this.requestsDGV.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestsDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestsDGV.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.requestsDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.requestsDGV.ShowCellErrors = false;
@@ -261,12 +227,60 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // fromLabel
+            // 
+            this.fromLabel.AutoEllipsis = true;
+            this.fromLabel.Font = new System.Drawing.Font("Roboto Medium", 9F);
+            this.fromLabel.Location = new System.Drawing.Point(13, 589);
+            this.fromLabel.Name = "fromLabel";
+            this.fromLabel.Size = new System.Drawing.Size(325, 16);
+            this.fromLabel.TabIndex = 31;
+            this.fromLabel.Text = "From";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteButton.BorderRadius = 7;
+            this.deleteButton.ButtonText = "Delete Request";
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Enabled = false;
+            this.deleteButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.deleteButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("deleteButton.Iconimage")));
+            this.deleteButton.Iconimage_right = null;
+            this.deleteButton.Iconimage_right_Selected = null;
+            this.deleteButton.Iconimage_Selected = null;
+            this.deleteButton.IconMarginLeft = 5;
+            this.deleteButton.IconMarginRight = 0;
+            this.deleteButton.IconRightVisible = true;
+            this.deleteButton.IconRightZoom = 0D;
+            this.deleteButton.IconVisible = true;
+            this.deleteButton.IconZoom = 40D;
+            this.deleteButton.IsTab = false;
+            this.deleteButton.Location = new System.Drawing.Point(543, 572);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.deleteButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.deleteButton.selected = false;
+            this.deleteButton.Size = new System.Drawing.Size(132, 48);
+            this.deleteButton.TabIndex = 32;
+            this.deleteButton.Text = "Delete Request";
+            this.deleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.deleteButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.deleteButton.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // SeekersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.bunifuFlatButton2);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.fromLabel);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.menuButton);
@@ -282,13 +296,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestsDGV)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton updateButton;
         private Bunifu.Framework.UI.BunifuFlatButton addButton;
         private System.Windows.Forms.PictureBox menuButton;
@@ -297,5 +308,7 @@
         private System.Windows.Forms.PictureBox logo;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView requestsDGV;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label fromLabel;
+        private Bunifu.Framework.UI.BunifuFlatButton deleteButton;
     }
 }

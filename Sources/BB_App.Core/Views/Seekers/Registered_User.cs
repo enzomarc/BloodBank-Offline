@@ -69,7 +69,7 @@ namespace BB_App.Core.Views.Seekers
 
         public void UpdateRequest(int requestId)
         {
-            Requests.ChangeUser(requestId, Convert.ToInt32(usersDGV.SelectedRows[0].Cells[0].Value));
+            // Requests.ChangeUser(requestId, Convert.ToInt32(usersDGV.SelectedRows[0].Cells[0].Value));
         }
 
         public void LoadUsers()

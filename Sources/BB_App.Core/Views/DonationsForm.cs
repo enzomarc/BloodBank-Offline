@@ -61,7 +61,7 @@ namespace BB_App.Core.Views
                 Settings.Default.db_name))
             {
                 var query =
-                    "SELECT id_donation, id_user, donation_date, expiration_date, unit FROM donations WHERE ref_hospital = '" +
+                    "SELECT id_donation, id_user, donation_date, expiration_date, unit, donation_status FROM donations WHERE ref_hospital = '" +
                     Settings.Default.reference + "';";
                 _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
@@ -69,13 +69,12 @@ namespace BB_App.Core.Views
                 _data.Fill(_ds, "donations");
                 donationsDGV.DataSource = _ds;
                 donationsDGV.DataMember = "donations";
-                donationsDGV.Columns[0].ReadOnly = true;
-                donationsDGV.Columns[1].ReadOnly = true;
                 donationsDGV.Columns[0].HeaderText = @"Donation ID";
                 donationsDGV.Columns[1].HeaderText = @"User ID";
                 donationsDGV.Columns[2].HeaderText = @"Donation Date";
                 donationsDGV.Columns[3].HeaderText = @"Expiration Date";
                 donationsDGV.Columns[4].HeaderText = @"Units";
+                donationsDGV.Columns[5].HeaderText = @"Status";
             }
             else
             {
@@ -90,7 +89,20 @@ namespace BB_App.Core.Views
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            _data.Update(_ds, "donations");
+            try
+            {
+                var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
+
+                if (Requests.DeleteDonation(id))
+                {
+                    MessageBox.Show(@"Donation deleted !", @"Deletion", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    LoadDonations();
+                }
+                else
+                    MessageBox.Show(@"Can't delete the donation.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch { }
         }
 
         private void donationsDGV_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -100,17 +112,32 @@ namespace BB_App.Core.Views
 
         private void donationsDGV_SelectionChanged(object sender, EventArgs e)
         {
-            if (donationsDGV.SelectedRows.Count > 0)
-                bunifuFlatButton2.Text =
-                    @"From " + User.GetUserName(Convert.ToInt32(donationsDGV.SelectedRows[0].Cells[1].Value));
-        }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            var id = (int) donationsDGV.SelectedRows[0].Cells[0].Value;
-            LoadForm(((Main)ParentForm)?.frmContainer, new RegisteredUser(true, id));
+            try
+            {
+                if (donationsDGV.SelectedRows.Count > 0)
+                {
+                    fromLabel.Text =
+                        @"From " + User.GetUserName(Convert.ToInt32(donationsDGV.SelectedRows[0].Cells[1].Value));
+                    updateButton.Enabled = (string)donationsDGV.SelectedRows[0].Cells[5].Value == "waiting";
+                }
+            } catch { }
+            
         }
 
         #endregion
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
+
+            if (Requests.ValidateDonation(id))
+            {
+                MessageBox.Show(@"Donation validated !", @"Validation", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                LoadDonations();
+            }
+            else
+                MessageBox.Show(@"Can't validate the donation.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -50,9 +50,9 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usersListBox = new BB_App.Core.Controls.CustomListBox();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.usersListBox = new BB_App.Core.Controls.CustomListBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
@@ -96,7 +96,7 @@
             // label2
             // 
             this.label2.AutoEllipsis = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label2.Font = new System.Drawing.Font("Roboto Medium", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(60, 168);
             this.label2.Name = "label2";
@@ -126,7 +126,7 @@
             // label3
             // 
             this.label3.AutoEllipsis = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label3.Font = new System.Drawing.Font("Roboto Medium", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(416, 168);
             this.label3.Name = "label3";
@@ -241,7 +241,7 @@
             // label4
             // 
             this.label4.AutoEllipsis = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label4.Font = new System.Drawing.Font("Roboto Medium", 12F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(416, 399);
             this.label4.Name = "label4";
@@ -337,14 +337,6 @@
             this.administratorToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.administratorToolStripMenuItem.Text = "Administrator";
             // 
-            // usersListBox
-            // 
-            this.usersListBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.usersListBox.Location = new System.Drawing.Point(64, 204);
-            this.usersListBox.Name = "usersListBox";
-            this.usersListBox.Size = new System.Drawing.Size(264, 395);
-            this.usersListBox.TabIndex = 36;
-            // 
             // menuButton
             // 
             this.menuButton.Image = global::BB_App.Core.Properties.Resources.Left_15px;
@@ -364,6 +356,14 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // usersListBox
+            // 
+            this.usersListBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.usersListBox.Location = new System.Drawing.Point(64, 204);
+            this.usersListBox.Name = "usersListBox";
+            this.usersListBox.Size = new System.Drawing.Size(264, 395);
+            this.usersListBox.TabIndex = 36;
             // 
             // UsersManagement
             // 

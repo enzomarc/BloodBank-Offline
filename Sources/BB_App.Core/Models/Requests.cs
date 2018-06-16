@@ -60,7 +60,7 @@ namespace BB_App.Core.Models
                         RequestUser = Convert.ToInt32(reader[1]);
                         HospitalReference = Convert.ToString(reader[2]);
                         RequestDate = Convert.ToDateTime(reader[3]);
-                        ExpirationDate = Convert.ToDateTime(reader[4]);
+                        ReceivedDate = Convert.ToDateTime(reader[4]);
                         Unit = Convert.ToInt32(reader[5]);
                         RequestStatus = Convert.ToString(reader[6]);
                     }
@@ -83,16 +83,16 @@ namespace BB_App.Core.Models
             /// <param name="reqUser">id of the user who is making request</param>
             /// <param name="hospital">hospital reference from where the request is maded</param>
             /// <param name="reqDate">the day where the request was made</param>
-            /// <param name="expDate">the day the request will expires</param>
+            /// <param name="receivedDate">the day the request will expires</param>
             /// <param name="qty">the number units of blood the user needs</param>
             /// <param name="status">status message of the request (waiting, cancelled, done)</param>
-            public Request(int reqUser, string hospital, DateTime reqDate, DateTime expDate, int qty, string status)
+            public Request(int reqUser, string hospital, DateTime reqDate, DateTime receivedDate, int qty, string status)
             {
                 RequestUser = reqUser;
                 Unit = qty;
                 HospitalReference = hospital;
                 RequestDate = reqDate;
-                ExpirationDate = expDate;
+                ReceivedDate = receivedDate;
                 RequestStatus = status;
             }
 
@@ -143,7 +143,7 @@ namespace BB_App.Core.Models
             /// <summary>
             ///     Request expiration date.
             /// </summary>
-            public DateTime ExpirationDate { get; set; }
+            public DateTime ReceivedDate { get; set; }
 
             #endregion Properties
         }
@@ -182,17 +182,16 @@ namespace BB_App.Core.Models
         /// <returns>Boolean that represent the insert result.</returns>
         public static bool SaveRequest(Request req)
         {
-            // Variaable who checks if the request was saved
             bool saved;
 
             if (!Connect(Settings.Default.server, Settings.Default.db_user,
                 Settings.Default.db_pwd, Settings.Default.db_name)) return false;
 
             var date = req.RequestDate.Year + "-" + req.RequestDate.Month + "-" + req.RequestDate.Day;
-            var expDate = req.ExpirationDate.Year + "-" + req.ExpirationDate.Month + "-" + req.ExpirationDate.Day;
+            var receivedDate = req.ReceivedDate.Year == 1 ? null : req.ReceivedDate.Year + "-" + req.ReceivedDate.Month + "-" + req.ReceivedDate.Day;
 
             var query =
-                "INSERT INTO requests(id_user, ref_hospital, request_date, limit_date, unit, request_status) VALUES (@id, @ref, @date, @exp_date, @qty, @status);";
+                "INSERT INTO requests(id_user, ref_hospital, request_date, received_date, unit, request_status) VALUES (@id, @ref, @date, @exp_date, @qty, @status);";
 
             var cmd = new MySqlCommand(query, Conn);
             cmd.Prepare();
@@ -201,13 +200,12 @@ namespace BB_App.Core.Models
             cmd.Parameters.AddWithValue("@ref", Settings.Default.reference);
             cmd.Parameters.AddWithValue("@date", date);
             cmd.Parameters.AddWithValue("@qty", req.Unit);
-            cmd.Parameters.AddWithValue("@status", "waiting");
-            cmd.Parameters.AddWithValue("@exp_date", expDate);
+            cmd.Parameters.AddWithValue("@status", req.ReceivedDate.Year == 1 ? "waiting" : "completed");
+            cmd.Parameters.AddWithValue("@exp_date", receivedDate);
 
             try
             {
-                cmd.ExecuteNonQuery();
-                saved = true;
+                saved = cmd.ExecuteNonQuery() > 0;
             }
             catch
             {
@@ -218,23 +216,106 @@ namespace BB_App.Core.Models
         }
 
         /// <summary>
-        ///     Change the user who makes the request.
+        /// Validate the request with specified id
         /// </summary>
-        /// <param name="request">id of the request to changes the user</param>
-        /// <param name="id">id of the new user</param>
-        /// <returns>Boolean that represents the update result.</returns>
-        public static bool ChangeUser(int request, int id)
+        /// <param name="request">Id of the request to validate</param>
+        /// <returns>Boolean that represents the validation result.</returns>
+        public static bool ValidateRequest(int request)
         {
             if (!Connect(Settings.Default.server, Settings.Default.db_user,
                 Settings.Default.db_pwd, Settings.Default.db_name)) return false;
 
-            var query = "UPDATE requests SET id_user = " + id + " WHERE id_request = " + request + ";";
+            var date = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+            var query = "UPDATE requests SET request_status = 'completed', received_date = @date WHERE id_request = @id;";
 
             var cmd = new MySqlCommand(query, Conn);
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@id", request);
 
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery() > 0;
+        }
 
-            return true;
+        /// <summary>
+        /// Validate the donation with specified id
+        /// </summary>
+        /// <param name="donation">Id of the donation to validate</param>
+        /// <returns>Boolean that represents the validation result.</returns>
+        public static bool ValidateDonation(int donation)
+        {
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
+                Settings.Default.db_pwd, Settings.Default.db_name)) return false;
+
+            // var date = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
+            var query = "UPDATE donations SET donation_status = 'completed' WHERE id_donation = @id;";
+
+            var cmd = new MySqlCommand(query, Conn);
+            cmd.Prepare();
+            // cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@id", donation);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        /// <summary>
+        /// Determines whether the user with specified id has pending request
+        /// </summary>
+        /// <param name="id">Id of the user to check</param>
+        /// <returns>True if the user has pending request</returns>
+        public static bool PendingRequest(int id)
+        {
+            var pending = false;
+
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
+                Settings.Default.db_pwd, Settings.Default.db_name)) return pending;
+
+            const string query = "SELECT request_status FROM requests WHERE id_user = @id";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+            command.Parameters.AddWithValue("@id", id);
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (reader[0].ToString() == "waiting")
+                    pending = true;
+            }
+
+            return pending;
+        }
+
+        /// <summary>
+        /// Delete request with the specified id
+        /// </summary>
+        /// <param name="id">Id of the request to delete</param>
+        /// <returns>True if the request was deleted</returns>
+        public static bool DeleteRequest(int id)
+        {
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
+                Settings.Default.db_pwd, Settings.Default.db_name)) return false;
+
+            const string query = "DELETE FROM requests WHERE id_request = @id";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+            command.Parameters.AddWithValue("@id", id);
+
+            return command.ExecuteNonQuery() > 0;
+        }
+
+        public static bool DeleteDonation(int id)
+        {
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
+                Settings.Default.db_pwd, Settings.Default.db_name)) return false;
+
+            const string query = "DELETE FROM donations WHERE id_donation = @id";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+            command.Parameters.AddWithValue("@id", id);
+
+            return command.ExecuteNonQuery() > 0;
         }
 
         #endregion Methods

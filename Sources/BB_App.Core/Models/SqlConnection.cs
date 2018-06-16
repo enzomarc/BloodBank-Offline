@@ -22,7 +22,7 @@ namespace BB_App.Core.Models
                 else
                 {
                     Conn.ConnectionString = $"server={server}; user={user}; password={password}; database={database}";
-                    Conn.Open();
+                    Conn.Open();    
                     connected = Conn.Ping();
                 }
             }
