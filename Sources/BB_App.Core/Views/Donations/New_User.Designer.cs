@@ -69,6 +69,7 @@
             this.bamendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nkongsambaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -317,22 +318,23 @@
             this.contextMenuStrip2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.otherToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(113, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 92);
             this.contextMenuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip2_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-            this.toolStripMenuItem1.Text = "Male";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Text = "Man";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
-            this.toolStripMenuItem3.Text = "Female";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Text = "Woman";
             // 
             // bunifuFlatButton1
             // 
@@ -404,68 +406,68 @@
             this.bamendaToolStripMenuItem,
             this.nkongsambaToolStripMenuItem});
             this.contextMenuStrip3.Name = "contextMenuStrip1";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(146, 224);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(130, 224);
             this.contextMenuStrip3.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip3_ItemClicked);
             // 
             // yaoundéToolStripMenuItem
             // 
             this.yaoundéToolStripMenuItem.Name = "yaoundéToolStripMenuItem";
-            this.yaoundéToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.yaoundéToolStripMenuItem.Text = "Yaoundé";
+            this.yaoundéToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yaoundéToolStripMenuItem.Text = "Adamawa";
             // 
             // doualaToolStripMenuItem
             // 
             this.doualaToolStripMenuItem.Name = "doualaToolStripMenuItem";
-            this.doualaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.doualaToolStripMenuItem.Text = "Douala";
+            this.doualaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.doualaToolStripMenuItem.Text = "Central";
             // 
             // bafoussamToolStripMenuItem
             // 
             this.bafoussamToolStripMenuItem.Name = "bafoussamToolStripMenuItem";
-            this.bafoussamToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.bafoussamToolStripMenuItem.Text = "Bafoussam";
+            this.bafoussamToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bafoussamToolStripMenuItem.Text = "East";
             // 
             // marouaToolStripMenuItem
             // 
             this.marouaToolStripMenuItem.Name = "marouaToolStripMenuItem";
-            this.marouaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.marouaToolStripMenuItem.Text = "Maroua";
+            this.marouaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.marouaToolStripMenuItem.Text = "Far North";
             // 
             // garouaToolStripMenuItem
             // 
             this.garouaToolStripMenuItem.Name = "garouaToolStripMenuItem";
-            this.garouaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.garouaToolStripMenuItem.Text = "Garoua";
+            this.garouaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.garouaToolStripMenuItem.Text = "Littoral";
             // 
             // ngaoundéréToolStripMenuItem
             // 
             this.ngaoundéréToolStripMenuItem.Name = "ngaoundéréToolStripMenuItem";
-            this.ngaoundéréToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.ngaoundéréToolStripMenuItem.Text = "Ngaoundéré";
+            this.ngaoundéréToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ngaoundéréToolStripMenuItem.Text = "North";
             // 
             // kribiToolStripMenuItem
             // 
             this.kribiToolStripMenuItem.Name = "kribiToolStripMenuItem";
-            this.kribiToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.kribiToolStripMenuItem.Text = "Kribi";
+            this.kribiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kribiToolStripMenuItem.Text = "Northwest";
             // 
             // bueaToolStripMenuItem
             // 
             this.bueaToolStripMenuItem.Name = "bueaToolStripMenuItem";
-            this.bueaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.bueaToolStripMenuItem.Text = "Buea";
+            this.bueaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bueaToolStripMenuItem.Text = "South";
             // 
             // bamendaToolStripMenuItem
             // 
             this.bamendaToolStripMenuItem.Name = "bamendaToolStripMenuItem";
-            this.bamendaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.bamendaToolStripMenuItem.Text = "Bamenda";
+            this.bamendaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bamendaToolStripMenuItem.Text = "Southwest";
             // 
             // nkongsambaToolStripMenuItem
             // 
             this.nkongsambaToolStripMenuItem.Name = "nkongsambaToolStripMenuItem";
-            this.nkongsambaToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.nkongsambaToolStripMenuItem.Text = "Nkongsamba";
+            this.nkongsambaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nkongsambaToolStripMenuItem.Text = "West";
             // 
             // bunifuDragControl1
             // 
@@ -474,7 +476,13 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // New_User
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.otherToolStripMenuItem.Text = "Other";
+            // 
+            // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -548,5 +556,6 @@
         private System.Windows.Forms.ToolStripMenuItem bamendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nkongsambaToolStripMenuItem;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
     }
 }

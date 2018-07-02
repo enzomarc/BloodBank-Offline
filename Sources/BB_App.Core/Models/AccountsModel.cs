@@ -76,6 +76,26 @@ namespace BB_App.Core.Models
 	        return isAdmin;
 	    }
 
+        public static int UserId(string username)
+        {
+            var id = 0;
+
+            if (!Connect(Server, DbUser, DbPassword, DbName)) return id;
+
+            const string query = "SELECT id FROM accounts WHERE username = @user";
+
+            var command = new MySqlCommand(query, Conn);
+            command.Prepare();
+            command.Parameters.AddWithValue("@user", username.ToLower());
+            var reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+                while (reader.Read())
+                    id = reader.GetInt32(0);
+
+            return id;
+        }
+
         /// <summary>
         /// Get the list of all users available in the database
         /// </summary>

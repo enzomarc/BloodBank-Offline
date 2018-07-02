@@ -61,9 +61,12 @@ namespace BB_App.Core.Views
 	        {
 				SetAccountType(ParseAccountType(accountType));
 	            SetCurrentUser(username.Text);
-                LoadForm(((Main) ParentForm)?.frmContainer, new Dashboard());
+                if (accountType == "analyst")
+                    LoadForm(((Main) ParentForm)?.frmContainer, new Analyst.Dashboard());
+                else
+                    LoadForm(((Main)ParentForm)?.frmContainer, new Dashboard());
             }
-	        else
+            else
 		        password.Clear();
         }
 

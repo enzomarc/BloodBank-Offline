@@ -23,7 +23,7 @@ namespace BB_App.Core.Models
                 Phone = (int) rdr[2];
                 Password = rdr[3].ToString();
                 BloodGroup = rdr[4].ToString();
-                BirthDate = (DateTime) rdr[5];
+                BirthDate = rdr[5].ToString();
                 Gender = rdr[6].ToString();
                 City = rdr[7].ToString();
             }
@@ -70,7 +70,7 @@ namespace BB_App.Core.Models
 
         public string City { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
 
         #endregion
     }

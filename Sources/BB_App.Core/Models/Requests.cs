@@ -237,21 +237,59 @@ namespace BB_App.Core.Models
         }
 
         /// <summary>
-        /// Validate the donation with specified id
+        /// Send the donation with specified id to verification
         /// </summary>
-        /// <param name="donation">Id of the donation to validate</param>
-        /// <returns>Boolean that represents the validation result.</returns>
-        public static bool ValidateDonation(int donation)
+        /// <param name="donation">Id of the donation to send to the analyst</param>
+        /// <returns>Boolean that represents the verification result.</returns>
+        public static bool SendToVerif(int donation)
         {
             if (!Connect(Settings.Default.server, Settings.Default.db_user,
                 Settings.Default.db_pwd, Settings.Default.db_name)) return false;
 
-            // var date = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day;
-            var query = "UPDATE donations SET donation_status = 'completed' WHERE id_donation = @id;";
+            var query = "UPDATE donations SET donation_status = 'verificating' WHERE id_donation = @id;";
 
             var cmd = new MySqlCommand(query, Conn);
             cmd.Prepare();
-            // cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@id", donation);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        /// <summary>
+        /// Validate the donation with specified id
+        /// </summary>
+        /// <param name="donation">Id of the donation to validate</param>
+        /// <returns>Boolean that represents the validation result.</returns>
+        public static bool ValidateDonation(int donation, int by)
+        {
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
+                Settings.Default.db_pwd, Settings.Default.db_name)) return false;
+
+            var query = "UPDATE donations SET donation_status = 'completed', checked_by = @uid WHERE id_donation = @id;";
+
+            var cmd = new MySqlCommand(query, Conn);
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@uid", by);
+            cmd.Parameters.AddWithValue("@id", donation);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        /// <summary>
+        /// Unvalidate the donation with specified id
+        /// </summary>
+        /// <param name="donation">Id of the donation to unvalidate</param>
+        /// <returns>Boolean that represents the unvalidation result.</returns>
+        public static bool UnvalidateDonation(int donation, int by)
+        {
+            if (!Connect(Settings.Default.server, Settings.Default.db_user,
+                Settings.Default.db_pwd, Settings.Default.db_name)) return false;
+
+            var query = "UPDATE donations SET donation_status = 'cancelled', checked_by = @uid WHERE id_donation = @id;";
+
+            var cmd = new MySqlCommand(query, Conn);
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@uid", by);
             cmd.Parameters.AddWithValue("@id", donation);
 
             return cmd.ExecuteNonQuery() > 0;

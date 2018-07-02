@@ -1,4 +1,4 @@
-﻿namespace BB_App.Core.Views
+﻿namespace BB_App.Core.Views.Analyst
 {
     partial class DonationsForm
     {
@@ -35,7 +35,6 @@
             this.donationsDGV = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.addButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.logo = new System.Windows.Forms.PictureBox();
@@ -96,11 +95,11 @@
             // 
             this.label1.AutoEllipsis = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(328, 79);
+            this.label1.Location = new System.Drawing.Point(361, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 32);
+            this.label1.Size = new System.Drawing.Size(135, 32);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Donations Management";
+            this.label1.Text = "Donations List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuDragControl1
@@ -109,41 +108,6 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
-            // 
-            // addButton
-            // 
-            this.addButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.addButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addButton.BorderRadius = 7;
-            this.addButton.ButtonText = "Add Donation";
-            this.addButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addButton.DisabledColor = System.Drawing.Color.Gray;
-            this.addButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.addButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("addButton.Iconimage")));
-            this.addButton.Iconimage_right = null;
-            this.addButton.Iconimage_right_Selected = null;
-            this.addButton.Iconimage_Selected = null;
-            this.addButton.IconMarginLeft = 5;
-            this.addButton.IconMarginRight = 0;
-            this.addButton.IconRightVisible = true;
-            this.addButton.IconRightZoom = 0D;
-            this.addButton.IconVisible = true;
-            this.addButton.IconZoom = 40D;
-            this.addButton.IsTab = false;
-            this.addButton.Location = new System.Drawing.Point(672, 573);
-            this.addButton.Name = "addButton";
-            this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.addButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.addButton.selected = false;
-            this.addButton.Size = new System.Drawing.Size(125, 48);
-            this.addButton.TabIndex = 20;
-            this.addButton.Text = "Add Donation";
-            this.addButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.addButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.addButton.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // menuButton
             // 
@@ -174,7 +138,7 @@
             // logo
             // 
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(290, 79);
+            this.logo.Location = new System.Drawing.Point(323, 79);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(32, 32);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -187,9 +151,10 @@
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
-            this.bunifuFlatButton1.ButtonText = "Delete Donation";
+            this.bunifuFlatButton1.ButtonText = "Unvalidate donation";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Enabled = false;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
             this.bunifuFlatButton1.Iconimage_right = null;
@@ -202,15 +167,15 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 40D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(503, 573);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(632, 573);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(150, 48);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(165, 48);
             this.bunifuFlatButton1.TabIndex = 21;
-            this.bunifuFlatButton1.Text = "Delete Donation";
+            this.bunifuFlatButton1.Text = "Unvalidate donation";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -223,7 +188,7 @@
             this.updateButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.updateButton.BorderRadius = 7;
-            this.updateButton.ButtonText = "Send to verification";
+            this.updateButton.ButtonText = "Validate donation";
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.Enabled = false;
@@ -239,7 +204,7 @@
             this.updateButton.IconVisible = true;
             this.updateButton.IconZoom = 40D;
             this.updateButton.IsTab = false;
-            this.updateButton.Location = new System.Drawing.Point(345, 573);
+            this.updateButton.Location = new System.Drawing.Point(461, 573);
             this.updateButton.Name = "updateButton";
             this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -247,7 +212,7 @@
             this.updateButton.selected = false;
             this.updateButton.Size = new System.Drawing.Size(152, 48);
             this.updateButton.TabIndex = 30;
-            this.updateButton.Text = "Send to verification";
+            this.updateButton.Text = "Validate donation";
             this.updateButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.updateButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -259,7 +224,7 @@
             this.fromLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.fromLabel.Location = new System.Drawing.Point(15, 591);
             this.fromLabel.Name = "fromLabel";
-            this.fromLabel.Size = new System.Drawing.Size(240, 16);
+            this.fromLabel.Size = new System.Drawing.Size(289, 16);
             this.fromLabel.TabIndex = 32;
             this.fromLabel.Text = "From";
             // 
@@ -271,7 +236,6 @@
             this.Controls.Add(this.fromLabel);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.addButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.label1);
@@ -295,7 +259,6 @@
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.PictureBox closeButton;
-        private Bunifu.Framework.UI.BunifuFlatButton addButton;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton updateButton;

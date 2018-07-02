@@ -115,6 +115,24 @@
     <Compile Include="Views\Administration\UsersManagement.Designer.cs">
       <DependentUpon>UsersManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Analyst\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Analyst\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Analyst\DonationsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Analyst\DonationsForm.Designer.cs">
+      <DependentUpon>DonationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Analyst\DonationResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Analyst\DonationResult.Designer.cs">
+      <DependentUpon>DonationResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Bloods\Blood_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +255,15 @@
     <EmbeddedResource Include="Views\Administration\UsersManagement.resx">
       <DependentUpon>UsersManagement.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Analyst\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Analyst\DonationsForm.resx">
+      <DependentUpon>DonationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Analyst\DonationResult.resx">
+      <DependentUpon>DonationResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Bloods\Blood_Dashboard.resx">
       <DependentUpon>Blood_Dashboard.cs</DependentUpon>

@@ -6,7 +6,7 @@ using BB_App.Core.Properties;
 using BB_App.Core.Views.Donations;
 using MySql.Data.MySqlClient;
 
-namespace BB_App.Core.Views
+namespace BB_App.Core.Views.Analyst
 {
     public partial class DonationsForm : UserControl
     {
@@ -61,7 +61,7 @@ namespace BB_App.Core.Views
                 Settings.Default.db_name))
             {
                 var query =
-                    "SELECT id_donation, id_user, donation_date, expiration_date, unit, donation_status FROM donations WHERE ref_hospital = '" +
+                    "SELECT id_donation, id_user, donation_date, expiration_date, unit, donation_status FROM donations WHERE donation_status = 'verificating' AND ref_hospital = '" +
                     Settings.Default.reference + "';";
                 _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
@@ -93,14 +93,14 @@ namespace BB_App.Core.Views
             {
                 var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
 
-                if (Requests.DeleteDonation(id))
+                if (Requests.UnvalidateDonation(id, AccountsModel.UserId(AccountsModel.WhoIsConnected())))
                 {
-                    MessageBox.Show(@"Donation deleted !", @"Deletion", MessageBoxButtons.OK,
+                    MessageBox.Show(@"Donation unvalidated !", @"Deletion", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     LoadDonations();
                 }
                 else
-                    MessageBox.Show(@"Can't delete the donation.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Can't unvalidate the donation. Contact the administrator.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch { }
         }
@@ -118,7 +118,8 @@ namespace BB_App.Core.Views
                 {
                     fromLabel.Text =
                         @"From " + User.GetUserName(Convert.ToInt32(donationsDGV.SelectedRows[0].Cells[1].Value));
-                    updateButton.Enabled = (string)donationsDGV.SelectedRows[0].Cells[5].Value == "waiting";
+                    updateButton.Enabled = (string)donationsDGV.SelectedRows[0].Cells[5].Value == "verificating";
+                    bunifuFlatButton1.Enabled = (string)donationsDGV.SelectedRows[0].Cells[5].Value == "verificating";
                 }
             } catch { }
             
@@ -130,14 +131,16 @@ namespace BB_App.Core.Views
         {
             var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
 
-            if (Requests.SendToVerif(id))
+            if (Requests.ValidateDonation(id, AccountsModel.UserId(AccountsModel.WhoIsConnected())))
             {
-                MessageBox.Show(@"Donation sended to verification.", @"Validation", MessageBoxButtons.OK,
+                MessageBox.Show(@"Donation validated.", @"Validation", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 LoadDonations();
+                updateButton.Enabled = false;
+                bunifuFlatButton1.Enabled = false;
             }
             else
-                MessageBox.Show(@"Can't send the donation. Contact the administrator.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Can't validate the donation. Contact the administrator.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

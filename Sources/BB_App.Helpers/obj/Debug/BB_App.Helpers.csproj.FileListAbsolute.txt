@@ -15,6 +15,6 @@ C:/Users/Ghost/Documents/Visual Studio 2012/Projects/BloodBank-Offline/Sources/B
 /media/ghost/D80A37130A36EE5E/Users/Ghost/Documents/Visual Studio 2012/Projects/BloodBank-Offline/Sources/BB_App.Helpers/obj/Debug/BB_App.Helpers.pdb
 C:\Users\Ghost\Documents\Visual Studio 2015\Projects\BloodBank-Offline\Sources\BB_App.Helpers\bin\Debug\BB_App.Helpers.dll
 C:\Users\Ghost\Documents\Visual Studio 2015\Projects\BloodBank-Offline\Sources\BB_App.Helpers\bin\Debug\BB_App.Helpers.pdb
-C:\Users\Ghost\Documents\Visual Studio 2015\Projects\BloodBank-Offline\Sources\BB_App.Helpers\obj\Debug\BB_App.Helpers.csprojResolveAssemblyReference.cache
 C:\Users\Ghost\Documents\Visual Studio 2015\Projects\BloodBank-Offline\Sources\BB_App.Helpers\obj\Debug\BB_App.Helpers.dll
 C:\Users\Ghost\Documents\Visual Studio 2015\Projects\BloodBank-Offline\Sources\BB_App.Helpers\obj\Debug\BB_App.Helpers.pdb
+C:\Users\Ghost\Documents\Visual Studio 2015\Projects\BloodBank-Offline\Sources\BB_App.Helpers\obj\Debug\BB_App.Helpers.csprojResolveAssemblyReference.cache

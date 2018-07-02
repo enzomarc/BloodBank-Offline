@@ -1,8 +1,12 @@
-﻿using System; using static BB_App.Helpers.FormsHelpers;
+﻿using System;
+using System.Security.Cryptography;
+using static BB_App.Helpers.FormsHelpers;
 using System.Windows.Forms;
 using BB_App.Core.Models;
 using BB_App.Core.Properties;
 using MySql.Data.MySqlClient;
+using BB_App.Helpers;
+using System.Text;
 
 namespace BB_App.Core.Views.Donations
 {
@@ -11,6 +15,7 @@ namespace BB_App.Core.Views.Donations
         public NewUser()
         {
             InitializeComponent();
+            kryptonDateTimePicker1.MaxDate = DateTime.Today;
         }
 
         #region Methods
@@ -53,42 +58,69 @@ namespace BB_App.Core.Views.Donations
             if (SqlConnection.Connect(Settings.Default.server, Settings.Default.db_user, Settings.Default.db_pwd,
                 Settings.Default.db_name))
             {
-                var date = kryptonDateTimePicker1.Value.Year + "-" + kryptonDateTimePicker1.Value.Month + "-" +
-                           kryptonDateTimePicker1.Value.Day;
-                var query =
-                    "INSERT INTO users(name, phone, bloodgroup, birthdate, gender, city) VALUES (@name, @phone, @blood, @birth, @gender, @city);";
-                var cmd = new MySqlCommand(query, SqlConnection.Conn);
-                cmd.Prepare();
-
-                cmd.Parameters.AddWithValue("@name", username.Text);
-                cmd.Parameters.AddWithValue("@phone", phone.Text);
-                cmd.Parameters.AddWithValue("@blood", bloodGD.Text);
-                cmd.Parameters.AddWithValue("@birth", date);
-                cmd.Parameters.AddWithValue("@gender", genderD.Text);
-                cmd.Parameters.AddWithValue("@city", cityD.Text);
-
                 try
                 {
-                    cmd.ExecuteNonQuery(); // Adding user
+                    var password = StringHelpers.UniqueId();
+                    
+                    var md5= MD5.Create();
 
-                    var id = 0;
-                    var query2 = "SELECT id_user FROM users WHERE phone = " + phone.Text;
-                    var cmd2 = new MySqlCommand(query2, SqlConnection.Conn);
+                    var sourceBytes = Encoding.UTF8.GetBytes(password);
+                    var hashBytes = md5.ComputeHash(sourceBytes);
+                    var md5_pass = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
 
-                    var result = cmd2.ExecuteScalar(); // Loading user id for donation informations
+                    var month = kryptonDateTimePicker1.Value.Month.ToString();
 
-                    if (result != null)
-                        id = Convert.ToInt32(result);
-                    else
-                        MessageBox.Show(@"Can't retrieve user id, Try creating the user again.", @"Error",
+                    if (month.Length == 1)
+                        month = "0" + month;
+
+                    var day = kryptonDateTimePicker1.Value.Day.ToString();
+
+                    if (day.Length == 1)
+                        day = "0" + day;
+
+                    var date = kryptonDateTimePicker1.Value.Year + "-" + month + "-" +
+                               day;
+                    var query =
+                        "INSERT INTO users(name, phone, password, bloodgroup, birthdate, gender, city) VALUES (@name, @phone, @pass, @blood, @birth, @gender, @city);";
+                    var cmd = new MySqlCommand(query, SqlConnection.Conn);
+                    cmd.Prepare();
+
+                    cmd.Parameters.AddWithValue("@name", username.Text);
+                    cmd.Parameters.AddWithValue("@phone", phone.Text);
+                    cmd.Parameters.AddWithValue("@pass", md5_pass.ToLower());
+                    cmd.Parameters.AddWithValue("@blood", Commons.Unformat(bloodGD.Text).ToLower());
+                    cmd.Parameters.AddWithValue("@birth", date);
+                    cmd.Parameters.AddWithValue("@gender", genderD.Text.ToLower());
+                    cmd.Parameters.AddWithValue("@city", cityD.Text);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery(); // Adding user
+
+                        var id = 0;
+                        var query2 = "SELECT id_user FROM users WHERE phone = " + phone.Text;
+                        var cmd2 = new MySqlCommand(query2, SqlConnection.Conn);
+
+                        var result = cmd2.ExecuteScalar(); // Loading user id for donation informations
+
+                        if (result != null)
+                            id = Convert.ToInt32(result);
+                        else
+                            MessageBox.Show(@"Can't retrieve user id, Try creating the user again.", @"Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        MessageBox.Show(@"Here is the new user password. Please note it somewhere and give it to the user." + Environment.NewLine + @" Password : " + password);
+                        LoadForm(((Main)ParentForm).frmContainer, new DonationInformations(new User(id)));
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(@"Can't create the user. Error " + ex.ErrorCode + @" : " + ex.Message, @"Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    LoadForm(((Main)ParentForm).frmContainer, new DonationInformations(new User(id)));
-                }
-                catch (MySqlException ex)
+                    }
+                } catch (Exception ex2)
                 {
-                    MessageBox.Show(@"Can't create the user. Error " + ex.ErrorCode + @" : " + ex.Message, @"Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Can't create the user. Error : " + ex2.Message, @"Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

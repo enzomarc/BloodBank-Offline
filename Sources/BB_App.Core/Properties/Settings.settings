@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="reference" Type="System.String" Scope="User">
-      <Value Profile="(Default)">HCDoul</Value>
+      <Value Profile="(Default)">hgy</Value>
     </Setting>
     <Setting Name="first_start" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

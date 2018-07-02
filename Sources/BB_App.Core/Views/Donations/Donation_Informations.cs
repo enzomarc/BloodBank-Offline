@@ -79,7 +79,7 @@ namespace BB_App.Core.Views.Donations
                 cmd.Parameters.AddWithValue("@ref", Settings.Default.reference);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@qty", kryptonNumericUpDown1.Value);
-                cmd.Parameters.AddWithValue("@status", "pending");
+                cmd.Parameters.AddWithValue("@status", "waiting");
 
                 cmd.Parameters.AddWithValue("@exp_date", radioButton1.Checked ? date : expDate);
 
