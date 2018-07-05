@@ -29,7 +29,7 @@ namespace BB_App.Core.Views.Bloods
 
         private void BloodDashboard_Load(object sender, EventArgs e)
         {
-            Bl.LoadBloods();
+            // Bl.LoadBloods();
         }
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace BB_App.Core.Views.Bloods
 
         private void nextBlood_MouseLeave(object sender, EventArgs e)
         {
-            ((Control) sender).BackColor = Color.WhiteSmoke;
+            ((Control) sender).BackColor = Color.White;
         }
 
         private void nextBlood_Click(object sender, EventArgs e)

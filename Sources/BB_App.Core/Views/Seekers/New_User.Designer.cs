@@ -129,7 +129,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(195, 202);
             this.pictureBox2.Name = "pictureBox2";
@@ -143,7 +143,7 @@
             this.username.Location = new System.Drawing.Point(181, 192);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(436, 41);
-            this.username.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.username.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.username.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.username.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -164,7 +164,7 @@
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
             this.kryptonDateTimePicker1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(436, 40);
-            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonDateTimePicker1.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.kryptonDateTimePicker1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -181,8 +181,8 @@
             this.bloodGD.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.bloodGD.Size = new System.Drawing.Size(436, 39);
             this.bloodGD.Splitter = false;
-            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.bloodGD.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.bloodGD.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.bloodGD.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -266,7 +266,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(195, 261);
             this.pictureBox1.Name = "pictureBox1";
@@ -280,7 +280,7 @@
             this.phone.Location = new System.Drawing.Point(181, 251);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(436, 41);
-            this.phone.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.phone.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.phone.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.phone.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -300,8 +300,8 @@
             this.genderD.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.genderD.Size = new System.Drawing.Size(436, 39);
             this.genderD.Splitter = false;
-            this.genderD.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.genderD.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.genderD.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.genderD.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.genderD.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.genderD.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.genderD.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -338,7 +338,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
             this.bunifuFlatButton1.ButtonText = "ADD USER";
@@ -358,7 +358,7 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(327, 544);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
@@ -378,8 +378,8 @@
             this.cityD.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.cityD.Size = new System.Drawing.Size(436, 39);
             this.cityD.Splitter = false;
-            this.cityD.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.cityD.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.cityD.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.cityD.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.cityD.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.cityD.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.cityD.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -485,7 +485,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cityD);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.genderD);

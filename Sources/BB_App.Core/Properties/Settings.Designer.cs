@@ -49,7 +49,7 @@ namespace BB_App.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("77.72.0.102")]
         public string server {
             get {
                 return ((string)(this["server"]));
@@ -61,7 +61,7 @@ namespace BB_App.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("nucleustechnolog_bloodbank")]
         public string db_user {
             get {
                 return ((string)(this["db_user"]));
@@ -73,7 +73,7 @@ namespace BB_App.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("B0o99D)f0cnD")]
         public string db_pwd {
             get {
                 return ((string)(this["db_pwd"]));
@@ -85,7 +85,7 @@ namespace BB_App.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("bloodbankdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("nucleustechnolog_bloodbank")]
         public string db_name {
             get {
                 return ((string)(this["db_name"]));

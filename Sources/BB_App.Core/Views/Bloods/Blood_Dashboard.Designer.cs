@@ -104,8 +104,8 @@
             // 
             // bunifuTileButton5
             // 
-            this.bunifuTileButton5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton5.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton5.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton5.color = System.Drawing.Color.White;
             this.bunifuTileButton5.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton5.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -124,8 +124,8 @@
             // 
             // bunifuTileButton6
             // 
-            this.bunifuTileButton6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton6.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton6.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton6.color = System.Drawing.Color.White;
             this.bunifuTileButton6.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton6.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -144,8 +144,8 @@
             // 
             // bunifuTileButton2
             // 
-            this.bunifuTileButton2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton2.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton2.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton2.color = System.Drawing.Color.White;
             this.bunifuTileButton2.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton2.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -164,8 +164,8 @@
             // 
             // bunifuTileButton1
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton1.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.color = System.Drawing.Color.White;
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton1.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.previousBlood);
             this.Controls.Add(this.nextBlood);
             this.Controls.Add(this.unitLabel);

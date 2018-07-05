@@ -42,16 +42,25 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.bloodGD = new ComponentFactory.Krypton.Toolkit.KryptonDropButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.oToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -103,7 +112,7 @@
             // 
             // kryptonNumericUpDown1
             // 
-            this.kryptonNumericUpDown1.Location = new System.Drawing.Point(363, 359);
+            this.kryptonNumericUpDown1.Location = new System.Drawing.Point(363, 434);
             this.kryptonNumericUpDown1.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -116,8 +125,8 @@
             0});
             this.kryptonNumericUpDown1.Name = "kryptonNumericUpDown1";
             this.kryptonNumericUpDown1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonNumericUpDown1.Size = new System.Drawing.Size(261, 39);
-            this.kryptonNumericUpDown1.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonNumericUpDown1.Size = new System.Drawing.Size(183, 39);
+            this.kryptonNumericUpDown1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonNumericUpDown1.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.kryptonNumericUpDown1.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.kryptonNumericUpDown1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -136,7 +145,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
             this.bunifuFlatButton1.ButtonText = "ADD REQUEST";
@@ -155,9 +164,9 @@
             this.bunifuFlatButton1.IconVisible = false;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(327, 499);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(327, 529);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
@@ -181,7 +190,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.label4.Location = new System.Drawing.Point(185, 214);
+            this.label4.Location = new System.Drawing.Point(185, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 20);
             this.label4.TabIndex = 54;
@@ -190,7 +199,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.label5.Location = new System.Drawing.Point(185, 249);
+            this.label5.Location = new System.Drawing.Point(185, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 20);
             this.label5.TabIndex = 55;
@@ -199,7 +208,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.label6.Location = new System.Drawing.Point(185, 285);
+            this.label6.Location = new System.Drawing.Point(185, 339);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(169, 20);
             this.label6.TabIndex = 56;
@@ -209,7 +218,7 @@
             // 
             this.label7.AutoEllipsis = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 10F);
-            this.label7.Location = new System.Drawing.Point(360, 284);
+            this.label7.Location = new System.Drawing.Point(360, 338);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(264, 20);
             this.label7.TabIndex = 60;
@@ -219,21 +228,11 @@
             // 
             this.label8.AutoEllipsis = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 10F);
-            this.label8.Location = new System.Drawing.Point(360, 248);
+            this.label8.Location = new System.Drawing.Point(360, 290);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(264, 20);
             this.label8.TabIndex = 59;
             this.label8.Text = "Male";
-            // 
-            // label9
-            // 
-            this.label9.AutoEllipsis = true;
-            this.label9.Font = new System.Drawing.Font("Roboto", 10F);
-            this.label9.Location = new System.Drawing.Point(360, 213);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(264, 20);
-            this.label9.TabIndex = 58;
-            this.label9.Text = "O+";
             // 
             // label10
             // 
@@ -248,7 +247,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.label11.Location = new System.Drawing.Point(185, 369);
+            this.label11.Location = new System.Drawing.Point(185, 449);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(169, 20);
             this.label11.TabIndex = 61;
@@ -258,7 +257,7 @@
             // 
             this.label2.AutoEllipsis = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.label2.Location = new System.Drawing.Point(360, 320);
+            this.label2.Location = new System.Drawing.Point(360, 385);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(264, 20);
             this.label2.TabIndex = 64;
@@ -267,7 +266,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.label13.Location = new System.Drawing.Point(185, 321);
+            this.label13.Location = new System.Drawing.Point(185, 386);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 20);
             this.label13.TabIndex = 63;
@@ -280,29 +279,101 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // checkBox1
+            // bloodGD
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Roboto Medium", 9F);
-            this.checkBox1.Location = new System.Drawing.Point(345, 435);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(122, 18);
-            this.checkBox1.TabIndex = 65;
-            this.checkBox1.Text = "Request validated";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.bloodGD.ContextMenuStrip = this.contextMenuStrip1;
+            this.bloodGD.Location = new System.Drawing.Point(357, 223);
+            this.bloodGD.Name = "bloodGD";
+            this.bloodGD.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.bloodGD.Size = new System.Drawing.Size(189, 39);
+            this.bloodGD.Splitter = false;
+            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.bloodGD.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
+            this.bloodGD.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
+            this.bloodGD.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.bloodGD.StateCommon.Border.Rounding = 20;
+            this.bloodGD.TabIndex = 66;
+            this.bloodGD.Values.Text = "Blood Group";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.White;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bToolStripMenuItem,
+            this.aToolStripMenuItem1,
+            this.bToolStripMenuItem1,
+            this.bToolStripMenuItem2,
+            this.aBToolStripMenuItem,
+            this.aBToolStripMenuItem1,
+            this.oToolStripMenuItem,
+            this.oToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(98, 180);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
+            // 
+            // bToolStripMenuItem
+            // 
+            this.bToolStripMenuItem.Name = "bToolStripMenuItem";
+            this.bToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.bToolStripMenuItem.Text = "A+";
+            // 
+            // aToolStripMenuItem1
+            // 
+            this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
+            this.aToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.aToolStripMenuItem1.Text = "A-";
+            // 
+            // bToolStripMenuItem1
+            // 
+            this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
+            this.bToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.bToolStripMenuItem1.Text = "B+";
+            // 
+            // bToolStripMenuItem2
+            // 
+            this.bToolStripMenuItem2.Name = "bToolStripMenuItem2";
+            this.bToolStripMenuItem2.Size = new System.Drawing.Size(97, 22);
+            this.bToolStripMenuItem2.Text = "B-";
+            // 
+            // aBToolStripMenuItem
+            // 
+            this.aBToolStripMenuItem.Name = "aBToolStripMenuItem";
+            this.aBToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.aBToolStripMenuItem.Text = "AB+";
+            // 
+            // aBToolStripMenuItem1
+            // 
+            this.aBToolStripMenuItem1.Name = "aBToolStripMenuItem1";
+            this.aBToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.aBToolStripMenuItem1.Text = "AB-";
+            // 
+            // oToolStripMenuItem
+            // 
+            this.oToolStripMenuItem.Name = "oToolStripMenuItem";
+            this.oToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.oToolStripMenuItem.Text = "O+";
+            // 
+            // oToolStripMenuItem1
+            // 
+            this.oToolStripMenuItem1.Name = "oToolStripMenuItem1";
+            this.oToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.oToolStripMenuItem1.Text = "O-";
             // 
             // RequestInformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.checkBox1);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.bloodGD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -319,8 +390,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -338,12 +409,20 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDropButton bloodGD;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem aBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem oToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oToolStripMenuItem1;
     }
 }

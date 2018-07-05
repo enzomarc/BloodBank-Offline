@@ -51,5 +51,15 @@ namespace BB_App.Core.Views.Analyst
         {
             LoadForm(((Main)ParentForm).frmContainer, new DonationsForm());
         }
+
+        private void bunifuTileButton4_Click(object sender, EventArgs e)
+        {
+            LoadForm(((Main)ParentForm).frmContainer, new Login());
+        }
+
+        private void bunifuTileButton3_Click(object sender, EventArgs e)
+        {
+            LoadForm(((Main)ParentForm).frmContainer, new RequestsForm());
+        }
     }
 }

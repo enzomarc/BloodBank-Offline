@@ -67,8 +67,8 @@
             // 
             // profileButton
             // 
-            this.profileButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.profileButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.profileButton.Activecolor = System.Drawing.Color.White;
+            this.profileButton.BackColor = System.Drawing.Color.White;
             this.profileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.profileButton.BorderRadius = 7;
             this.profileButton.ButtonText = "John Doe";
@@ -88,7 +88,7 @@
             this.profileButton.IsTab = false;
             this.profileButton.Location = new System.Drawing.Point(355, 581);
             this.profileButton.Name = "profileButton";
-            this.profileButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.profileButton.Normalcolor = System.Drawing.Color.White;
             this.profileButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.profileButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.profileButton.selected = false;
@@ -111,9 +111,9 @@
             // 
             // bunifuTileButton4
             // 
-            this.bunifuTileButton4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton4.BackColor = System.Drawing.Color.White;
             this.bunifuTileButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bunifuTileButton4.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton4.color = System.Drawing.Color.White;
             this.bunifuTileButton4.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton4.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -128,11 +128,12 @@
             this.bunifuTileButton4.Name = "bunifuTileButton4";
             this.bunifuTileButton4.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton4.TabIndex = 24;
+            this.bunifuTileButton4.Click += new System.EventHandler(this.bunifuTileButton4_Click);
             // 
             // bunifuTileButton6
             // 
-            this.bunifuTileButton6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton6.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton6.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton6.color = System.Drawing.Color.White;
             this.bunifuTileButton6.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton6.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -150,8 +151,8 @@
             // 
             // bunifuTileButton3
             // 
-            this.bunifuTileButton3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton3.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton3.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton3.color = System.Drawing.Color.White;
             this.bunifuTileButton3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton3.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -160,17 +161,18 @@
             this.bunifuTileButton3.ImagePosition = 20;
             this.bunifuTileButton3.ImageZoom = 45;
             this.bunifuTileButton3.LabelPosition = 25;
-            this.bunifuTileButton3.LabelText = "TESTS RESULTS";
+            this.bunifuTileButton3.LabelText = "VERIFY REQUESTS";
             this.bunifuTileButton3.Location = new System.Drawing.Point(432, 198);
             this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuTileButton3.Name = "bunifuTileButton3";
             this.bunifuTileButton3.Size = new System.Drawing.Size(116, 112);
             this.bunifuTileButton3.TabIndex = 21;
+            this.bunifuTileButton3.Click += new System.EventHandler(this.bunifuTileButton3_Click);
             // 
             // bunifuTileButton1
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton1.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.color = System.Drawing.Color.White;
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton1.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -288,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.profileButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);

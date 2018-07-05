@@ -8,12 +8,12 @@ using MySql.Data.MySqlClient;
 
 namespace BB_App.Core.Views.Analyst
 {
-    public partial class DonationsForm : UserControl
+    public partial class RequestsForm : UserControl
     {
         private MySqlDataAdapter _data;
         private DataSet _ds;
 
-        public DonationsForm()
+        public RequestsForm()
         {
             InitializeComponent();
         }
@@ -55,26 +55,28 @@ namespace BB_App.Core.Views.Analyst
             LoadForm(((Main)ParentForm)?.frmContainer, new AddType());
         }
 
-        private void LoadDonations()
+        private void LoadRequests()
         {
             if (SqlConnection.Connect(Settings.Default.server, Settings.Default.db_user, Settings.Default.db_pwd,
                 Settings.Default.db_name))
             {
-                var query =
-                    "SELECT id_donation, id_user, donation_date, expiration_date, unit, donation_status FROM donations WHERE donation_status = 'verificating' AND ref_hospital = '" +
-                    Settings.Default.reference + "';";
+                var query = "SELECT * FROM requests WHERE request_status = 'verificating' AND ref_hospital = '" + Settings.Default.reference + "'";
+
                 _data = new MySqlDataAdapter(query, SqlConnection.Conn);
 
                 _ds = new DataSet();
-                _data.Fill(_ds, "donations");
-                donationsDGV.DataSource = _ds;
-                donationsDGV.DataMember = "donations";
-                donationsDGV.Columns[0].HeaderText = @"Donation ID";
-                donationsDGV.Columns[1].HeaderText = @"User ID";
-                donationsDGV.Columns[2].HeaderText = @"Donation Date";
-                donationsDGV.Columns[3].HeaderText = @"Expiration Date";
-                donationsDGV.Columns[4].HeaderText = @"Units";
-                donationsDGV.Columns[5].HeaderText = @"Status";
+                _data.Fill(_ds, "requests");
+                requestsDGV.DataSource = _ds;
+                requestsDGV.DataMember = "requests";
+                requestsDGV.Columns[0].HeaderText = @"Request ID";
+                requestsDGV.Columns[1].HeaderText = @"User";
+                requestsDGV.Columns[2].HeaderText = @"Hospital Reference";
+                requestsDGV.Columns[3].HeaderText = @"Blood Group";
+                requestsDGV.Columns[4].HeaderText = @"Request Date";
+                requestsDGV.Columns[5].HeaderText = @"Received Date";
+                requestsDGV.Columns[6].HeaderText = @"Units";
+                requestsDGV.Columns[7].HeaderText = @"Status";
+                requestsDGV.Columns[8].Visible = false;
             }
             else
             {
@@ -84,13 +86,13 @@ namespace BB_App.Core.Views.Analyst
 
         private void Donations_Load(object sender, EventArgs e)
         {
-            LoadDonations();
+            LoadRequests();
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
-            var validationForm = new Validation(id, "unvalidation", "donations");
+            var id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
+            var validationForm = new Validation(id, "unvalidation", "requests");
 
             validationForm.FormClosed += ValidationForm_FormClosed;
             validationForm.ShowDialog();
@@ -105,12 +107,12 @@ namespace BB_App.Core.Views.Analyst
         {
             try
             {
-                if (donationsDGV.SelectedRows.Count > 0)
+                if (requestsDGV.SelectedRows.Count > 0)
                 {
                     fromLabel.Text =
-                        @"From " + User.GetUserName(Convert.ToInt32(donationsDGV.SelectedRows[0].Cells[1].Value));
-                    updateButton.Enabled = (string)donationsDGV.SelectedRows[0].Cells[5].Value == "verificating";
-                    bunifuFlatButton1.Enabled = (string)donationsDGV.SelectedRows[0].Cells[5].Value == "verificating";
+                        @"From " + User.GetUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
+                    updateButton.Enabled = (string)requestsDGV.SelectedRows[0].Cells[7].Value == "verificating";
+                    bunifuFlatButton1.Enabled = (string)requestsDGV.SelectedRows[0].Cells[7].Value == "verificating";
                 }
             } catch { }
             
@@ -120,8 +122,8 @@ namespace BB_App.Core.Views.Analyst
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
-            var validationForm = new Validation(id, "validation", "donations");
+            var id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
+            var validationForm = new Validation(id, "validation", "requests");
 
             validationForm.FormClosed += ValidationForm_FormClosed;
             validationForm.ShowDialog();
@@ -140,7 +142,7 @@ namespace BB_App.Core.Views.Analyst
 
         private void ValidationForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoadDonations();
+            LoadRequests();
         }
     }
 }

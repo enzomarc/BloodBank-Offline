@@ -43,6 +43,10 @@
                 case "om":
                     formatted = "O-";
                     break;
+
+                case "unknow":
+                    formatted = "Unknow";
+                    break;
             }
 
             return formatted;
@@ -59,26 +63,37 @@
                 case "a+":
                     formatted = "AP";
                     break;
+
                 case "a-":
                     formatted = "AM";
                     break;
+
                 case "b+":
                     formatted = "BP";
                     break;
+
                 case "b-":
                     formatted = "BM";
                     break;
+
                 case "ab+":
                     formatted = "ABP";
                     break;
+
                 case "ab-":
                     formatted = "ABM";
                     break;
+
                 case "o+":
                     formatted = "OP";
                     break;
+
                 case "o-":
                     formatted = "OM";
+                    break;
+
+                case "unknow":
+                    formatted = "unknow";
                     break;
             }
 

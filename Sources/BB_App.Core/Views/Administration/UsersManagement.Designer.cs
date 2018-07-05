@@ -161,8 +161,8 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.deleteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Activecolor = System.Drawing.Color.White;
+            this.deleteButton.BackColor = System.Drawing.Color.White;
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.deleteButton.BorderRadius = 7;
             this.deleteButton.ButtonText = "Delete Account";
@@ -182,7 +182,7 @@
             this.deleteButton.IsTab = false;
             this.deleteButton.Location = new System.Drawing.Point(402, 318);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Normalcolor = System.Drawing.Color.White;
             this.deleteButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.deleteButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.deleteButton.selected = false;
@@ -196,8 +196,8 @@
             // 
             // addButton
             // 
-            this.addButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.addButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Activecolor = System.Drawing.Color.White;
+            this.addButton.BackColor = System.Drawing.Color.White;
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addButton.BorderRadius = 7;
             this.addButton.ButtonText = "Add Account";
@@ -217,7 +217,7 @@
             this.addButton.IsTab = false;
             this.addButton.Location = new System.Drawing.Point(419, 562);
             this.addButton.Name = "addButton";
-            this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Normalcolor = System.Drawing.Color.White;
             this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.addButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.addButton.selected = false;
@@ -255,7 +255,7 @@
             this.usernameBox.Location = new System.Drawing.Point(419, 442);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(261, 31);
-            this.usernameBox.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.usernameBox.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.usernameBox.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.usernameBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -274,7 +274,7 @@
             this.passwordBox.Location = new System.Drawing.Point(419, 479);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(261, 31);
-            this.passwordBox.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.passwordBox.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.passwordBox.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.passwordBox.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -296,8 +296,8 @@
             this.accountType.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.accountType.Size = new System.Drawing.Size(261, 31);
             this.accountType.Splitter = false;
-            this.accountType.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.accountType.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.accountType.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.accountType.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.accountType.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.accountType.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.accountType.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -359,7 +359,7 @@
             // 
             // usersListBox
             // 
-            this.usersListBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.usersListBox.BackColor = System.Drawing.Color.White;
             this.usersListBox.Location = new System.Drawing.Point(64, 204);
             this.usersListBox.Name = "usersListBox";
             this.usersListBox.Size = new System.Drawing.Size(264, 395);
@@ -369,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.accountType);
             this.Controls.Add(this.passwordBox);

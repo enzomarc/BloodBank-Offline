@@ -47,6 +47,11 @@ namespace BB_App.Core.Views
 
         private void Seekers_Load(object sender, EventArgs e)
         {
+            LoadRequests();
+        }
+
+        public void LoadRequests()
+        {
             // Load all requests from the database
             requestsDGV.DataSource = Requests.LoadRequests();
             requestsDGV.DataMember = "requests";
@@ -55,16 +60,17 @@ namespace BB_App.Core.Views
             requestsDGV.Columns[0].HeaderText = @"Request ID";
             requestsDGV.Columns[1].HeaderText = @"User";
             requestsDGV.Columns[2].HeaderText = @"Hospital Reference";
-            requestsDGV.Columns[3].HeaderText = @"Request Date";
-            requestsDGV.Columns[4].HeaderText = @"Received Date";
-            requestsDGV.Columns[5].HeaderText = @"Units";
-            requestsDGV.Columns[6].HeaderText = @"Status";
+            requestsDGV.Columns[3].HeaderText = @"Blood Group";
+            requestsDGV.Columns[4].HeaderText = @"Request Date";
+            requestsDGV.Columns[5].HeaderText = @"Received Date";
+            requestsDGV.Columns[6].HeaderText = @"Units";
+            requestsDGV.Columns[7].HeaderText = @"Status";
+            requestsDGV.Columns[8].Visible = false;
 
             for (var i = 0; i < requestsDGV.Rows.Count; i++)
             {
                 var id = (int)requestsDGV.Rows[i].Cells[1].Value;
                 requestsDGV.Rows[i].Cells[1].ValueType = User.GetUserName(id).GetType();
-                
             }
         }
 
@@ -82,15 +88,14 @@ namespace BB_App.Core.Views
         {
             var id = (int)requestsDGV.SelectedRows[0].Cells[0].Value;
 
-            if (Requests.ValidateRequest(id))
+            if (Requests.VerifRequest(id))
             {
-                MessageBox.Show(@"Request validated !", @"Validation", MessageBoxButtons.OK,
+                MessageBox.Show(@"Request sended to verification.", @"Verification", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                requestsDGV.DataSource = Requests.LoadRequests();
-                requestsDGV.DataMember = "requests";
+                LoadRequests();
             }
             else
-                MessageBox.Show(@"Can't validate the request.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Can't send the request. Contact the administrator.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -102,8 +107,13 @@ namespace BB_App.Core.Views
         {
             try
             {
-                updateButton.Enabled = (string) requestsDGV.SelectedRows[0].Cells[6].Value == "waiting";
-                deleteButton.Enabled = requestsDGV.SelectedRows.Count > 0;
+                if (requestsDGV.SelectedRows.Count > 0)
+                {
+                    fromLabel.Text =
+                        @"From " + User.GetUserName(Convert.ToInt32(requestsDGV.SelectedRows[0].Cells[1].Value));
+                    updateButton.Enabled = (string)requestsDGV.SelectedRows[0].Cells[7].Value == "waiting";
+                    deleteButton.Enabled = requestsDGV.SelectedRows.Count > 0;
+                }
             } catch { }
         }
 

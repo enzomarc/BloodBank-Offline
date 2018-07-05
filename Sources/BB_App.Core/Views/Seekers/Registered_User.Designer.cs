@@ -58,8 +58,8 @@
             // 
             // nextButton
             // 
-            this.nextButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.nextButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.nextButton.Activecolor = System.Drawing.Color.White;
+            this.nextButton.BackColor = System.Drawing.Color.White;
             this.nextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.nextButton.BorderRadius = 7;
             this.nextButton.ButtonText = "Next";
@@ -79,7 +79,7 @@
             this.nextButton.IsTab = false;
             this.nextButton.Location = new System.Drawing.Point(703, 566);
             this.nextButton.Name = "nextButton";
-            this.nextButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.nextButton.Normalcolor = System.Drawing.Color.White;
             this.nextButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.nextButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.nextButton.selected = false;
@@ -157,14 +157,14 @@
             this.usersDGV.ShowEditingIcon = false;
             this.usersDGV.ShowRowErrors = false;
             this.usersDGV.Size = new System.Drawing.Size(468, 413);
-            this.usersDGV.StateCommon.Background.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.usersDGV.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.usersDGV.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.usersDGV.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.usersDGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
             this.usersDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Gainsboro;
             this.usersDGV.StateCommon.DataCell.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.usersDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.usersDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.usersDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.usersDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.White;
             this.usersDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.usersDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.usersDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Roboto Medium", 8.75F);
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.usersDGV);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.menuButton);

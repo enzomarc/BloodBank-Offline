@@ -36,7 +36,6 @@ namespace BB_App.Core.Models
         #endregion Constructors
 
         /// <summary>
-        ///     dz
         ///     Represents a blood object with group and units.
         /// </summary>
         public class Blood
@@ -73,8 +72,6 @@ namespace BB_App.Core.Models
         /// </summary>
         public static void LoadBloods()
         {
-            SqlConnection.Disconnect();
-
             if (!SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName)) return;
 
             if (Exist())
@@ -100,6 +97,8 @@ namespace BB_App.Core.Models
             {
                 InitializeBloods();
             }
+
+            UpdateValues();
         }
 
         /// <summary>
@@ -107,23 +106,24 @@ namespace BB_App.Core.Models
         /// </summary>
         public static void UpdateValues()
         {
-            SqlConnection.Disconnect();
-
             if (!SqlConnection.Connect(param.Server, param.DbUser, param.DbPassword, param.DbName)) return;
 
             const string query =
-                "UPDATE blood_bank SET AP = @ap, AM = @am, BP = @bp, BM = @bm, ABP = @abp, ABM = @abm, OP = @op, OM = @om, Total = @total";
+                "UPDATE blood_bank SET AP = @ap, AM = @am, BP = @bp, BM = @bm, ABP = @abp, ABM = @abm, OP = @op, OM = @om, Total = @total WHERE ref_hospital = @hospital" ;
             var command = new MySqlCommand(query, SqlConnection.Conn);
 
             command.Prepare();
 
-            foreach (var blood in BloodsList)
-            {
-                var unit = blood.BloodUnits;
-                command.Parameters.Add(unit);
-            }
-
-            command.Parameters.AddWithValue("@total", GetTotal(BloodsList));
+            command.Parameters.AddWithValue("@ap", BloodsList[0].BloodUnits);
+            command.Parameters.AddWithValue("@am", BloodsList[1].BloodUnits);
+            command.Parameters.AddWithValue("@bp", BloodsList[2].BloodUnits);
+            command.Parameters.AddWithValue("@bm", BloodsList[3].BloodUnits);
+            command.Parameters.AddWithValue("@abp", BloodsList[4].BloodUnits);
+            command.Parameters.AddWithValue("@abm", BloodsList[5].BloodUnits);
+            command.Parameters.AddWithValue("@op", BloodsList[6].BloodUnits);
+            command.Parameters.AddWithValue("@om", BloodsList[7].BloodUnits);
+            command.Parameters.AddWithValue("@total", GetTotal());
+            command.Parameters.AddWithValue("@hospital", param.Hospital);
 
             command.ExecuteNonQuery();
         }
@@ -137,6 +137,18 @@ namespace BB_App.Core.Models
                     return t.BloodUnits;
 
             return 0;
+        }
+
+        public static void ChangeBloodValue(string bloodgroup, int units)
+        {
+
+            foreach (var blood in BloodsList)
+            {
+                if (blood.BloodGroup.ToLower() == bloodgroup)
+                    blood.BloodUnits = units;
+            }
+
+            UpdateValues();
         }
 
         #endregion Methods
@@ -165,13 +177,19 @@ namespace BB_App.Core.Models
         }
 
         /// <summary>
-        ///     Calculates the sum of all elements from a blood list.
+        ///     Calculates the sum of all elements from the blood list.
         /// </summary>
-        /// <param name="list">The blood list to calculates the sum of items.</param>
-        /// <returns>An integer representing the sum of all items</returns>
-        private static int GetTotal(IEnumerable<Blood> list)
+        /// <returns>An integer representing the sum of all items in blood list</returns>
+        public static int GetTotal()
         {
-            return list.Sum(blood => blood.BloodUnits);
+            var total = 0;
+
+            foreach (var item in BloodsList)
+            {
+                total += item.BloodUnits;
+            }
+
+            return total;
         }
 
         #endregion Functions

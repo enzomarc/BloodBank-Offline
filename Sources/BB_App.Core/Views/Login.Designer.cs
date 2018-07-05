@@ -55,7 +55,7 @@
             this.password.Location = new System.Drawing.Point(250, 377);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(311, 41);
-            this.password.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.password.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.password.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.password.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -75,7 +75,7 @@
             this.username.Location = new System.Drawing.Point(250, 305);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(311, 41);
-            this.username.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.username.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.username.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.username.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -93,7 +93,7 @@
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton2.BorderRadius = 7;
             this.bunifuFlatButton2.ButtonText = "EXIT";
@@ -113,7 +113,7 @@
             this.bunifuFlatButton2.IsTab = false;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(416, 459);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton2.selected = false;
@@ -128,7 +128,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
             this.bunifuFlatButton1.ButtonText = "LOGIN";
@@ -148,7 +148,7 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(275, 459);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
@@ -162,7 +162,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(264, 387);
             this.pictureBox3.Name = "pictureBox3";
@@ -173,7 +173,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(264, 315);
             this.pictureBox2.Name = "pictureBox2";
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);

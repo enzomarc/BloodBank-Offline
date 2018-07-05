@@ -130,7 +130,7 @@ namespace BB_App.Core.Views
         {
             var id = (int)donationsDGV.SelectedRows[0].Cells[0].Value;
 
-            if (Requests.SendToVerif(id))
+            if (Requests.VerifDonation(id))
             {
                 MessageBox.Show(@"Donation sended to verification.", @"Validation", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);

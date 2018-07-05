@@ -1,6 +1,6 @@
 ﻿namespace BB_App.Core.Views.Analyst
 {
-    partial class DonationsForm
+    partial class RequestsForm
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestsForm));
-            this.donationsDGV = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.requestsDGV = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.menuButton = new System.Windows.Forms.PictureBox();
@@ -41,55 +41,55 @@
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.updateButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.fromLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.donationsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // donationsDGV
+            // requestsDGV
             // 
-            this.donationsDGV.AllowUserToAddRows = false;
+            this.requestsDGV.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donationsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.donationsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.donationsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.donationsDGV.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Sheet;
-            this.donationsDGV.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.donationsDGV.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.donationsDGV.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.donationsDGV.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.donationsDGV.Location = new System.Drawing.Point(16, 146);
-            this.donationsDGV.Name = "donationsDGV";
-            this.donationsDGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.donationsDGV.ReadOnly = true;
-            this.donationsDGV.RowHeadersVisible = false;
+            this.requestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.requestsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.requestsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestsDGV.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Sheet;
+            this.requestsDGV.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.requestsDGV.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.requestsDGV.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.requestsDGV.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.requestsDGV.Location = new System.Drawing.Point(16, 146);
+            this.requestsDGV.Name = "requestsDGV";
+            this.requestsDGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.requestsDGV.ReadOnly = true;
+            this.requestsDGV.RowHeadersVisible = false;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donationsDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.donationsDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donationsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.donationsDGV.ShowCellErrors = false;
-            this.donationsDGV.ShowCellToolTips = false;
-            this.donationsDGV.ShowEditingIcon = false;
-            this.donationsDGV.ShowRowErrors = false;
-            this.donationsDGV.Size = new System.Drawing.Size(781, 413);
-            this.donationsDGV.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.donationsDGV.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.donationsDGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.donationsDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.donationsDGV.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.donationsDGV.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)(((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.requestsDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.requestsDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.requestsDGV.ShowCellErrors = false;
+            this.requestsDGV.ShowCellToolTips = false;
+            this.requestsDGV.ShowEditingIcon = false;
+            this.requestsDGV.ShowRowErrors = false;
+            this.requestsDGV.Size = new System.Drawing.Size(781, 413);
+            this.requestsDGV.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.requestsDGV.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.requestsDGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.requestsDGV.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.requestsDGV.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.requestsDGV.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)(((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.donationsDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.donationsDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.donationsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.White;
-            this.donationsDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.donationsDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.donationsDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
-            this.donationsDGV.TabIndex = 0;
-            this.donationsDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.donationsDGV_CellEndEdit);
-            this.donationsDGV.SelectionChanged += new System.EventHandler(this.donationsDGV_SelectionChanged);
+            this.requestsDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.requestsDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.requestsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.White;
+            this.requestsDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.requestsDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.requestsDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
+            this.requestsDGV.TabIndex = 0;
+            this.requestsDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.donationsDGV_CellEndEdit);
+            this.requestsDGV.SelectionChanged += new System.EventHandler(this.donationsDGV_SelectionChanged);
             // 
             // label1
             // 
@@ -99,7 +99,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 32);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Donations List";
+            this.label1.Text = "Requests List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuDragControl1
@@ -151,7 +151,7 @@
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
-            this.bunifuFlatButton1.ButtonText = "Unvalidate donation";
+            this.bunifuFlatButton1.ButtonText = "Unvalidate request";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.Enabled = false;
@@ -175,7 +175,7 @@
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(165, 48);
             this.bunifuFlatButton1.TabIndex = 21;
-            this.bunifuFlatButton1.Text = "Unvalidate donation";
+            this.bunifuFlatButton1.Text = "Unvalidate request";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -188,7 +188,7 @@
             this.updateButton.BackColor = System.Drawing.Color.White;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.updateButton.BorderRadius = 7;
-            this.updateButton.ButtonText = "Validate donation";
+            this.updateButton.ButtonText = "Validate request";
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateButton.DisabledColor = System.Drawing.Color.White;
             this.updateButton.Enabled = false;
@@ -212,7 +212,7 @@
             this.updateButton.selected = false;
             this.updateButton.Size = new System.Drawing.Size(152, 48);
             this.updateButton.TabIndex = 30;
-            this.updateButton.Text = "Validate donation";
+            this.updateButton.Text = "Validate request";
             this.updateButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.updateButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -228,7 +228,7 @@
             this.fromLabel.TabIndex = 32;
             this.fromLabel.Text = "From";
             // 
-            // DonationsForm
+            // RequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -240,11 +240,11 @@
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);
-            this.Controls.Add(this.donationsDGV);
-            this.Name = "DonationsForm";
+            this.Controls.Add(this.requestsDGV);
+            this.Name = "RequestsForm";
             this.Size = new System.Drawing.Size(813, 646);
             this.Load += new System.EventHandler(this.Donations_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.donationsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -254,7 +254,7 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView donationsDGV;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView requestsDGV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.PictureBox menuButton;

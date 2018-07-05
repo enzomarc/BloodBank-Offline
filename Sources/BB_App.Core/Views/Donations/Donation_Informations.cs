@@ -110,7 +110,11 @@ namespace BB_App.Core.Views.Donations
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            AddDonation();
+            if (!Requests.PendingDonation(_currentUser.Id))
+                AddDonation();
+            else
+                MessageBox.Show(@"Can't add the donation because the specified user has waiting donation.", @"Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         #endregion Methods

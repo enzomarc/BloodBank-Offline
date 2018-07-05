@@ -81,7 +81,7 @@ namespace BB_App.Core.Views.Donations
                     var date = kryptonDateTimePicker1.Value.Year + "-" + month + "-" +
                                day;
                     var query =
-                        "INSERT INTO users(name, phone, password, bloodgroup, birthdate, gender, city) VALUES (@name, @phone, @pass, @blood, @birth, @gender, @city);";
+                        "INSERT INTO users(name, phone, password, bloodgroup, birthdate, gender, city, profile_img) VALUES (@name, @phone, @pass, @blood, @birth, @gender, @city, @img);";
                     var cmd = new MySqlCommand(query, SqlConnection.Conn);
                     cmd.Prepare();
 
@@ -92,6 +92,7 @@ namespace BB_App.Core.Views.Donations
                     cmd.Parameters.AddWithValue("@birth", date);
                     cmd.Parameters.AddWithValue("@gender", genderD.Text.ToLower());
                     cmd.Parameters.AddWithValue("@city", cityD.Text);
+                    cmd.Parameters.AddWithValue("@img", "default.png");
 
                     try
                     {
@@ -109,7 +110,7 @@ namespace BB_App.Core.Views.Donations
                             MessageBox.Show(@"Can't retrieve user id, Try creating the user again.", @"Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        MessageBox.Show(@"Here is the new user password. Please note it somewhere and give it to the user." + Environment.NewLine + @" Password : " + password);
+                        MessageBox.Show(@"Here is the new user password. Please note it somewhere and give it to the user." + Environment.NewLine + @" Password : " + password, @"Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadForm(((Main)ParentForm).frmContainer, new DonationInformations(new User(id)));
                     }
                     catch (MySqlException ex)

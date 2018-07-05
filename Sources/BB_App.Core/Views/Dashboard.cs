@@ -95,6 +95,12 @@ namespace BB_App.Core.Views
         private void Dashboard_Load(object sender, EventArgs e)
         {
             profileButton.Text = WhoIsConnected();
+            Models.Bloods.LoadBloods();
+        }
+
+        private void aboutBloodBankToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new About().ShowDialog();
         }
     }
 }

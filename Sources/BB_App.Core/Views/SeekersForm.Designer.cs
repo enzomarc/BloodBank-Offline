@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeekersForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.updateButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuButton = new System.Windows.Forms.PictureBox();
@@ -50,14 +50,14 @@
             // 
             // updateButton
             // 
-            this.updateButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Activecolor = System.Drawing.Color.White;
             this.updateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.BackColor = System.Drawing.Color.White;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.updateButton.BorderRadius = 7;
-            this.updateButton.ButtonText = "Validate Request";
+            this.updateButton.ButtonText = "Send to verification";
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.DisabledColor = System.Drawing.Color.White;
             this.updateButton.Enabled = false;
             this.updateButton.Iconcolor = System.Drawing.Color.Transparent;
             this.updateButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("updateButton.Iconimage")));
@@ -71,15 +71,15 @@
             this.updateButton.IconVisible = true;
             this.updateButton.IconZoom = 40D;
             this.updateButton.IsTab = false;
-            this.updateButton.Location = new System.Drawing.Point(394, 572);
+            this.updateButton.Location = new System.Drawing.Point(382, 572);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Normalcolor = System.Drawing.Color.White;
             this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.updateButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.selected = false;
-            this.updateButton.Size = new System.Drawing.Size(143, 48);
+            this.updateButton.Size = new System.Drawing.Size(155, 48);
             this.updateButton.TabIndex = 29;
-            this.updateButton.Text = "Validate Request";
+            this.updateButton.Text = "Send to verification";
             this.updateButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.updateButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.TextFont = new System.Drawing.Font("Roboto Medium", 9F);
@@ -87,9 +87,9 @@
             // 
             // addButton
             // 
-            this.addButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Activecolor = System.Drawing.Color.White;
             this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.BackColor = System.Drawing.Color.White;
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addButton.BorderRadius = 7;
             this.addButton.ButtonText = "Add Request";
@@ -109,7 +109,7 @@
             this.addButton.IsTab = false;
             this.addButton.Location = new System.Drawing.Point(681, 572);
             this.addButton.Name = "addButton";
-            this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Normalcolor = System.Drawing.Color.White;
             this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.addButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.addButton.selected = false;
@@ -174,9 +174,9 @@
             // requestsDGV
             // 
             this.requestsDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.requestsDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,8 +193,8 @@
             this.requestsDGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.requestsDGV.ReadOnly = true;
             this.requestsDGV.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestsDGV.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestsDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.requestsDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.requestsDGV.ShowCellErrors = false;
@@ -211,7 +211,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.requestsDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.requestsDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.requestsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.requestsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.White;
             this.requestsDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.requestsDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.requestsDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Roboto Medium", 8.75F);
@@ -239,14 +239,14 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Activecolor = System.Drawing.Color.White;
             this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.BackColor = System.Drawing.Color.White;
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.deleteButton.BorderRadius = 7;
             this.deleteButton.ButtonText = "Delete Request";
             this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.DisabledColor = System.Drawing.Color.White;
             this.deleteButton.Enabled = false;
             this.deleteButton.Iconcolor = System.Drawing.Color.Transparent;
             this.deleteButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("deleteButton.Iconimage")));
@@ -262,7 +262,7 @@
             this.deleteButton.IsTab = false;
             this.deleteButton.Location = new System.Drawing.Point(543, 572);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Normalcolor = System.Drawing.Color.White;
             this.deleteButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.deleteButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.deleteButton.selected = false;
@@ -278,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.fromLabel);
             this.Controls.Add(this.updateButton);

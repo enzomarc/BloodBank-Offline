@@ -6,7 +6,10 @@ using static BB_App.Core.Models.Consts;
 using static BB_App.Core.Properties.Settings;
 using static BB_App.Helpers.AccountsHelpers;
 using static BB_App.Helpers.StringHelpers;
+using System.Security.Cryptography;
 using System.Collections.Generic;
+using System.Text;
+using System;
 
 namespace BB_App.Core.Models
 {
@@ -16,8 +19,12 @@ namespace BB_App.Core.Models
 		public static string Login(string username, string password)
 		{
 			var type = string.Empty;
+            var md5 = MD5.Create();
+            var sourceBytes = Encoding.UTF8.GetBytes(password);
+            var hashBytes = md5.ComputeHash(sourceBytes);
+            var md5_pass = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
 
-			if (!Connect(Server, DbUser, DbPassword, DbName)) return type;
+            if (!Connect(Server, DbUser, DbPassword, DbName)) return type;
 
 			const string query =
 				"SELECT username, password, account_type FROM accounts WHERE username = @user AND password = @pwd";
@@ -25,7 +32,7 @@ namespace BB_App.Core.Models
 			var command = new MySqlCommand(query, Conn);
 			command.Prepare();
 			command.Parameters.AddWithValue("@user", username);
-			command.Parameters.AddWithValue("@pwd", password);
+			command.Parameters.AddWithValue("@pwd", md5_pass);
 
 			var reader = command.ExecuteReader();
 
@@ -167,15 +174,20 @@ namespace BB_App.Core.Models
 	    public static bool CreateUser(string username, string password, string type)
 	    {
 	        var added = false;
+            var md5 = MD5.Create();
+            var sourceBytes = Encoding.UTF8.GetBytes(password);
+            var hashBytes = md5.ComputeHash(sourceBytes);
+            var md5_pass = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
 
             if (!Connect(Server, DbUser, DbPassword, DbName)) return added;
 
-	        const string query = "INSERT INTO accounts (username, password, account_type) VALUES (@user, @pwd, @type)";
+	        const string query = "INSERT INTO accounts (ref_hospital, username, password, account_type) VALUES (@ref, @user, @pwd, @type)";
 
             var command = new MySqlCommand(query, Conn);
             command.Prepare();
+	        command.Parameters.AddWithValue("@ref", Default.reference);
 	        command.Parameters.AddWithValue("@user", username);
-	        command.Parameters.AddWithValue("@pwd", password);
+            command.Parameters.AddWithValue("@pwd", md5_pass.ToLower());
 	        command.Parameters.AddWithValue("@type", ParseAccountType(ParseAccountType(type)));
 
 	        added = command.ExecuteNonQuery() > 0;

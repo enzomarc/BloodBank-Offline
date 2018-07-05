@@ -43,7 +43,7 @@ namespace BB_App.Core.Controls
 
         private void kryptonBorderEdge1_MouseEnter(object sender, EventArgs e) => BackColor = Color.FromArgb(240, 240, 240);
 
-        private void kryptonBorderEdge1_MouseLeave(object sender, EventArgs e) => BackColor = Color.WhiteSmoke;
+        private void kryptonBorderEdge1_MouseLeave(object sender, EventArgs e) => BackColor = Color.White;
 
         private void checkBox_Click(object sender, EventArgs e) => Select();
 

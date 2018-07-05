@@ -84,7 +84,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.donationsDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
             this.donationsDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.donationsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.donationsDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.White;
             this.donationsDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.donationsDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.donationsDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
@@ -112,8 +112,8 @@
             // 
             // addButton
             // 
-            this.addButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.addButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Activecolor = System.Drawing.Color.White;
+            this.addButton.BackColor = System.Drawing.Color.White;
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addButton.BorderRadius = 7;
             this.addButton.ButtonText = "Add Donation";
@@ -133,7 +133,7 @@
             this.addButton.IsTab = false;
             this.addButton.Location = new System.Drawing.Point(672, 573);
             this.addButton.Name = "addButton";
-            this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Normalcolor = System.Drawing.Color.White;
             this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.addButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.addButton.selected = false;
@@ -183,8 +183,8 @@
             // 
             // bunifuFlatButton1
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
             this.bunifuFlatButton1.ButtonText = "Delete Donation";
@@ -204,7 +204,7 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(503, 573);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton1.selected = false;
@@ -218,14 +218,14 @@
             // 
             // updateButton
             // 
-            this.updateButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Activecolor = System.Drawing.Color.White;
             this.updateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.BackColor = System.Drawing.Color.White;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.updateButton.BorderRadius = 7;
             this.updateButton.ButtonText = "Send to verification";
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.DisabledColor = System.Drawing.Color.White;
             this.updateButton.Enabled = false;
             this.updateButton.Iconcolor = System.Drawing.Color.Transparent;
             this.updateButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("updateButton.Iconimage")));
@@ -241,7 +241,7 @@
             this.updateButton.IsTab = false;
             this.updateButton.Location = new System.Drawing.Point(345, 573);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Normalcolor = System.Drawing.Color.White;
             this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.updateButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.selected = false;
@@ -267,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.fromLabel);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.bunifuFlatButton1);

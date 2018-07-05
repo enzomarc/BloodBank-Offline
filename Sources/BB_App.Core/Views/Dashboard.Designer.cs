@@ -33,7 +33,6 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
+            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -81,19 +81,12 @@
             this.Menu.BackColor = System.Drawing.Color.White;
             this.Menu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateDatabaseToolStripMenuItem,
             this.updateSoftwareToolStripMenuItem,
             this.preferencesToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.Menu.Name = "Menu";
             this.Menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.Menu.Size = new System.Drawing.Size(171, 92);
-            // 
-            // updateDatabaseToolStripMenuItem
-            // 
-            this.updateDatabaseToolStripMenuItem.Name = "updateDatabaseToolStripMenuItem";
-            this.updateDatabaseToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.updateDatabaseToolStripMenuItem.Text = "Update Database";
             // 
             // updateSoftwareToolStripMenuItem
             // 
@@ -110,6 +103,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.documentationToolStripMenuItem,
             this.bloodBankWebsiteToolStripMenuItem,
             this.reportIssueToolStripMenuItem,
             this.aboutBloodBankToolStripMenuItem});
@@ -139,11 +133,12 @@
             this.aboutBloodBankToolStripMenuItem.Name = "aboutBloodBankToolStripMenuItem";
             this.aboutBloodBankToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.aboutBloodBankToolStripMenuItem.Text = "About BloodBank";
+            this.aboutBloodBankToolStripMenuItem.Click += new System.EventHandler(this.aboutBloodBankToolStripMenuItem_Click);
             // 
             // profileButton
             // 
-            this.profileButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-            this.profileButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.profileButton.Activecolor = System.Drawing.Color.White;
+            this.profileButton.BackColor = System.Drawing.Color.White;
             this.profileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.profileButton.BorderRadius = 7;
             this.profileButton.ButtonText = "John Doe";
@@ -163,7 +158,7 @@
             this.profileButton.IsTab = false;
             this.profileButton.Location = new System.Drawing.Point(355, 578);
             this.profileButton.Name = "profileButton";
-            this.profileButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.profileButton.Normalcolor = System.Drawing.Color.White;
             this.profileButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.profileButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.profileButton.selected = false;
@@ -188,9 +183,9 @@
             // 
             // bunifuTileButton4
             // 
-            this.bunifuTileButton4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton4.BackColor = System.Drawing.Color.White;
             this.bunifuTileButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bunifuTileButton4.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton4.color = System.Drawing.Color.White;
             this.bunifuTileButton4.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton4.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -209,8 +204,8 @@
             // 
             // bunifuTileButton5
             // 
-            this.bunifuTileButton5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton5.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton5.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton5.color = System.Drawing.Color.White;
             this.bunifuTileButton5.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton5.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -229,8 +224,8 @@
             // 
             // bunifuTileButton6
             // 
-            this.bunifuTileButton6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton6.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton6.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton6.color = System.Drawing.Color.White;
             this.bunifuTileButton6.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton6.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -248,8 +243,8 @@
             // 
             // bunifuTileButton3
             // 
-            this.bunifuTileButton3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton3.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton3.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton3.color = System.Drawing.Color.White;
             this.bunifuTileButton3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton3.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -268,8 +263,8 @@
             // 
             // bunifuTileButton2
             // 
-            this.bunifuTileButton2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton2.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton2.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton2.color = System.Drawing.Color.White;
             this.bunifuTileButton2.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton2.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -288,8 +283,8 @@
             // 
             // bunifuTileButton1
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTileButton1.color = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.color = System.Drawing.Color.White;
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton1.Font = new System.Drawing.Font("Roboto Medium", 6.75F);
@@ -332,11 +327,17 @@
             this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
             this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
+            // documentationToolStripMenuItem
+            // 
+            this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.documentationToolStripMenuItem.Text = "Documentation";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.profileButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);
@@ -374,12 +375,12 @@
         private System.Windows.Forms.PictureBox logo;
         private Bunifu.Framework.UI.BunifuFlatButton profileButton;
         private System.Windows.Forms.ContextMenuStrip Menu;
-        private System.Windows.Forms.ToolStripMenuItem updateDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateSoftwareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bloodBankWebsiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportIssueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutBloodBankToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
     }
 }

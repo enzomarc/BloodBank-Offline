@@ -114,7 +114,7 @@
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
             this.kryptonDateTimePicker1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(261, 40);
-            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonDateTimePicker1.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.kryptonDateTimePicker1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -139,7 +139,7 @@
             this.kryptonNumericUpDown1.Name = "kryptonNumericUpDown1";
             this.kryptonNumericUpDown1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.kryptonNumericUpDown1.Size = new System.Drawing.Size(261, 39);
-            this.kryptonNumericUpDown1.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonNumericUpDown1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonNumericUpDown1.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.kryptonNumericUpDown1.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.kryptonNumericUpDown1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -192,7 +192,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
             this.bunifuFlatButton1.ButtonText = "MAKE DONATION";
@@ -212,7 +212,7 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(327, 527);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
@@ -348,7 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);

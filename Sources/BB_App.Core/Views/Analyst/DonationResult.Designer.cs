@@ -49,14 +49,14 @@
             // 
             // updateButton
             // 
-            this.updateButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Activecolor = System.Drawing.Color.White;
             this.updateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.BackColor = System.Drawing.Color.White;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.updateButton.BorderRadius = 7;
             this.updateButton.ButtonText = "Validate Request";
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.DisabledColor = System.Drawing.Color.White;
             this.updateButton.Enabled = false;
             this.updateButton.Iconcolor = System.Drawing.Color.Transparent;
             this.updateButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("updateButton.Iconimage")));
@@ -72,7 +72,7 @@
             this.updateButton.IsTab = false;
             this.updateButton.Location = new System.Drawing.Point(394, 572);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.updateButton.Normalcolor = System.Drawing.Color.White;
             this.updateButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.updateButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.updateButton.selected = false;
@@ -86,9 +86,9 @@
             // 
             // addButton
             // 
-            this.addButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Activecolor = System.Drawing.Color.White;
             this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.BackColor = System.Drawing.Color.White;
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addButton.BorderRadius = 7;
             this.addButton.ButtonText = "Add Request";
@@ -108,7 +108,7 @@
             this.addButton.IsTab = false;
             this.addButton.Location = new System.Drawing.Point(681, 572);
             this.addButton.Name = "addButton";
-            this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.addButton.Normalcolor = System.Drawing.Color.White;
             this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.addButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.addButton.selected = false;
@@ -189,14 +189,14 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Activecolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Activecolor = System.Drawing.Color.White;
             this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.BackColor = System.Drawing.Color.White;
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.deleteButton.BorderRadius = 7;
             this.deleteButton.ButtonText = "Delete Request";
             this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteButton.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.DisabledColor = System.Drawing.Color.White;
             this.deleteButton.Enabled = false;
             this.deleteButton.Iconcolor = System.Drawing.Color.Transparent;
             this.deleteButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("deleteButton.Iconimage")));
@@ -212,7 +212,7 @@
             this.deleteButton.IsTab = false;
             this.deleteButton.Location = new System.Drawing.Point(543, 572);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Normalcolor = System.Drawing.Color.White;
             this.deleteButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.deleteButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.deleteButton.selected = false;
@@ -226,7 +226,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(202, 197);
             this.pictureBox2.Name = "pictureBox2";
@@ -240,7 +240,7 @@
             this.username.Location = new System.Drawing.Point(188, 187);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(436, 41);
-            this.username.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.username.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.username.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.username.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -256,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.username);
             this.Controls.Add(this.deleteButton);

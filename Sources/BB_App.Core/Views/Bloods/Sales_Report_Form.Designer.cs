@@ -130,7 +130,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
 			this.reportDGV.StateCommon.DataCell.Content.MultiLine = ComponentFactory.Krypton.Toolkit.InheritBool.True;
 			this.reportDGV.StateCommon.DataCell.Content.MultiLineH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-			this.reportDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+			this.reportDGV.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.White;
 			this.reportDGV.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
 			this.reportDGV.StateCommon.HeaderColumn.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
 			this.reportDGV.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Roboto Medium", 8.75F);
@@ -145,8 +145,8 @@
 			// 
 			// addButton
 			// 
-			this.addButton.Activecolor = System.Drawing.Color.WhiteSmoke;
-			this.addButton.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.addButton.Activecolor = System.Drawing.Color.White;
+			this.addButton.BackColor = System.Drawing.Color.White;
 			this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.addButton.BorderRadius = 7;
 			this.addButton.ButtonText = "Print Report";
@@ -166,7 +166,7 @@
 			this.addButton.IsTab = false;
 			this.addButton.Location = new System.Drawing.Point(672, 575);
 			this.addButton.Name = "addButton";
-			this.addButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+			this.addButton.Normalcolor = System.Drawing.Color.White;
 			this.addButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
 			this.addButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
 			this.addButton.selected = false;
@@ -181,7 +181,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.BackColor = System.Drawing.Color.White;
 			this.Controls.Add(this.addButton);
 			this.Controls.Add(this.reportDGV);
 			this.Controls.Add(this.menuButton);

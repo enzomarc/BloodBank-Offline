@@ -79,8 +79,8 @@
             this.bloodGD.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.bloodGD.Size = new System.Drawing.Size(436, 39);
             this.bloodGD.Splitter = false;
-            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.bloodGD.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.bloodGD.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.bloodGD.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -171,7 +171,7 @@
             this.dateTime.Name = "dateTime";
             this.dateTime.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
             this.dateTime.Size = new System.Drawing.Size(436, 40);
-            this.dateTime.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.dateTime.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.dateTime.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.dateTime.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -191,7 +191,7 @@
             this.numberUnits.Name = "numberUnits";
             this.numberUnits.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.numberUnits.Size = new System.Drawing.Size(312, 39);
-            this.numberUnits.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.numberUnits.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.numberUnits.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.numberUnits.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.numberUnits.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -237,7 +237,7 @@
             this.unitsPrice.Name = "unitsPrice";
             this.unitsPrice.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.unitsPrice.Size = new System.Drawing.Size(312, 39);
-            this.unitsPrice.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.unitsPrice.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.unitsPrice.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.unitsPrice.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.unitsPrice.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -284,7 +284,7 @@
             // purchaseBtn
             // 
             this.purchaseBtn.Activecolor = System.Drawing.Color.Gainsboro;
-            this.purchaseBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.purchaseBtn.BackColor = System.Drawing.Color.White;
             this.purchaseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.purchaseBtn.BorderRadius = 7;
             this.purchaseBtn.ButtonText = "PURCHASE";
@@ -305,7 +305,7 @@
             this.purchaseBtn.IsTab = false;
             this.purchaseBtn.Location = new System.Drawing.Point(327, 502);
             this.purchaseBtn.Name = "purchaseBtn";
-            this.purchaseBtn.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.purchaseBtn.Normalcolor = System.Drawing.Color.White;
             this.purchaseBtn.OnHovercolor = System.Drawing.Color.LightGray;
             this.purchaseBtn.OnHoverTextColor = System.Drawing.Color.Black;
             this.purchaseBtn.selected = false;
@@ -357,7 +357,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.purchaseBtn);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.label4);

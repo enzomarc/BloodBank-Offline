@@ -39,13 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numberUnits = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
             this.bloodGD = new ComponentFactory.Krypton.Toolkit.KryptonDropButton();
-            this.dateTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.menuButton = new System.Windows.Forms.PictureBox();
-            this.closeButton = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,10 +48,15 @@
             this.aBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.oToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTime = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.menuButton = new System.Windows.Forms.PictureBox();
+            this.closeButton = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuDragControl1
@@ -70,7 +69,7 @@
             // saleBtn
             // 
             this.saleBtn.Activecolor = System.Drawing.Color.Gainsboro;
-            this.saleBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.saleBtn.BackColor = System.Drawing.Color.White;
             this.saleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.saleBtn.BorderRadius = 7;
             this.saleBtn.ButtonText = "SALE";
@@ -91,7 +90,7 @@
             this.saleBtn.IsTab = false;
             this.saleBtn.Location = new System.Drawing.Point(327, 502);
             this.saleBtn.Name = "saleBtn";
-            this.saleBtn.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.saleBtn.Normalcolor = System.Drawing.Color.White;
             this.saleBtn.OnHovercolor = System.Drawing.Color.LightGray;
             this.saleBtn.OnHoverTextColor = System.Drawing.Color.Black;
             this.saleBtn.selected = false;
@@ -147,7 +146,7 @@
             this.unitsPrice.Name = "unitsPrice";
             this.unitsPrice.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.unitsPrice.Size = new System.Drawing.Size(312, 39);
-            this.unitsPrice.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.unitsPrice.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.unitsPrice.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.unitsPrice.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.unitsPrice.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -185,7 +184,7 @@
             this.numberUnits.Name = "numberUnits";
             this.numberUnits.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.numberUnits.Size = new System.Drawing.Size(312, 39);
-            this.numberUnits.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.numberUnits.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.numberUnits.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.numberUnits.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.numberUnits.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -210,8 +209,8 @@
             this.bloodGD.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.bloodGD.Size = new System.Drawing.Size(436, 39);
             this.bloodGD.Splitter = false;
-            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.bloodGD.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.bloodGD.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.bloodGD.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.bloodGD.StateCommon.Border.Color2 = System.Drawing.Color.Silver;
             this.bloodGD.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -220,6 +219,71 @@
             this.bloodGD.StateCommon.Border.Rounding = 20;
             this.bloodGD.TabIndex = 65;
             this.bloodGD.Values.Text = "Blood Group";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.White;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bToolStripMenuItem,
+            this.aToolStripMenuItem1,
+            this.bToolStripMenuItem1,
+            this.bToolStripMenuItem2,
+            this.aBToolStripMenuItem,
+            this.aBToolStripMenuItem1,
+            this.oToolStripMenuItem,
+            this.oToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(98, 180);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
+            // 
+            // bToolStripMenuItem
+            // 
+            this.bToolStripMenuItem.Name = "bToolStripMenuItem";
+            this.bToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.bToolStripMenuItem.Text = "A+";
+            // 
+            // aToolStripMenuItem1
+            // 
+            this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
+            this.aToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.aToolStripMenuItem1.Text = "A-";
+            // 
+            // bToolStripMenuItem1
+            // 
+            this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
+            this.bToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.bToolStripMenuItem1.Text = "B+";
+            // 
+            // bToolStripMenuItem2
+            // 
+            this.bToolStripMenuItem2.Name = "bToolStripMenuItem2";
+            this.bToolStripMenuItem2.Size = new System.Drawing.Size(97, 22);
+            this.bToolStripMenuItem2.Text = "B-";
+            // 
+            // aBToolStripMenuItem
+            // 
+            this.aBToolStripMenuItem.Name = "aBToolStripMenuItem";
+            this.aBToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.aBToolStripMenuItem.Text = "AB+";
+            // 
+            // aBToolStripMenuItem1
+            // 
+            this.aBToolStripMenuItem1.Name = "aBToolStripMenuItem1";
+            this.aBToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.aBToolStripMenuItem1.Text = "AB-";
+            // 
+            // oToolStripMenuItem
+            // 
+            this.oToolStripMenuItem.Name = "oToolStripMenuItem";
+            this.oToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.oToolStripMenuItem.Text = "O+";
+            // 
+            // oToolStripMenuItem1
+            // 
+            this.oToolStripMenuItem1.Name = "oToolStripMenuItem1";
+            this.oToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.oToolStripMenuItem1.Text = "O-";
             // 
             // dateTime
             // 
@@ -230,7 +294,7 @@
             this.dateTime.Name = "dateTime";
             this.dateTime.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
             this.dateTime.Size = new System.Drawing.Size(436, 40);
-            this.dateTime.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.dateTime.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.dateTime.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
             this.dateTime.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -286,83 +350,11 @@
             this.logo.TabIndex = 60;
             this.logo.TabStop = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.White;
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aToolStripMenuItem,
-            this.bToolStripMenuItem,
-            this.aToolStripMenuItem1,
-            this.bToolStripMenuItem1,
-            this.bToolStripMenuItem2,
-            this.aBToolStripMenuItem,
-            this.aBToolStripMenuItem1,
-            this.oToolStripMenuItem,
-            this.oToolStripMenuItem1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 202);
-            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
-            // 
-            // aToolStripMenuItem
-            // 
-            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.aToolStripMenuItem.Text = "Unknow";
-            // 
-            // bToolStripMenuItem
-            // 
-            this.bToolStripMenuItem.Name = "bToolStripMenuItem";
-            this.bToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.bToolStripMenuItem.Text = "A+";
-            // 
-            // aToolStripMenuItem1
-            // 
-            this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
-            this.aToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
-            this.aToolStripMenuItem1.Text = "A-";
-            // 
-            // bToolStripMenuItem1
-            // 
-            this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
-            this.bToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
-            this.bToolStripMenuItem1.Text = "B+";
-            // 
-            // bToolStripMenuItem2
-            // 
-            this.bToolStripMenuItem2.Name = "bToolStripMenuItem2";
-            this.bToolStripMenuItem2.Size = new System.Drawing.Size(118, 22);
-            this.bToolStripMenuItem2.Text = "B-";
-            // 
-            // aBToolStripMenuItem
-            // 
-            this.aBToolStripMenuItem.Name = "aBToolStripMenuItem";
-            this.aBToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.aBToolStripMenuItem.Text = "AB+";
-            // 
-            // aBToolStripMenuItem1
-            // 
-            this.aBToolStripMenuItem1.Name = "aBToolStripMenuItem1";
-            this.aBToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
-            this.aBToolStripMenuItem1.Text = "AB-";
-            // 
-            // oToolStripMenuItem
-            // 
-            this.oToolStripMenuItem.Name = "oToolStripMenuItem";
-            this.oToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.oToolStripMenuItem.Text = "O+";
-            // 
-            // oToolStripMenuItem1
-            // 
-            this.oToolStripMenuItem1.Name = "oToolStripMenuItem1";
-            this.oToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
-            this.oToolStripMenuItem1.Text = "O-";
-            // 
             // Blood_Sale_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.saleBtn);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.label4);
@@ -378,10 +370,10 @@
             this.Controls.Add(this.logo);
             this.Name = "Blood_Sale_Form";
             this.Size = new System.Drawing.Size(813, 646);
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -403,7 +395,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem1;

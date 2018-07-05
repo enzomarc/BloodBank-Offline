@@ -27,12 +27,12 @@ namespace BB_App.Core.Views.Administration
 
         private void menuButton_MouseEnter(object sender, EventArgs e)
         {
-            menuButton.Image = Resources.Menu_Hover_16px;
+            menuButton.Image = Resources.Left_Hover_16px;
         }
 
         private void menuButton_MouseLeave(object sender, EventArgs e)
         {
-            menuButton.Image = Resources.Menu_16px;
+            menuButton.Image = Resources.Left_15px;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace BB_App.Core.Views.Administration
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            Menu.Show(menuButton, menuButton.Location);
+            LoadForm(((Main)ParentForm).frmContainer, new Views.Dashboard());
         }
 
         #endregion
@@ -50,6 +50,16 @@ namespace BB_App.Core.Views.Administration
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
             LoadForm(((Main)ParentForm).frmContainer, new UsersManagement());
+        }
+
+        private void bunifuTileButton3_Click(object sender, EventArgs e)
+        {
+            LoadForm(((Main)ParentForm).frmContainer, new HospitalRequest());
+        }
+
+        private void bunifuTileButton4_Click(object sender, EventArgs e)
+        {
+            LoadForm(((Main)ParentForm).frmContainer, new Login());
         }
     }
 }

@@ -95,6 +95,8 @@
     <Compile Include="Models\Consts.cs" />
     <Compile Include="Models\Bloods.cs" />
     <Compile Include="Models\FirstStart.cs" />
+    <Compile Include="Models\Tests.cs" />
+    <Compile Include="Models\Notifications.cs" />
     <Compile Include="Models\SqlConnection.cs" />
     <Compile Include="Models\Requests.cs" />
     <Compile Include="Models\User.cs" />
@@ -103,11 +105,29 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Views\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administration\AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administration\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Administration\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administration\HospitalRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Administration\HospitalRequest.Designer.cs">
+      <DependentUpon>HospitalRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Administration\UsersManagement.cs">
       <SubType>UserControl</SubType>
@@ -121,6 +141,12 @@
     <Compile Include="Views\Analyst\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Analyst\RequestsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Analyst\RequestsForm.Designer.cs">
+      <DependentUpon>RequestsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Analyst\DonationsForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +158,12 @@
     </Compile>
     <Compile Include="Views\Analyst\DonationResult.Designer.cs">
       <DependentUpon>DonationResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Analyst\Validation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Analyst\Validation.Designer.cs">
+      <DependentUpon>Validation.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Bloods\Blood_Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -249,8 +281,18 @@
     <EmbeddedResource Include="Controls\CustomListBoxItem.resx">
       <DependentUpon>CustomListBoxItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administration\AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Administration\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administration\HospitalRequest.resx">
+      <DependentUpon>HospitalRequest.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Administration\UsersManagement.resx">
       <DependentUpon>UsersManagement.cs</DependentUpon>
@@ -259,11 +301,17 @@
     <EmbeddedResource Include="Views\Analyst\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Analyst\RequestsForm.resx">
+      <DependentUpon>RequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Analyst\DonationsForm.resx">
       <DependentUpon>DonationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Analyst\DonationResult.resx">
       <DependentUpon>DonationResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Analyst\Validation.resx">
+      <DependentUpon>Validation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Bloods\Blood_Dashboard.resx">
       <DependentUpon>Blood_Dashboard.cs</DependentUpon>

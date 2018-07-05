@@ -51,7 +51,7 @@ namespace BB_App.Core.Views.Seekers
         private void FillWith(User user)
         {
             label10.Text = user.Name;
-            label9.Text = Commons.Format(user.BloodGroup);
+            bloodGD.Text = Commons.Format(user.BloodGroup);
             label8.Text = user.Gender;
             label7.Text = user.Phone.ToString();
             label2.Text = DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year;
@@ -59,8 +59,7 @@ namespace BB_App.Core.Views.Seekers
 
         private void AddRequest()
         {
-            var request = new Requests.Request(_currentUser.Id, Settings.Default.reference, DateTime.Today,
-                checkBox1.Checked ? DateTime.Today : new DateTime(1, 1, 1), Convert.ToInt32(kryptonNumericUpDown1.Value), "waiting");
+            var request = new Requests.Request(_currentUser.Id, Settings.Default.reference, Commons.Unformat(bloodGD.Text).ToLower(), DateTime.Today, new DateTime(1, 1, 1), Convert.ToInt32(kryptonNumericUpDown1.Value), "waiting");
 
             if (Requests.SaveRequest(request))
                 MessageBox.Show(@"Request added successfully.", @"Success", MessageBoxButtons.OK,
@@ -77,10 +76,16 @@ namespace BB_App.Core.Views.Seekers
             if (!Requests.PendingRequest(_currentUser.Id))
                 AddRequest();
             else
-                MessageBox.Show("Can't add the request because the specified user has pending request.", "Error",
+                MessageBox.Show("Can't add the request because the specified user has waiting request.", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         #endregion
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            bloodGD.Text = e.ClickedItem.Text;
+            kryptonNumericUpDown1.Maximum = Models.Bloods.GetUnits(Commons.Unformat(e.ClickedItem.Text).ToLower());
+        }
     }
 }
