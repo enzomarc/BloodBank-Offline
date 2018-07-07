@@ -13,7 +13,7 @@ namespace BB_App.Core
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Database_Config());
         }
     }
 }

@@ -114,5 +114,10 @@ namespace BB_App.Core.Views.Administration
         {
             LoadRequests();
         }
+
+        private void HospitalRequest_Load(object sender, EventArgs e)
+        {
+            LoadRequests();
+        }
     }
 }

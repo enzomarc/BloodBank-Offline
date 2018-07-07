@@ -12,10 +12,10 @@
       <Value Profile="(Default)">77.72.0.102</Value>
     </Setting>
     <Setting Name="db_user" Type="System.String" Scope="User">
-      <Value Profile="(Default)">nucleustechnolog_bloodbank</Value>
+      <Value Profile="(Default)">nucleustechnolog</Value>
     </Setting>
     <Setting Name="db_pwd" Type="System.String" Scope="User">
-      <Value Profile="(Default)">B0o99D)f0cnD</Value>
+      <Value Profile="(Default)">_fCKx+zuQu%u</Value>
     </Setting>
     <Setting Name="db_name" Type="System.String" Scope="User">
       <Value Profile="(Default)">nucleustechnolog_bloodbank</Value>

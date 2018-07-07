@@ -61,7 +61,7 @@ namespace BB_App.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("nucleustechnolog_bloodbank")]
+        [global::System.Configuration.DefaultSettingValueAttribute("nucleustechnolog")]
         public string db_user {
             get {
                 return ((string)(this["db_user"]));
@@ -73,7 +73,7 @@ namespace BB_App.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("B0o99D)f0cnD")]
+        [global::System.Configuration.DefaultSettingValueAttribute("_fCKx+zuQu%u")]
         public string db_pwd {
             get {
                 return ((string)(this["db_pwd"]));
