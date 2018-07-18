@@ -22,7 +22,7 @@ Module de gestion hors-ligne pour des banque de sang disponible dans les différ
 
   - Bunifu.UI 1.5.3 disponible [ici](https://devtools.bunifu.co.ke)
 
-  - TransControl disponible sur ce repositoire
+  - TransControl disponible sur ce dépôt
 
     ​
 
